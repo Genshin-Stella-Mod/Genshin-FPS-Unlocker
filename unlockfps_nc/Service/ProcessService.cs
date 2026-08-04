@@ -84,8 +84,9 @@ public class ProcessService
 		if (!Native.CreateProcess(_config.GamePath, commandLine, IntPtr.Zero, IntPtr.Zero, false, creationFlag, IntPtr.Zero, gameFolder, ref si, out PROCESS_INFORMATION pi))
 		{
 			var error = Marshal.GetLastWin32Error();
-			Program.Logger.Error($"CreateProcess failed with error code {error}: {Marshal.GetLastPInvokeErrorMessage()}");
-			MessageBox.Show(string.Format(Resources.ProcessService_StartGame_CreateProcessFailed, error, Marshal.GetLastPInvokeErrorMessage()), Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			var errorMessage = Marshal.GetLastPInvokeErrorMessage();
+			Program.Logger.Error($"CreateProcess failed with error code {error}: {errorMessage}");
+			MessageBox.Show(string.Format(Resources.ProcessService_StartGame_CreateProcessFailed, error, errorMessage), Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			return false;
 		}
 

@@ -1,5 +1,5 @@
 # Genshin Impact FPS Unlocker modified by Sefinek
-> [Custom release for Genshin Stella Mod. Read more.](https://sefinek.net/genshin-stella-mod)
+> [Custom release for Genshin Stella Mod. Read more.](https://stella.sefinek.net)
 
 ## Information
 - This tool helps you to unlock the 60 FPS limit in the game.

@@ -69,8 +69,9 @@ public class IpcService(ConfigService configService) : IDisposable
 		if (_stubModule == IntPtr.Zero)
 		{
 			var error = Marshal.GetLastWin32Error();
-			Program.Logger.Error($"LoadLibrary failed with error code {error}: {Marshal.GetLastPInvokeErrorMessage()}");
-			MessageBox.Show(string.Format(Resources.IpcService_Start_FailedToLoadStubModule, error, Marshal.GetLastPInvokeErrorMessage()), Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			var errorMessage = Marshal.GetLastPInvokeErrorMessage();
+			Program.Logger.Error($"LoadLibrary failed with error code {error}: {errorMessage}");
+			MessageBox.Show(string.Format(Resources.IpcService_Start_FailedToLoadStubModule, error, errorMessage), Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			return false;
 		}
 
@@ -78,8 +79,10 @@ public class IpcService(ConfigService configService) : IDisposable
 		var targetWindow = ProcessUtils.GetWindowFromProcessId(processId);
 		if (targetWindow == IntPtr.Zero)
 		{
+			var error = Marshal.GetLastWin32Error();
+			var errorMessage = Marshal.GetLastPInvokeErrorMessage();
 			Program.Logger.Error($"Failed to find game window for process ID: {processId}");
-			MessageBox.Show(string.Format(Resources.IpcService_Start_FailedToSetWindowHook, Marshal.GetLastWin32Error(), Marshal.GetLastPInvokeErrorMessage()), Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			MessageBox.Show(string.Format(Resources.IpcService_Start_FailedToSetWindowHook, error, errorMessage), Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			return false;
 		}
 
@@ -89,16 +92,18 @@ public class IpcService(ConfigService configService) : IDisposable
 		if (_wndHook == IntPtr.Zero)
 		{
 			var error = Marshal.GetLastWin32Error();
-			Program.Logger.Error($"SetWindowsHookEx failed with error code {error}: {Marshal.GetLastPInvokeErrorMessage()}");
-			MessageBox.Show(string.Format(Resources.IpcService_Start_FailedToSetWindowHook, error, Marshal.GetLastPInvokeErrorMessage()), Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			var errorMessage = Marshal.GetLastPInvokeErrorMessage();
+			Program.Logger.Error($"SetWindowsHookEx failed with error code {error}: {errorMessage}");
+			MessageBox.Show(string.Format(Resources.IpcService_Start_FailedToSetWindowHook, error, errorMessage), Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			return false;
 		}
 
 		if (!Native.PostThreadMessage(threadId, 0, IntPtr.Zero, IntPtr.Zero))
 		{
 			var error = Marshal.GetLastWin32Error();
-			Program.Logger.Error($"PostThreadMessage failed with error code {error}: {Marshal.GetLastPInvokeErrorMessage()}");
-			MessageBox.Show(string.Format(Resources.IpcService_Start_FailedToPostThreadMessage, error, Marshal.GetLastPInvokeErrorMessage()), Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			var errorMessage = Marshal.GetLastPInvokeErrorMessage();
+			Program.Logger.Error($"PostThreadMessage failed with error code {error}: {errorMessage}");
+			MessageBox.Show(string.Format(Resources.IpcService_Start_FailedToPostThreadMessage, error, errorMessage), Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			return false;
 		}
 

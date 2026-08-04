@@ -21,7 +21,7 @@ internal partial class AboutForm : Form
 
 	private void Website_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
-		OpenLink("https://sefinek.net/genshin-stella-mod?referrer=OfficialWebsite_LinkClicked");
+		OpenLink("https://stella.sefinek.net/?referrer=OfficialWebsite_LinkClicked");
 	}
 
 	internal static void OpenLink(string url)
