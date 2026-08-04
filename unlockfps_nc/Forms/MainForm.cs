@@ -226,7 +226,7 @@ public partial class MainForm : Form
 
 	private void FpsUnlocker_Click(object sender, EventArgs e)
 	{
-		AboutForm.OpenLink("https://github.com/sefinek/Genshin-FPS-Unlocker?referrer=FpsUnlocker_Click");
+		AboutForm.OpenLink("https://github.com/Genshin-Stella-Mod/Genshin-FPS-Unlocker?referrer=FpsUnlocker_Click");
 	}
 
 	private void SefinGitHub_Click(object sender, EventArgs e)

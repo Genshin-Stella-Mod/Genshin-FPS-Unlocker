@@ -16,7 +16,7 @@ internal partial class AboutForm : Form
 
 	private void GitHub_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
-		OpenLink("https://github.com/sefinek/Genshin-FPS-Unlocker?referrer=GitHub_LinkClicked");
+		OpenLink("https://github.com/Genshin-Stella-Mod/Genshin-FPS-Unlocker?referrer=GitHub_LinkClicked");
 	}
 
 	private void Website_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
