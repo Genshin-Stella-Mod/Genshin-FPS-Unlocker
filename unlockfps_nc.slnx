@@ -1,16 +1,11 @@
 <Solution>
   <Configurations>
-    <BuildType Name="Debug" />
-    <BuildType Name="Release" />
-    <BuildType Name="ReleaseMin" />
     <Platform Name="Any CPU" />
+    <Platform Name="ARM" />
+    <Platform Name="ARM64" />
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="UnlockerStub/UnlockerStub.vcxproj" Id="517821e2-89ad-4ea4-b788-e8948bf27d8d">
-    <BuildType Solution="ReleaseMin|x64" Project="Release" />
-  </Project>
-  <Project Path="unlockfps_nc/Genshin FPS Unlocker.csproj">
-    <BuildDependency Project="UnlockerStub/UnlockerStub.vcxproj" />
-  </Project>
+  <Project Path="UnlockerStub/UnlockerStub.vcxproj" Id="517821e2-89ad-4ea4-b788-e8948bf27d8d" />
+  <Project Path="unlockfps_nc/Genshin FPS Unlocker.csproj" />
 </Solution>
