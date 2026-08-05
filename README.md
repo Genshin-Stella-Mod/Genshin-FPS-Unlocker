@@ -14,7 +14,6 @@ To fix this, disable the feature: `Windows Security` → `App & browser control`
 - Does not require a driver for R/W access.
 - Supports OS and CN version.
 - Should work for future updates.
-- If the source needs to be updated, I'll try to do it as soon as possible.
 - You can download the compiled binary over at [Release](https://github.com/Genshin-Stella-Mod/Genshin-FPS-Unlocker/releases) if you don't want to compile it yourself.
 
 ## Usage
