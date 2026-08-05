@@ -195,9 +195,21 @@ public class ProcessService
 		if (config.Fullscreen)
 			commandLine += $"-window-mode {(config.IsExclusiveFullscreen ? "exclusive" : "borderless")} ";
 
-		commandLine += $"-monitor {config.MonitorNum} ";
+		commandLine += $"-monitor {ResolveMonitorNum(config)} ";
 		if (!string.IsNullOrWhiteSpace(config.AdditionalCommandLine))
 			commandLine += $"{config.AdditionalCommandLine.Trim()} ";
 		return commandLine.TrimEnd();
+	}
+
+	private static int ResolveMonitorNum(Config config)
+	{
+		var screenCount = Screen.AllScreens.Length;
+
+		if (!string.IsNullOrEmpty(config.MonitorId))
+			for (var i = 0; i < screenCount; i++)
+				if (MonitorUtils.GetMonitorInfo(i).DeviceId == config.MonitorId)
+					return i + 1;
+
+		return config.MonitorNum is >= 1 && config.MonitorNum <= screenCount ? config.MonitorNum : 1;
 	}
 }

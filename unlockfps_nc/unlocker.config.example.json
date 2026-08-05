@@ -15,6 +15,7 @@
     "CustomResX": 1920,
     "CustomResY": 1080,
     "MonitorNum": 1,
+    "MonitorId": "",
     "Priority": 3,
     "AdditionalCommandLine": ""
 }

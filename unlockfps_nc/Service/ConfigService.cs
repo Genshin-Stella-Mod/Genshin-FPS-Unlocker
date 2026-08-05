@@ -22,6 +22,7 @@ public class ConfigService
 		Sanitize();
 		LoadGamePathFromRegistry();
 		if (!loaded) InitializePrimaryMonitor();
+		else BackfillMonitorId();
 	}
 
 	internal bool IsFirstRun { get; }
@@ -90,7 +91,7 @@ public class ConfigService
 		for (var i = 0; i < 10; i++)
 			try
 			{
-				var (_, _, _, _, isPrimary) = MonitorUtils.GetMonitorInfo(i);
+				var (_, _, _, _, isPrimary, _) = MonitorUtils.GetMonitorInfo(i);
 				if (isPrimary) return i;
 			}
 			catch
@@ -101,12 +102,24 @@ public class ConfigService
 		return -1;
 	}
 
+	private void BackfillMonitorId()
+	{
+		if (!string.IsNullOrEmpty(Config.MonitorId)) return;
+
+		var index = Config.MonitorNum - 1;
+		if (index < 0 || index >= Screen.AllScreens.Length) return;
+
+		Config.MonitorId = MonitorUtils.GetMonitorInfo(index).DeviceId;
+		Program.Logger.Info($"Backfilled MonitorId for existing config from monitor index {Config.MonitorNum}");
+	}
+
 	internal void UpdateMonitorSettings(int monitorIndex)
 	{
-		var (_, width, height, refreshRate, _) = MonitorUtils.GetMonitorInfo(monitorIndex);
+		var (_, width, height, refreshRate, _, deviceId) = MonitorUtils.GetMonitorInfo(monitorIndex);
 		Config.FPSTarget = refreshRate > 0 ? refreshRate : 60;
 		Config.CustomResX = width > 0 ? width : 1920;
 		Config.CustomResY = height > 0 ? height : 1080;
+		Config.MonitorId = deviceId;
 	}
 
 	internal void Save()

@@ -8,7 +8,7 @@ internal static class MonitorUtils
 	[DllImport("user32.dll")]
 	private static extern bool EnumDisplayDevices(string? lpDevice, uint iDevNum, ref DisplayDevice lpDisplayDevice, uint dwFlags);
 
-	internal static (string Name, int Width, int Height, int RefreshRate, bool IsPrimary) GetMonitorInfo(int monitorIndex)
+	internal static (string Name, int Width, int Height, int RefreshRate, bool IsPrimary, string DeviceId) GetMonitorInfo(int monitorIndex)
 	{
 		var device = new DisplayDevice { cb = Marshal.SizeOf<DisplayDevice>() };
 
@@ -29,11 +29,11 @@ internal static class MonitorUtils
 				var refreshRate = devMode.dmDisplayFrequency;
 				var isPrimary = (device.StateFlags & 4) != 0;
 
-				return (name, width, height, refreshRate, isPrimary);
+				return (name, width, height, refreshRate, isPrimary, monitorDevice.DeviceID);
 			}
 		}
 
-		return ($"Monitor {monitorIndex + 1}", 0, 0, 60, false);
+		return ($"Monitor {monitorIndex + 1}", 0, 0, 60, false, "");
 	}
 
 	[DllImport("user32.dll")]

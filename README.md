@@ -1,6 +1,12 @@
 # Genshin Impact FPS Unlocker modified by Sefinek
 > [Custom release for Genshin Stella Mod. Read more.](https://stella.sefinek.net)
 
+Windows Security may show the following warning when you run the program:  
+![Unsigned DLL warning](/.github/unsigned-dll-warning.png)  
+This is expected - the compiled exe and DLL aren't digitally signed (no certificate), so **Smart App Control** can't verify their publisher and blocks part of the app's functionality.
+
+To fix this, disable the feature: `Windows Security` → `App & browser control` → `Smart App Control` → `Off`.
+
 ## Information
 - This tool helps you to unlock the 60 FPS limit in the game.
 - This is an external program which uses **WriteProcessMemory** to write the desired fps to the game.

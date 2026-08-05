@@ -135,7 +135,7 @@ public partial class SettingsForm : Form
 
 		for (var i = 0; i < screens.Length; i++)
 		{
-			var (name, width, height, refreshRate, isPrimary) = MonitorUtils.GetMonitorInfo(i);
+			var (name, width, height, refreshRate, isPrimary, _) = MonitorUtils.GetMonitorInfo(i);
 			var displayName = $"{name}{(isPrimary ? " (Primary)" : "")} - {width}x{height}@{refreshRate}Hz";
 			ComboMonitor.Items.Add(displayName);
 		}
