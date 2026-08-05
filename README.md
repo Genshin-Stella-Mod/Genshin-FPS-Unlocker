@@ -2,7 +2,7 @@
 > [Custom release for Genshin Stella Mod. Read more.](https://stella.sefinek.net)
 
 Windows Security may show the following warning when you run the program:  
-![Unsigned DLL warning](/.github/unsigned-dll-warning.png)  
+![Unsigned DLL warning](.github/unsigned-dll-warning.png)  
 This is expected - the compiled exe and DLL aren't digitally signed (no certificate), so **Smart App Control** can't verify their publisher and blocks part of the app's functionality.
 
 To fix this, disable the feature: `Windows Security` → `App & browser control` → `Smart App Control` → `Off`.
