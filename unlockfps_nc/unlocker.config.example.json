@@ -4,7 +4,7 @@
     "AutoClose": true,
     "PopupWindow": false,
     "Fullscreen": true,
-    "UseCustomRes": false,
+    "UseCustomRes": true,
     "IsExclusiveFullscreen": false,
     "StartMinimized": false,
     "UsePowerSave": false,
