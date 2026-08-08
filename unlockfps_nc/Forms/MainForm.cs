@@ -29,7 +29,7 @@ public partial class MainForm : Form
 	private void SettingsMenuItem_Click(object sender, EventArgs e)
 	{
 		Program.Logger.Info("Opening settings dialog");
-		using SettingsForm form = Program.ServiceProvider.GetRequiredService<SettingsForm>();
+		using var form = Program.ServiceProvider.GetRequiredService<SettingsForm>();
 		form.ShowDialog();
 		RefreshFPSControls();
 	}
@@ -103,7 +103,7 @@ public partial class MainForm : Form
 
 	private static void ShowSetupForm()
 	{
-		using SetupForm form = Program.ServiceProvider.GetRequiredService<SetupForm>();
+		using var form = Program.ServiceProvider.GetRequiredService<SetupForm>();
 		form.ShowDialog();
 	}
 
