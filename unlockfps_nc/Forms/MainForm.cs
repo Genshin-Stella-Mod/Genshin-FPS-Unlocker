@@ -29,7 +29,8 @@ public partial class MainForm : Form
 	private void SettingsMenuItem_Click(object sender, EventArgs e)
 	{
 		Program.Logger.Info("Opening settings dialog");
-		Program.ServiceProvider.GetRequiredService<SettingsForm>().ShowDialog();
+		using SettingsForm form = Program.ServiceProvider.GetRequiredService<SettingsForm>();
+		form.ShowDialog();
 		RefreshFPSControls();
 	}
 
@@ -102,7 +103,8 @@ public partial class MainForm : Form
 
 	private static void ShowSetupForm()
 	{
-		Program.ServiceProvider.GetRequiredService<SetupForm>().ShowDialog();
+		using SetupForm form = Program.ServiceProvider.GetRequiredService<SetupForm>();
+		form.ShowDialog();
 	}
 
 	private void ExitMenuItem_Click(object sender, EventArgs e)
@@ -153,7 +155,7 @@ public partial class MainForm : Form
 
 	private void AboutMenuItem_Click(object sender, EventArgs e)
 	{
-		AboutForm aboutForm = new();
+		using AboutForm aboutForm = new();
 		aboutForm.ShowDialog();
 	}
 

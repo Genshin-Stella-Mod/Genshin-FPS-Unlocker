@@ -1,11 +1,14 @@
-# Genshin Impact FPS Unlocker modified by Sefinek
-> [Custom release for Genshin Stella Mod. Read more.](https://stella.sefinek.net)
+# Genshin FPS Unlocker
+This is a fork providing better compatibility with [Genshin Stella Mod](https://stella.sefinek.net). If you want to use ReShade + FPS Unlocker at the same time, use Stella Mod instead.
 
-Windows Security may show the following warning when you run the program:  
-![Unsigned DLL warning](.github/unsigned-dll-warning.png)  
-This is expected - the compiled exe and DLL aren't digitally signed (no certificate), so **Smart App Control** can't verify their publisher and blocks part of the app's functionality.
+> [!IMPORTANT]
+> Windows Security may show the following warning when you run the program: *"Part of this app has been blocked. Some features of Genshin FPS Unlock may not work because we can't confirm who published Genshin FPS Unlock.dll that the app tried to load."*
+> This is expected - the compiled exe and DLL aren't digitally signed (no certificate), so **Smart App Control** can't verify their publisher and blocks part of the app's functionality.
+> To fix this, disable the feature: `Windows Security` → `App & browser control` → `Smart App Control` → `Off`.
 
-To fix this, disable the feature: `Windows Security` → `App & browser control` → `Smart App Control` → `Off`.
+> [!IMPORTANT]
+> This version defaults fullscreen to `Exclusive` instead of `Borderless` for better compatibility with ReShade scaling and for monitors with a resolution higher than FHD. If you have an FHD monitor, you can safely use `Borderless` - there shouldn't be any issues.
+> It's also recommended to disable the `Optimizations for windowed games` option in Windows graphics settings, as in rare cases it can cause various issues.
 
 ## Information
 - This tool helps you to unlock the 60 FPS limit in the game.

@@ -63,6 +63,7 @@ public class IpcService(ConfigService configService) : IDisposable
 				return false;
 		}
 
+		_stubModule.Dispose();
 		_stubPath = GetUnlockerStubPath();
 		Program.Logger.Info($"Loading stub module from: {_stubPath}");
 		_stubModule = Native.LoadLibrary(_stubPath);

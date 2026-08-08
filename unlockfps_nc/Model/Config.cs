@@ -9,7 +9,7 @@ internal class Config
 	public bool PopupWindow { get; set; }
 	public bool Fullscreen { get; set; } = true;
 	public bool UseCustomRes { get; set; } = true;
-	public bool IsExclusiveFullscreen { get; set; }
+	public bool IsExclusiveFullscreen { get; set; } = true;
 	public bool StartMinimized { get; set; }
 	public bool UsePowerSave { get; set; }
 	public bool SuspendLoad { get; set; }

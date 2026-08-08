@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Text;
 using Microsoft.Win32;
 using unlockfps_nc.Model;
 using unlockfps_nc.Properties;
@@ -81,7 +82,8 @@ public class ProcessService
 		var commandLine = BuildCommandLine();
 		Program.Logger.Info($"Launching game with command line: {commandLine}");
 
-		if (!Native.CreateProcess(_config.GamePath, commandLine, IntPtr.Zero, IntPtr.Zero, false, creationFlag, IntPtr.Zero, gameFolder, ref si, out PROCESS_INFORMATION pi))
+		var commandLineBuffer = new StringBuilder(commandLine);
+		if (!Native.CreateProcess(_config.GamePath, commandLineBuffer, IntPtr.Zero, IntPtr.Zero, false, creationFlag, IntPtr.Zero, gameFolder, ref si, out PROCESS_INFORMATION pi))
 		{
 			var error = Marshal.GetLastWin32Error();
 			var errorMessage = Marshal.GetLastPInvokeErrorMessage();
@@ -185,8 +187,8 @@ public class ProcessService
 	internal static string BuildCommandLine(Config config)
 	{
 		var commandLine = $"\"{config.GamePath}\" ";
-		if (config.PopupWindow)
-			commandLine += "-popupwindow ";
+
+		commandLine += $"-monitor {ResolveMonitorNum(config)} ";
 
 		if (config.UseCustomRes)
 			commandLine += $"-screen-width {config.CustomResX} -screen-height {config.CustomResY} ";
@@ -195,7 +197,9 @@ public class ProcessService
 		if (config.Fullscreen)
 			commandLine += $"-window-mode {(config.IsExclusiveFullscreen ? "exclusive" : "borderless")} ";
 
-		commandLine += $"-monitor {ResolveMonitorNum(config)} ";
+		if (config.PopupWindow)
+			commandLine += "-popupwindow ";
+
 		if (!string.IsNullOrWhiteSpace(config.AdditionalCommandLine))
 			commandLine += $"{config.AdditionalCommandLine.Trim()} ";
 		return commandLine.TrimEnd();
