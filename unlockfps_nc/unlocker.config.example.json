@@ -5,7 +5,7 @@
     "PopupWindow": false,
     "Fullscreen": true,
     "UseCustomRes": true,
-    "IsExclusiveFullscreen": false,
+    "IsExclusiveFullscreen": true,
     "StartMinimized": false,
     "UsePowerSave": false,
     "SuspendLoad": false,
