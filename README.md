@@ -24,7 +24,7 @@ This is a fork providing better compatibility with [Genshin Stella Mod](https://
 - Run the exe and click `Start game`.
 - If it is your first time running, unlocker will attempt to find your game through the registry. If it fails, then it will ask you to either browse or run the game.
 - Place the compiled exe anywhere you want (except for the game folder).
-- Make sure your game is closed—the unlocker will automatically start the game for you.
+- Make sure your game is closed - the unlocker will automatically start the game for you.
 - Run the exe as administrator, and leave the exe running.
 > It requires administrator because the game needs to be started by the unlocker and the game requires such permission.
 
