@@ -140,7 +140,7 @@
     <value>$this</value>
   </data>
   <data name="systemInformationToolStripMenuItem.Text" xml:space="preserve">
-    <value>System information</value>
+    <value>معلومات النظام</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
   <data name="CBAutoStart.TabIndex" type="System.Int32, mscorlib">
@@ -159,7 +159,7 @@
     <value>2</value>
   </data>
   <data name="CBAutoStart.Text" xml:space="preserve">
-    <value>Start game automatically</value>
+    <value>تشغيل اللعبة تلقائيًا</value>
   </data>
   <data name="InputFPS.ToolTip" xml:space="preserve">
     <value></value>
@@ -226,7 +226,7 @@
     <value>openToolStripMenuItem</value>
   </data>
   <data name="sefineksProfileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Sefinek's profile</value>
+    <value>الملف الشخصي لـ Sefinek</value>
   </data>
   <data name="gitHubToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 22</value>
@@ -235,7 +235,7 @@
     <value>OptionsMenuStrip</value>
   </data>
   <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Options</value>
+    <value>خيارات</value>
   </data>
   <data name="&gt;&gt;sefineksProfileToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -292,13 +292,13 @@
     <value>211, 22</value>
   </data>
   <data name="CBAutoStart.ToolTip" xml:space="preserve">
-    <value>This will take effect on subsequent launch. Not recommended!</value>
+    <value>سيصبح هذا ساري المفعول عند التشغيل التالي. غير مستحسن!</value>
   </data>
   <data name="&gt;&gt;CBAutoStart.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="officialWebsiteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Official website</value>
+    <value>الموقع الرسمي</value>
   </data>
   <data name="OptionsMenuStrip.ToolTip" xml:space="preserve">
     <value></value>
@@ -307,10 +307,10 @@
     <value>officialWebsiteToolStripMenuItem</value>
   </data>
   <data name="configFileToolStrip.Text" xml:space="preserve">
-    <value>Configuration file</value>
+    <value>ملف الإعداد</value>
   </data>
   <data name="ExitMenuItem.Text" xml:space="preserve">
-    <value>Exit</value>
+    <value>خروج</value>
   </data>
   <data name="genshinImpactReShadeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 22</value>
@@ -379,10 +379,10 @@
     <value>MainForm</value>
   </data>
   <data name="fPSUnlockerToolStripMenuItem.Text" xml:space="preserve">
-    <value>FPS Unlocker</value>
+    <value>أداة فتح قفل FPS</value>
   </data>
   <data name="repositoresToolStripMenuItem.Text" xml:space="preserve">
-    <value>Repositories</value>
+    <value>المستودعات</value>
   </data>
   <data name="stellaLauncherToolStrip.Text" xml:space="preserve">
     <value>Stella Mod Launcher</value>
@@ -406,7 +406,7 @@
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open</value>
+    <value>فتح</value>
   </data>
   <data name="SetupMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 22</value>
@@ -472,7 +472,7 @@
     <value>52, 20</value>
   </data>
   <data name="BtnStartGame.Text" xml:space="preserve">
-    <value>Start Game</value>
+    <value>بدء</value>
   </data>
   <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -511,10 +511,10 @@
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="SetupMenuItem.Text" xml:space="preserve">
-    <value>Setup</value>
+    <value>الإعداد</value>
   </data>
   <data name="checkHzToolStrip.Text" xml:space="preserve">
-    <value>Check Hz of your monitor</value>
+    <value>التحقق من معدل تحديث شاشتك (Hz)</value>
   </data>
   <data name="&gt;&gt;LabelFPS.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -541,10 +541,10 @@
     <value>repositoresToolStripMenuItem</value>
   </data>
   <data name="NotifyIconMain.BalloonTipText" xml:space="preserve">
-    <value>The tool has been minimized to the system tray. You can change the FPS limit even during gameplay.</value>
+    <value>تم تصغير الأداة إلى علبة النظام. يمكنك تغيير حد FPS حتى أثناء اللعب.</value>
   </data>
   <data name="aboutToolStrip.Text" xml:space="preserve">
-    <value>About</value>
+    <value>حول</value>
   </data>
   <data name="&gt;&gt;InputFPS.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -562,7 +562,7 @@
     <value>157, 22</value>
   </data>
   <data name="StartGameMenuItem.Text" xml:space="preserve">
-    <value>Start Game</value>
+    <value>بدء اللعبة</value>
   </data>
   <data name="&gt;&gt;NotifyIconMain.Name" xml:space="preserve">
     <value>NotifyIconMain</value>
@@ -574,7 +574,7 @@
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="LabelFPS.Text" xml:space="preserve">
-    <value>FPS limit</value>
+    <value>حد FPS</value>
   </data>
   <data name="NotifyIconMain.Text" xml:space="preserve">
     <value>Genshin FPS Unlocker</value>

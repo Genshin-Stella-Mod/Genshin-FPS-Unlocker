@@ -184,7 +184,7 @@
     <value>LabelHint</value>
   </data>
   <data name="BrowseDialog.Filter" xml:space="preserve">
-    <value>Genshin file (*.exe)|GenshinImpact.exe;YuanShen.exe</value>
+    <value>Genshin-fil (*.exe)|GenshinImpact.exe;YuanShen.exe</value>
   </data>
   <data name="LabelHint.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>

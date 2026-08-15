@@ -118,98 +118,98 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="SetupForm_Searching" xml:space="preserve">
-    <value>Searching...</value>
+    <value>Procurando...</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
+    <value>Erro</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
   <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MainForm_ViewCfg_TheUnlockerConfigJsonFileWasNotFound" xml:space="preserve">
-    <value>The unlocker.config.json file was not found.</value>
+    <value>O arquivo unlocker.config.json não foi encontrado.</value>
   </data>
   <data name="MainForm_ViewCfg_FileNotFound" xml:space="preserve">
-    <value>File not found</value>
+    <value>Arquivo não encontrado</value>
   </data>
   <data name="SetupForm_UpdateGamePathUi_Found0InstallationOfTheGame" xml:space="preserve">
-    <value>Found {0} installation of the game</value>
+    <value>Encontrada {0} instalação do jogo</value>
   </data>
   <data name="SetupForm_UpdateGamePathUi_NoGameInstallationsFound" xml:space="preserve">
-    <value>No game installations found!</value>
+    <value>Nenhuma instalação do jogo encontrada!</value>
   </data>
   <data name="MainForm_NotifyAndHide_GenshinFPSUnlockerCurrentLimit_" xml:space="preserve">
-    <value>Genshin FPS Unlocker (current limit: {0})</value>
+    <value>Genshin FPS Unlocker (limite atual: {0})</value>
   </data>
   <data name="SetupForm_BtnBrowse_Click_ThatSNotTheRightPlace" xml:space="preserve">
-    <value>That's not the right place.</value>
+    <value>Esse não é o lugar certo.</value>
   </data>
   <data name="SetupForm_BtnBrowse_Click_PleaseSelectTheGameExe_GenshinImpactExeOrYuanShenExe" xml:space="preserve">
-    <value>Please select the game exe:
-GenshinImpact.exe or YuanShen.exe</value>
+    <value>Selecione o executável do jogo:
+GenshinImpact.exe ou YuanShen.exe</value>
   </data>
   <data name="SetupForm_PollProcess_FailedToFindProcessPathPleaseUseBrowseInstead" xml:space="preserve">
-    <value>Failed to find process path. Please use "Browse" instead.</value>
+    <value>Não foi possível encontrar o caminho do processo. Use "Procurar" em vez disso.</value>
   </data>
   <data name="SetupForm_PollProcess_GameFound_" xml:space="preserve">
-    <value>Game found!
+    <value>Jogo encontrado!
 {0}</value>
   </data>
   <data name="SetupForm_SearchGamePath_SomethingWentWrong_ExMessage" xml:space="preserve">
-    <value>Something went wrong:
+    <value>Algo deu errado:
 {0}</value>
   </data>
   <data name="Program_Main_DoNotPlaceThisToolInTheGameFolder" xml:space="preserve">
-    <value>Do not place this tool in the game folder!</value>
+    <value>Não coloque esta ferramenta na pasta do jogo!</value>
   </data>
   <data name="MainForm_OpenStella_Click_TheRegistryKeyStellaPathWasNotFoundAreYouSureGenshinStellaModIsInstalled" xml:space="preserve">
-    <value>The registry key "StellaPath" was not found. Are you sure Genshin Stella Mod is installed?</value>
+    <value>A chave de registro "StellaPath" não foi encontrada. Tem certeza de que o Genshin Stella Mod está instalado?</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Warning</value>
+    <value>Aviso</value>
   </data>
   <data name="Success" xml:space="preserve">
-    <value>Success</value>
+    <value>Sucesso</value>
   </data>
   <data name="ProcessService_StartGame_GameNotFound" xml:space="preserve">
-    <value>Game executable not found:
+    <value>Executável do jogo não encontrado:
 {0}
 
-Please configure the correct path in Setup.</value>
+Configure o caminho correto em Configuração.</value>
   </data>
   <data name="MainForm_OpenStella_ExecutableNotFound" xml:space="preserve">
-    <value>Stella Mod Launcher not found:
+    <value>Stella Mod Launcher não encontrado:
 {0}
 
-Please reinstall Genshin Stella Mod (stella.sefinek.net).</value>
+Reinstale o Genshin Stella Mod (stella.sefinek.net).</value>
   </data>
   <data name="ProcessService_StartGame_GameAlreadyRunning" xml:space="preserve">
-    <value>An instance of the game is already running. Please close it first.</value>
+    <value>Uma instância do jogo já está em execução. Feche-a primeiro.</value>
   </data>
   <data name="ProcessService_StartGame_FailedToEnableHDR" xml:space="preserve">
-    <value>Failed to enable HDR: {0}</value>
+    <value>Não foi possível ativar o HDR: {0}</value>
   </data>
   <data name="ProcessService_StartGame_CreateProcessFailed" xml:space="preserve">
-    <value>CreateProcess failed ({0})
+    <value>Falha no CreateProcess ({0})
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToCreateSharedMemory" xml:space="preserve">
-    <value>Failed to create shared memory.</value>
+    <value>Não foi possível criar memória compartilhada.</value>
   </data>
   <data name="IpcService_Start_FailedToLoadStubModule" xml:space="preserve">
-    <value>Failed to load stub module: {0}
+    <value>Não foi possível carregar o módulo stub: {0}
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToSetWindowHook" xml:space="preserve">
-    <value>Failed to set window hook: {0}
+    <value>Não foi possível definir o hook de janela: {0}
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToPostThreadMessage" xml:space="preserve">
-    <value>Failed to post thread message: {0}
+    <value>Não foi possível enviar a mensagem à thread: {0}
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToStartUnlocker" xml:space="preserve">
-    <value>Failed to start the unlocker.</value>
+    <value>Não foi possível iniciar o unlocker.</value>
   </data>
 </root>

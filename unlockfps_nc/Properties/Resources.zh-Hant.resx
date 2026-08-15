@@ -118,98 +118,98 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="SetupForm_Searching" xml:space="preserve">
-    <value>Searching...</value>
+    <value>搜尋中...</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
+    <value>錯誤</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
   <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MainForm_ViewCfg_TheUnlockerConfigJsonFileWasNotFound" xml:space="preserve">
-    <value>The unlocker.config.json file was not found.</value>
+    <value>找不到 unlocker.config.json 檔案。</value>
   </data>
   <data name="MainForm_ViewCfg_FileNotFound" xml:space="preserve">
-    <value>File not found</value>
+    <value>找不到檔案</value>
   </data>
   <data name="SetupForm_UpdateGamePathUi_Found0InstallationOfTheGame" xml:space="preserve">
-    <value>Found {0} installation of the game</value>
+    <value>找到 {0} 個遊戲安裝位置</value>
   </data>
   <data name="SetupForm_UpdateGamePathUi_NoGameInstallationsFound" xml:space="preserve">
-    <value>No game installations found!</value>
+    <value>找不到遊戲安裝位置！</value>
   </data>
   <data name="MainForm_NotifyAndHide_GenshinFPSUnlockerCurrentLimit_" xml:space="preserve">
-    <value>Genshin FPS Unlocker (current limit: {0})</value>
+    <value>Genshin FPS Unlocker（目前限制：{0}）</value>
   </data>
   <data name="SetupForm_BtnBrowse_Click_ThatSNotTheRightPlace" xml:space="preserve">
-    <value>That's not the right place.</value>
+    <value>這不是正確的位置。</value>
   </data>
   <data name="SetupForm_BtnBrowse_Click_PleaseSelectTheGameExe_GenshinImpactExeOrYuanShenExe" xml:space="preserve">
-    <value>Please select the game exe:
-GenshinImpact.exe or YuanShen.exe</value>
+    <value>請選擇遊戲執行檔：
+GenshinImpact.exe 或 YuanShen.exe</value>
   </data>
   <data name="SetupForm_PollProcess_FailedToFindProcessPathPleaseUseBrowseInstead" xml:space="preserve">
-    <value>Failed to find process path. Please use "Browse" instead.</value>
+    <value>找不到處理程序路徑，請改用「瀏覽」。</value>
   </data>
   <data name="SetupForm_PollProcess_GameFound_" xml:space="preserve">
-    <value>Game found!
+    <value>已找到遊戲！
 {0}</value>
   </data>
   <data name="SetupForm_SearchGamePath_SomethingWentWrong_ExMessage" xml:space="preserve">
-    <value>Something went wrong:
+    <value>發生了問題：
 {0}</value>
   </data>
   <data name="Program_Main_DoNotPlaceThisToolInTheGameFolder" xml:space="preserve">
-    <value>Do not place this tool in the game folder!</value>
+    <value>請勿將此工具放置於遊戲資料夾中！</value>
   </data>
   <data name="MainForm_OpenStella_Click_TheRegistryKeyStellaPathWasNotFoundAreYouSureGenshinStellaModIsInstalled" xml:space="preserve">
-    <value>The registry key "StellaPath" was not found. Are you sure Genshin Stella Mod is installed?</value>
+    <value>找不到登錄機碼 "StellaPath"。您確定已安裝 Genshin Stella Mod 嗎？</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Warning</value>
+    <value>警告</value>
   </data>
   <data name="Success" xml:space="preserve">
-    <value>Success</value>
+    <value>成功</value>
   </data>
   <data name="ProcessService_StartGame_GameNotFound" xml:space="preserve">
-    <value>Game executable not found:
+    <value>找不到遊戲執行檔：
 {0}
 
-Please configure the correct path in Setup.</value>
+請在「設定精靈」中設定正確的路徑。</value>
   </data>
   <data name="MainForm_OpenStella_ExecutableNotFound" xml:space="preserve">
-    <value>Stella Mod Launcher not found:
+    <value>找不到 Stella Mod Launcher：
 {0}
 
-Please reinstall Genshin Stella Mod (stella.sefinek.net).</value>
+請重新安裝 Genshin Stella Mod (stella.sefinek.net)。</value>
   </data>
   <data name="ProcessService_StartGame_GameAlreadyRunning" xml:space="preserve">
-    <value>An instance of the game is already running. Please close it first.</value>
+    <value>遊戲已有一個執行個體正在執行，請先將其關閉。</value>
   </data>
   <data name="ProcessService_StartGame_FailedToEnableHDR" xml:space="preserve">
-    <value>Failed to enable HDR: {0}</value>
+    <value>啟用 HDR 失敗：{0}</value>
   </data>
   <data name="ProcessService_StartGame_CreateProcessFailed" xml:space="preserve">
-    <value>CreateProcess failed ({0})
+    <value>CreateProcess 失敗（{0}）
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToCreateSharedMemory" xml:space="preserve">
-    <value>Failed to create shared memory.</value>
+    <value>建立共用記憶體失敗。</value>
   </data>
   <data name="IpcService_Start_FailedToLoadStubModule" xml:space="preserve">
-    <value>Failed to load stub module: {0}
+    <value>載入存根模組失敗：{0}
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToSetWindowHook" xml:space="preserve">
-    <value>Failed to set window hook: {0}
+    <value>設定視窗掛勾失敗：{0}
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToPostThreadMessage" xml:space="preserve">
-    <value>Failed to post thread message: {0}
+    <value>傳送執行緒訊息失敗：{0}
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToStartUnlocker" xml:space="preserve">
-    <value>Failed to start the unlocker.</value>
+    <value>啟動解鎖工具失敗。</value>
   </data>
 </root>

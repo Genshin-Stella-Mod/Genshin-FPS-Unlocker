@@ -140,7 +140,7 @@
     <value>$this</value>
   </data>
   <data name="systemInformationToolStripMenuItem.Text" xml:space="preserve">
-    <value>System information</value>
+    <value>Информация о системе</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
   <data name="CBAutoStart.TabIndex" type="System.Int32, mscorlib">
@@ -379,7 +379,7 @@
     <value>MainForm</value>
   </data>
   <data name="fPSUnlockerToolStripMenuItem.Text" xml:space="preserve">
-    <value>FPS Unlocker</value>
+    <value>Разблокировка FPS</value>
   </data>
   <data name="repositoresToolStripMenuItem.Text" xml:space="preserve">
     <value>Репозитории</value>
@@ -562,7 +562,7 @@
     <value>157, 22</value>
   </data>
   <data name="StartGameMenuItem.Text" xml:space="preserve">
-    <value>Start Game</value>
+    <value>Запустить игру</value>
   </data>
   <data name="&gt;&gt;NotifyIconMain.Name" xml:space="preserve">
     <value>NotifyIconMain</value>

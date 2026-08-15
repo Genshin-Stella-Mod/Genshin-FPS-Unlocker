@@ -140,7 +140,7 @@
     <value>$this</value>
   </data>
   <data name="systemInformationToolStripMenuItem.Text" xml:space="preserve">
-    <value>System information</value>
+    <value>Sistem bilgileri</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
   <data name="CBAutoStart.TabIndex" type="System.Int32, mscorlib">

@@ -142,7 +142,7 @@
     <value>2</value>
   </data>
   <data name="CBAutoClose.Text" xml:space="preserve">
-    <value>Auto close</value>
+    <value>Chiusura automatica</value>
   </data>
   <data name="CBAutoClose.ToolTip" xml:space="preserve">
     <value>L'Unlocker si chiuderà automaticamente all'uscita del gioco</value>
@@ -178,7 +178,7 @@
     <value>1</value>
   </data>
   <data name="CBStartMinimized.Text" xml:space="preserve">
-    <value>Start the tool minimized</value>
+    <value>Avvia lo strumento ridotto a icona</value>
   </data>
   <data name="CBStartMinimized.ToolTip" xml:space="preserve">
     <value>Unlocker si ridurrà a icona nell'area di notifica all'avvio</value>
@@ -214,7 +214,7 @@
     <value>3</value>
   </data>
   <data name="CBPowerSave.Text" xml:space="preserve">
-    <value>Power saving</value>
+    <value>Risparmio energetico</value>
   </data>
   <data name="CBPowerSave.ToolTip" xml:space="preserve">
     <value>Limita gli FPS a 10 e abbassa la priorità del processo quando la finestra del gioco non è in primo piano (ad esempio quando è ridotta a icona o in background)</value>
@@ -250,7 +250,7 @@
     <value>11</value>
   </data>
   <data name="CBUseMobileUI.Text" xml:space="preserve">
-    <value>Use mobile UI</value>
+    <value>Usa interfaccia mobile</value>
   </data>
   <data name="&gt;&gt;CBUseMobileUI.Name" xml:space="preserve">
     <value>CBUseMobileUI</value>
@@ -307,7 +307,7 @@
     <value>15</value>
   </data>
   <data name="LabelCommandLine.Text" xml:space="preserve">
-    <value>Generated command:</value>
+    <value>Comando generato:</value>
   </data>
   <data name="&gt;&gt;LabelCommandLine.Name" xml:space="preserve">
     <value>LabelCommandLine</value>
@@ -361,7 +361,7 @@
     <value>13</value>
   </data>
   <data name="LabelAdditionalCmdLine.Text" xml:space="preserve">
-    <value>Additional command line:</value>
+    <value>Riga di comando aggiuntiva:</value>
   </data>
   <data name="&gt;&gt;LabelAdditionalCmdLine.Name" xml:space="preserve">
     <value>LabelAdditionalCmdLine</value>
@@ -571,7 +571,7 @@
     <value>2</value>
   </data>
   <data name="CBCustomRes.Text" xml:space="preserve">
-    <value>Custom resolution:</value>
+    <value>Risoluzione personalizzata:</value>
   </data>
   <data name="&gt;&gt;CBCustomRes.Name" xml:space="preserve">
     <value>CBCustomRes</value>
@@ -604,7 +604,7 @@
     <value>1</value>
   </data>
   <data name="CBFullscreen.Text" xml:space="preserve">
-    <value>Fullscreen:</value>
+    <value>Schermo intero:</value>
   </data>
   <data name="&gt;&gt;CBFullscreen.Name" xml:space="preserve">
     <value>CBFullscreen</value>
@@ -637,7 +637,7 @@
     <value>0</value>
   </data>
   <data name="CBPopup.Text" xml:space="preserve">
-    <value>Borderless window</value>
+    <value>Finestra senza bordi (Borderless)</value>
   </data>
   <data name="&gt;&gt;CBPopup.Name" xml:space="preserve">
     <value>CBPopup</value>
@@ -698,7 +698,7 @@
     <value>6</value>
   </data>
   <data name="CBHdr.Text" xml:space="preserve">
-    <value>Enable HDR</value>
+    <value>Abilita HDR</value>
   </data>
   <data name="&gt;&gt;CBHdr.Name" xml:space="preserve">
     <value>CBHdr</value>
@@ -722,13 +722,13 @@
     <value>Alto</value>
   </data>
   <data name="ComboPriority.Items2" xml:space="preserve">
-    <value>Above normal</value>
+    <value>Sopra la norma</value>
   </data>
   <data name="ComboPriority.Items3" xml:space="preserve">
     <value>Normale</value>
   </data>
   <data name="ComboPriority.Items4" xml:space="preserve">
-    <value>Below normal</value>
+    <value>Sotto la norma</value>
   </data>
   <data name="ComboPriority.Items5" xml:space="preserve">
     <value>Basso</value>
@@ -773,7 +773,7 @@
     <value>4</value>
   </data>
   <data name="LabelPriority.Text" xml:space="preserve">
-    <value>Game process priority:</value>
+    <value>Priorità del processo di gioco:</value>
   </data>
   <data name="&gt;&gt;LabelPriority.Name" xml:space="preserve">
     <value>LabelPriority</value>

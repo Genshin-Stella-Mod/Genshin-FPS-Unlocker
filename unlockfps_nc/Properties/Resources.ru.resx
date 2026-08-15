@@ -134,82 +134,82 @@
     <value>Файл не найден</value>
   </data>
   <data name="SetupForm_UpdateGamePathUi_Found0InstallationOfTheGame" xml:space="preserve">
-    <value>Found {0} installation of the game</value>
+    <value>Найдена {0} установка игры</value>
   </data>
   <data name="SetupForm_UpdateGamePathUi_NoGameInstallationsFound" xml:space="preserve">
-    <value>No game installations found!</value>
+    <value>Установки игры не найдены!</value>
   </data>
   <data name="MainForm_NotifyAndHide_GenshinFPSUnlockerCurrentLimit_" xml:space="preserve">
-    <value>Genshin FPS Unlocker (current limit: {0})</value>
+    <value>Genshin FPS Unlocker (текущий лимит: {0})</value>
   </data>
   <data name="SetupForm_BtnBrowse_Click_ThatSNotTheRightPlace" xml:space="preserve">
-    <value>That's not the right place.</value>
+    <value>Это неподходящее место.</value>
   </data>
   <data name="SetupForm_BtnBrowse_Click_PleaseSelectTheGameExe_GenshinImpactExeOrYuanShenExe" xml:space="preserve">
-    <value>Please select the game exe:
-GenshinImpact.exe or YuanShen.exe</value>
+    <value>Выберите исполняемый файл игры:
+GenshinImpact.exe или YuanShen.exe</value>
   </data>
   <data name="SetupForm_PollProcess_FailedToFindProcessPathPleaseUseBrowseInstead" xml:space="preserve">
-    <value>Failed to find process path. Please use "Browse" instead.</value>
+    <value>Не удалось найти путь процесса. Используйте вместо этого "Обзор".</value>
   </data>
   <data name="SetupForm_PollProcess_GameFound_" xml:space="preserve">
-    <value>Game found!
+    <value>Игра найдена!
 {0}</value>
   </data>
   <data name="SetupForm_SearchGamePath_SomethingWentWrong_ExMessage" xml:space="preserve">
-    <value>Something went wrong:
+    <value>Что-то пошло не так:
 {0}</value>
   </data>
   <data name="Program_Main_DoNotPlaceThisToolInTheGameFolder" xml:space="preserve">
-    <value>Do not place this tool in the game folder!</value>
+    <value>Не помещайте этот инструмент в папку с игрой!</value>
   </data>
   <data name="MainForm_OpenStella_Click_TheRegistryKeyStellaPathWasNotFoundAreYouSureGenshinStellaModIsInstalled" xml:space="preserve">
-    <value>The registry key "StellaPath" was not found. Are you sure Genshin Stella Mod is installed?</value>
+    <value>Ключ реестра "StellaPath" не найден. Вы уверены, что Genshin Stella Mod установлен?</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Warning</value>
+    <value>Предупреждение</value>
   </data>
   <data name="Success" xml:space="preserve">
-    <value>Success</value>
+    <value>Успешно</value>
   </data>
   <data name="ProcessService_StartGame_GameNotFound" xml:space="preserve">
-    <value>Game executable not found:
+    <value>Исполняемый файл игры не найден:
 {0}
 
-Please configure the correct path in Setup.</value>
+Настройте правильный путь в разделе «Настройка».</value>
   </data>
   <data name="MainForm_OpenStella_ExecutableNotFound" xml:space="preserve">
-    <value>Stella Mod Launcher not found:
+    <value>Stella Mod Launcher не найден:
 {0}
 
-Please reinstall Genshin Stella Mod (stella.sefinek.net).</value>
+Переустановите Genshin Stella Mod (stella.sefinek.net).</value>
   </data>
   <data name="ProcessService_StartGame_GameAlreadyRunning" xml:space="preserve">
-    <value>An instance of the game is already running. Please close it first.</value>
+    <value>Экземпляр игры уже запущен. Сначала закройте его.</value>
   </data>
   <data name="ProcessService_StartGame_FailedToEnableHDR" xml:space="preserve">
-    <value>Failed to enable HDR: {0}</value>
+    <value>Не удалось включить HDR: {0}</value>
   </data>
   <data name="ProcessService_StartGame_CreateProcessFailed" xml:space="preserve">
-    <value>CreateProcess failed ({0})
+    <value>Ошибка CreateProcess ({0})
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToCreateSharedMemory" xml:space="preserve">
-    <value>Failed to create shared memory.</value>
+    <value>Не удалось создать разделяемую память.</value>
   </data>
   <data name="IpcService_Start_FailedToLoadStubModule" xml:space="preserve">
-    <value>Failed to load stub module: {0}
+    <value>Не удалось загрузить модуль-заглушку: {0}
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToSetWindowHook" xml:space="preserve">
-    <value>Failed to set window hook: {0}
+    <value>Не удалось установить оконный хук: {0}
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToPostThreadMessage" xml:space="preserve">
-    <value>Failed to post thread message: {0}
+    <value>Не удалось отправить сообщение потоку: {0}
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToStartUnlocker" xml:space="preserve">
-    <value>Failed to start the unlocker.</value>
+    <value>Не удалось запустить анлокер.</value>
   </data>
 </root>

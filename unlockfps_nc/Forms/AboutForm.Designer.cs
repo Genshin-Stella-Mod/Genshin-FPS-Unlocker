@@ -50,8 +50,8 @@ namespace unlockfps_nc.Forms
 			// 
 			// linkLabel1
 			// 
-			resources.ApplyResources(linkLabel1, "linkLabel1");
 			linkLabel1.ActiveLinkColor = Color.LightSkyBlue;
+			resources.ApplyResources(linkLabel1, "linkLabel1");
 			linkLabel1.LinkBehavior = LinkBehavior.HoverUnderline;
 			linkLabel1.LinkColor = Color.DodgerBlue;
 			linkLabel1.Name = "linkLabel1";
@@ -60,8 +60,8 @@ namespace unlockfps_nc.Forms
 			// 
 			// linkLabel2
 			// 
-			resources.ApplyResources(linkLabel2, "linkLabel2");
 			linkLabel2.ActiveLinkColor = Color.LightSkyBlue;
+			resources.ApplyResources(linkLabel2, "linkLabel2");
 			linkLabel2.LinkBehavior = LinkBehavior.HoverUnderline;
 			linkLabel2.LinkColor = Color.DodgerBlue;
 			linkLabel2.Name = "linkLabel2";

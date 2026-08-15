@@ -142,10 +142,10 @@
     <value>2</value>
   </data>
   <data name="CBAutoClose.Text" xml:space="preserve">
-    <value>Auto close</value>
+    <value>自動關閉</value>
   </data>
   <data name="CBAutoClose.ToolTip" xml:space="preserve">
-    <value>Unlocker will automatically close when the game exits</value>
+    <value>遊戲結束時，解鎖工具將自動關閉</value>
   </data>
   <data name="&gt;&gt;CBAutoClose.Name" xml:space="preserve">
     <value>CBAutoClose</value>
@@ -178,10 +178,10 @@
     <value>1</value>
   </data>
   <data name="CBStartMinimized.Text" xml:space="preserve">
-    <value>Start the tool minimized</value>
+    <value>啟動時將工具最小化</value>
   </data>
   <data name="CBStartMinimized.ToolTip" xml:space="preserve">
-    <value>Unlocker will minimize to the tray on startup</value>
+    <value>啟動時解鎖工具將最小化到系統匣</value>
   </data>
   <data name="&gt;&gt;CBStartMinimized.Name" xml:space="preserve">
     <value>CBStartMinimized</value>
@@ -214,10 +214,10 @@
     <value>3</value>
   </data>
   <data name="CBPowerSave.Text" xml:space="preserve">
-    <value>Power saving</value>
+    <value>省電模式</value>
   </data>
   <data name="CBPowerSave.ToolTip" xml:space="preserve">
-    <value>Limits FPS to 10 and lowers process priority when the game window loses focus (e.g. when minimized or in the background)</value>
+    <value>當遊戲視窗失去焦點時（例如最小化或在背景執行），將 FPS 限制為 10 並降低處理程序優先權</value>
   </data>
   <data name="&gt;&gt;CBPowerSave.Name" xml:space="preserve">
     <value>CBPowerSave</value>
@@ -250,7 +250,7 @@
     <value>11</value>
   </data>
   <data name="CBUseMobileUI.Text" xml:space="preserve">
-    <value>Use mobile UI</value>
+    <value>使用行動裝置介面</value>
   </data>
   <data name="&gt;&gt;CBUseMobileUI.Name" xml:space="preserve">
     <value>CBUseMobileUI</value>
@@ -307,7 +307,7 @@
     <value>15</value>
   </data>
   <data name="LabelCommandLine.Text" xml:space="preserve">
-    <value>Generated command:</value>
+    <value>產生的指令：</value>
   </data>
   <data name="&gt;&gt;LabelCommandLine.Name" xml:space="preserve">
     <value>LabelCommandLine</value>
@@ -361,7 +361,7 @@
     <value>13</value>
   </data>
   <data name="LabelAdditionalCmdLine.Text" xml:space="preserve">
-    <value>Additional command line:</value>
+    <value>額外的命令列：</value>
   </data>
   <data name="&gt;&gt;LabelAdditionalCmdLine.Name" xml:space="preserve">
     <value>LabelAdditionalCmdLine</value>
@@ -436,10 +436,10 @@
     <value>Top, Right</value>
   </data>
   <data name="ComboFullscreenMode.Items" xml:space="preserve">
-    <value>Borderless</value>
+    <value>無邊框</value>
   </data>
   <data name="ComboFullscreenMode.Items1" xml:space="preserve">
-    <value>Exclusive</value>
+    <value>獨佔</value>
   </data>
   <data name="ComboFullscreenMode.Location" type="System.Drawing.Point, System.Drawing">
     <value>151, 7</value>
@@ -571,7 +571,7 @@
     <value>2</value>
   </data>
   <data name="CBCustomRes.Text" xml:space="preserve">
-    <value>Custom resolution:</value>
+    <value>自訂解析度：</value>
   </data>
   <data name="&gt;&gt;CBCustomRes.Name" xml:space="preserve">
     <value>CBCustomRes</value>
@@ -604,7 +604,7 @@
     <value>1</value>
   </data>
   <data name="CBFullscreen.Text" xml:space="preserve">
-    <value>Fullscreen:</value>
+    <value>全螢幕：</value>
   </data>
   <data name="&gt;&gt;CBFullscreen.Name" xml:space="preserve">
     <value>CBFullscreen</value>
@@ -637,7 +637,7 @@
     <value>0</value>
   </data>
   <data name="CBPopup.Text" xml:space="preserve">
-    <value>Borderless window</value>
+    <value>無邊框視窗 (Borderless)</value>
   </data>
   <data name="&gt;&gt;CBPopup.Name" xml:space="preserve">
     <value>CBPopup</value>
@@ -665,7 +665,7 @@
     <value>1</value>
   </data>
   <data name="TabLaunchOptions.Text" xml:space="preserve">
-    <value>Launch options</value>
+    <value>啟動選項</value>
   </data>
   <data name="&gt;&gt;TabLaunchOptions.Name" xml:space="preserve">
     <value>TabLaunchOptions</value>
@@ -698,7 +698,7 @@
     <value>6</value>
   </data>
   <data name="CBHdr.Text" xml:space="preserve">
-    <value>Enable HDR</value>
+    <value>啟用 HDR</value>
   </data>
   <data name="&gt;&gt;CBHdr.Name" xml:space="preserve">
     <value>CBHdr</value>
@@ -716,22 +716,22 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="ComboPriority.Items" xml:space="preserve">
-    <value>Realtime</value>
+    <value>即時</value>
   </data>
   <data name="ComboPriority.Items1" xml:space="preserve">
-    <value>High</value>
+    <value>高</value>
   </data>
   <data name="ComboPriority.Items2" xml:space="preserve">
-    <value>Above normal</value>
+    <value>高於一般</value>
   </data>
   <data name="ComboPriority.Items3" xml:space="preserve">
-    <value>Normal</value>
+    <value>一般</value>
   </data>
   <data name="ComboPriority.Items4" xml:space="preserve">
-    <value>Below normal</value>
+    <value>低於一般</value>
   </data>
   <data name="ComboPriority.Items5" xml:space="preserve">
-    <value>Low</value>
+    <value>低</value>
   </data>
   <data name="ComboPriority.Location" type="System.Drawing.Point, System.Drawing">
     <value>156, 106</value>
@@ -773,7 +773,7 @@
     <value>4</value>
   </data>
   <data name="LabelPriority.Text" xml:space="preserve">
-    <value>Game process priority:</value>
+    <value>遊戲處理程序優先權：</value>
   </data>
   <data name="&gt;&gt;LabelPriority.Name" xml:space="preserve">
     <value>LabelPriority</value>
@@ -800,7 +800,7 @@
     <value>0</value>
   </data>
   <data name="TabGeneral.Text" xml:space="preserve">
-    <value>General</value>
+    <value>一般</value>
   </data>
   <data name="&gt;&gt;TabGeneral.Name" xml:space="preserve">
     <value>TabGeneral</value>
@@ -857,7 +857,7 @@
     <value>2</value>
   </data>
   <data name="LabelAutoSave.Text" xml:space="preserve">
-    <value>All settings will be saved automatically.</value>
+    <value>所有設定將自動儲存。</value>
   </data>
   <data name="LabelAutoSave.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -887,7 +887,7 @@
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>設定</value>
   </data>
   <data name="&gt;&gt;ToolTipSettings.Name" xml:space="preserve">
     <value>ToolTipSettings</value>

@@ -146,7 +146,7 @@
     <value>Det är inte rätt plats.</value>
   </data>
   <data name="SetupForm_BtnBrowse_Click_PleaseSelectTheGameExe_GenshinImpactExeOrYuanShenExe" xml:space="preserve">
-    <value>Vänligen välj spelets exe-fill.
+    <value>Vänligen välj spelets exe-fil:
 GenshinImpact.exe eller YuanShen.exe</value>
   </data>
   <data name="SetupForm_PollProcess_FailedToFindProcessPathPleaseUseBrowseInstead" xml:space="preserve">
@@ -167,49 +167,49 @@ GenshinImpact.exe eller YuanShen.exe</value>
     <value>Registreringsnyckeln 'StellaPath' hittades inte. Är du säker på att Genshin Stella Mod är installerad?</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Warning</value>
+    <value>Varning</value>
   </data>
   <data name="Success" xml:space="preserve">
-    <value>Success</value>
+    <value>Lyckades</value>
   </data>
   <data name="ProcessService_StartGame_GameNotFound" xml:space="preserve">
-    <value>Game executable not found:
+    <value>Spelets körbara fil hittades inte:
 {0}
 
-Please configure the correct path in Setup.</value>
+Konfigurera rätt sökväg i Inställningar.</value>
   </data>
   <data name="MainForm_OpenStella_ExecutableNotFound" xml:space="preserve">
-    <value>Stella Mod Launcher not found:
+    <value>Stella Mod Launcher hittades inte:
 {0}
 
-Please reinstall Genshin Stella Mod (stella.sefinek.net).</value>
+Installera om Genshin Stella Mod (stella.sefinek.net).</value>
   </data>
   <data name="ProcessService_StartGame_GameAlreadyRunning" xml:space="preserve">
-    <value>An instance of the game is already running. Please close it first.</value>
+    <value>En instans av spelet körs redan. Stäng den först.</value>
   </data>
   <data name="ProcessService_StartGame_FailedToEnableHDR" xml:space="preserve">
-    <value>Failed to enable HDR: {0}</value>
+    <value>Det gick inte att aktivera HDR: {0}</value>
   </data>
   <data name="ProcessService_StartGame_CreateProcessFailed" xml:space="preserve">
-    <value>CreateProcess failed ({0})
+    <value>CreateProcess misslyckades ({0})
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToCreateSharedMemory" xml:space="preserve">
-    <value>Failed to create shared memory.</value>
+    <value>Det gick inte att skapa delat minne.</value>
   </data>
   <data name="IpcService_Start_FailedToLoadStubModule" xml:space="preserve">
-    <value>Failed to load stub module: {0}
+    <value>Det gick inte att läsa in stubbmodulen: {0}
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToSetWindowHook" xml:space="preserve">
-    <value>Failed to set window hook: {0}
+    <value>Det gick inte att ställa in fönsterhooken: {0}
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToPostThreadMessage" xml:space="preserve">
-    <value>Failed to post thread message: {0}
+    <value>Det gick inte att skicka trådmeddelandet: {0}
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToStartUnlocker" xml:space="preserve">
-    <value>Failed to start the unlocker.</value>
+    <value>Det gick inte att starta upplåsaren.</value>
   </data>
 </root>

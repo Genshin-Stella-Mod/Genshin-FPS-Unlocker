@@ -140,7 +140,7 @@
     <value>$this</value>
   </data>
   <data name="systemInformationToolStripMenuItem.Text" xml:space="preserve">
-    <value>System information</value>
+    <value>Systeminformationen</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
   <data name="CBAutoStart.TabIndex" type="System.Int32, mscorlib">
@@ -382,7 +382,7 @@
     <value>FPS-Entsperrer</value>
   </data>
   <data name="repositoresToolStripMenuItem.Text" xml:space="preserve">
-    <value>Repositories</value>
+    <value>Repositorys</value>
   </data>
   <data name="stellaLauncherToolStrip.Text" xml:space="preserve">
     <value>Stella Mod Launcher</value>
@@ -511,7 +511,7 @@
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="SetupMenuItem.Text" xml:space="preserve">
-    <value>Setup</value>
+    <value>Einrichtung</value>
   </data>
   <data name="checkHzToolStrip.Text" xml:space="preserve">
     <value>Überprüfe die Wiederholungsrate deines Monitors</value>

@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -120,18 +120,18 @@
   <metadata name="ToolTipSettings.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="CBAutoClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="CBAutoClose.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="CBAutoClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="CBAutoClose.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 32</value>
   </data>
@@ -142,10 +142,10 @@
     <value>2</value>
   </data>
   <data name="CBAutoClose.Text" xml:space="preserve">
-    <value>Otomatik kapat</value>
+    <value>자동 종료</value>
   </data>
   <data name="CBAutoClose.ToolTip" xml:space="preserve">
-    <value>Oyundan çıkıldığında sınır kaldırıcı otomatik olarak kapanacaktır</value>
+    <value>게임이 종료되면 Unlocker가 자동으로 종료됩니다</value>
   </data>
   <data name="&gt;&gt;CBAutoClose.Name" xml:space="preserve">
     <value>CBAutoClose</value>
@@ -178,10 +178,10 @@
     <value>1</value>
   </data>
   <data name="CBStartMinimized.Text" xml:space="preserve">
-    <value>Aracı simge durumunda başlat</value>
+    <value>도구를 최소화된 상태로 시작</value>
   </data>
   <data name="CBStartMinimized.ToolTip" xml:space="preserve">
-    <value>Sınır kaldırıcı başlangıçta tepsi durumuna küçültülecektir</value>
+    <value>시작 시 Unlocker가 트레이로 최소화됩니다</value>
   </data>
   <data name="&gt;&gt;CBStartMinimized.Name" xml:space="preserve">
     <value>CBStartMinimized</value>
@@ -214,10 +214,10 @@
     <value>3</value>
   </data>
   <data name="CBPowerSave.Text" xml:space="preserve">
-    <value>Güç tasarrufu</value>
+    <value>절전 모드</value>
   </data>
   <data name="CBPowerSave.ToolTip" xml:space="preserve">
-    <value>Oyun penceresi odağını kaybettiğinde (örneğin simge durumuna küçültüldüğünde veya arka plana atıldığında) FPS'yi 10 ile sınırlar ve işlem önceliğini düşürür</value>
+    <value>게임 창이 포커스를 잃으면(예: 최소화되거나 백그라운드에 있을 때) FPS를 10으로 제한하고 프로세스 우선순위를 낮춥니다</value>
   </data>
   <data name="&gt;&gt;CBPowerSave.Name" xml:space="preserve">
     <value>CBPowerSave</value>
@@ -250,7 +250,7 @@
     <value>11</value>
   </data>
   <data name="CBUseMobileUI.Text" xml:space="preserve">
-    <value>Mobil arayüzü kullan</value>
+    <value>모바일 UI 사용</value>
   </data>
   <data name="&gt;&gt;CBUseMobileUI.Name" xml:space="preserve">
     <value>CBUseMobileUI</value>
@@ -307,7 +307,7 @@
     <value>15</value>
   </data>
   <data name="LabelCommandLine.Text" xml:space="preserve">
-    <value>Oluşturulan komut:</value>
+    <value>생성된 명령어:</value>
   </data>
   <data name="&gt;&gt;LabelCommandLine.Name" xml:space="preserve">
     <value>LabelCommandLine</value>
@@ -361,7 +361,7 @@
     <value>13</value>
   </data>
   <data name="LabelAdditionalCmdLine.Text" xml:space="preserve">
-    <value>Ek komut satırı:</value>
+    <value>추가 명령줄:</value>
   </data>
   <data name="&gt;&gt;LabelAdditionalCmdLine.Name" xml:space="preserve">
     <value>LabelAdditionalCmdLine</value>
@@ -418,7 +418,7 @@
     <value>9</value>
   </data>
   <data name="LabelMonitor.Text" xml:space="preserve">
-    <value>Monitör:</value>
+    <value>모니터:</value>
   </data>
   <data name="&gt;&gt;LabelMonitor.Name" xml:space="preserve">
     <value>LabelMonitor</value>
@@ -436,10 +436,10 @@
     <value>Top, Right</value>
   </data>
   <data name="ComboFullscreenMode.Items" xml:space="preserve">
-    <value>Çerçevesiz</value>
+    <value>테두리 없음</value>
   </data>
   <data name="ComboFullscreenMode.Items1" xml:space="preserve">
-    <value>Özel</value>
+    <value>전체 화면 독점</value>
   </data>
   <data name="ComboFullscreenMode.Location" type="System.Drawing.Point, System.Drawing">
     <value>151, 7</value>
@@ -571,7 +571,7 @@
     <value>2</value>
   </data>
   <data name="CBCustomRes.Text" xml:space="preserve">
-    <value>Özel çözünürlük:</value>
+    <value>사용자 지정 해상도:</value>
   </data>
   <data name="&gt;&gt;CBCustomRes.Name" xml:space="preserve">
     <value>CBCustomRes</value>
@@ -604,7 +604,7 @@
     <value>1</value>
   </data>
   <data name="CBFullscreen.Text" xml:space="preserve">
-    <value>Tam ekran:</value>
+    <value>전체 화면:</value>
   </data>
   <data name="&gt;&gt;CBFullscreen.Name" xml:space="preserve">
     <value>CBFullscreen</value>
@@ -637,7 +637,7 @@
     <value>0</value>
   </data>
   <data name="CBPopup.Text" xml:space="preserve">
-    <value>Kenarlıksız pencere (Borderless)</value>
+    <value>테두리 없는 창</value>
   </data>
   <data name="&gt;&gt;CBPopup.Name" xml:space="preserve">
     <value>CBPopup</value>
@@ -654,7 +654,7 @@
   <data name="TabLaunchOptions.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TabLaunchOptions.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
@@ -665,7 +665,7 @@
     <value>1</value>
   </data>
   <data name="TabLaunchOptions.Text" xml:space="preserve">
-    <value>Başlatma seçenekleri</value>
+    <value>실행 옵션</value>
   </data>
   <data name="&gt;&gt;TabLaunchOptions.Name" xml:space="preserve">
     <value>TabLaunchOptions</value>
@@ -698,7 +698,7 @@
     <value>6</value>
   </data>
   <data name="CBHdr.Text" xml:space="preserve">
-    <value>HDR'yi Etkinleştir</value>
+    <value>HDR 활성화</value>
   </data>
   <data name="&gt;&gt;CBHdr.Name" xml:space="preserve">
     <value>CBHdr</value>
@@ -716,22 +716,22 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="ComboPriority.Items" xml:space="preserve">
-    <value>Gerçek Zamanlı</value>
+    <value>실시간</value>
   </data>
   <data name="ComboPriority.Items1" xml:space="preserve">
-    <value>Yüksek</value>
+    <value>높음</value>
   </data>
   <data name="ComboPriority.Items2" xml:space="preserve">
-    <value>Normalin üzerinde</value>
+    <value>보통 이상</value>
   </data>
   <data name="ComboPriority.Items3" xml:space="preserve">
-    <value>Normal</value>
+    <value>보통</value>
   </data>
   <data name="ComboPriority.Items4" xml:space="preserve">
-    <value>Normalin altında</value>
+    <value>보통 이하</value>
   </data>
   <data name="ComboPriority.Items5" xml:space="preserve">
-    <value>Düşük</value>
+    <value>낮음</value>
   </data>
   <data name="ComboPriority.Location" type="System.Drawing.Point, System.Drawing">
     <value>156, 106</value>
@@ -773,7 +773,7 @@
     <value>4</value>
   </data>
   <data name="LabelPriority.Text" xml:space="preserve">
-    <value>Oyun işlem önceliği:</value>
+    <value>게임 프로세스 우선순위:</value>
   </data>
   <data name="&gt;&gt;LabelPriority.Name" xml:space="preserve">
     <value>LabelPriority</value>
@@ -800,7 +800,7 @@
     <value>0</value>
   </data>
   <data name="TabGeneral.Text" xml:space="preserve">
-    <value>Genel</value>
+    <value>일반</value>
   </data>
   <data name="&gt;&gt;TabGeneral.Name" xml:space="preserve">
     <value>TabGeneral</value>
@@ -857,7 +857,7 @@
     <value>2</value>
   </data>
   <data name="LabelAutoSave.Text" xml:space="preserve">
-    <value>Tüm ayarlar otomatik olarak kaydedilir.</value>
+    <value>모든 설정은 자동으로 저장됩니다.</value>
   </data>
   <data name="LabelAutoSave.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -887,7 +887,7 @@
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Ayarlar</value>
+    <value>설정</value>
   </data>
   <data name="&gt;&gt;ToolTipSettings.Name" xml:space="preserve">
     <value>ToolTipSettings</value>

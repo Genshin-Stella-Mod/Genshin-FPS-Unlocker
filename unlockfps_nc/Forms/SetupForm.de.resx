@@ -184,7 +184,7 @@
     <value>LabelHint</value>
   </data>
   <data name="BrowseDialog.Filter" xml:space="preserve">
-    <value>Genshin file (*.exe)|GenshinImpact.exe;YuanShen.exe</value>
+    <value>Genshin-Datei (*.exe)|GenshinImpact.exe;YuanShen.exe</value>
   </data>
   <data name="LabelHint.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -264,7 +264,7 @@
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Setup</value>
+    <value>Einrichtung</value>
   </data>
   <data name="BtnBrowse.Location" type="System.Drawing.Point, System.Drawing">
     <value>31, 187</value>

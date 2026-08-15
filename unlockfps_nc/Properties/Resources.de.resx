@@ -179,10 +179,10 @@ GenshinImpact.exe oder YuanShen.exe</value>
 Bitte konfigurieren Sie den korrekten Pfad im Setup.</value>
   </data>
   <data name="MainForm_OpenStella_ExecutableNotFound" xml:space="preserve">
-    <value>Stella Mod Launcher not found:
+    <value>Stella Mod Launcher nicht gefunden:
 {0}
 
-Please reinstall Genshin Stella Mod (stella.sefinek.net).</value>
+Bitte installieren Sie Genshin Stella Mod neu (stella.sefinek.net).</value>
   </data>
   <data name="ProcessService_StartGame_GameAlreadyRunning" xml:space="preserve">
     <value>Eine Instanz des Spiels läuft bereits. Bitte schließe diese zuerst.</value>
@@ -202,7 +202,7 @@ Please reinstall Genshin Stella Mod (stella.sefinek.net).</value>
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToSetWindowHook" xml:space="preserve">
-    <value>Fehler beim Setzen des Fensterhaken {0}
+    <value>Fehler beim Setzen des Fenster-Hooks: {0}
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToPostThreadMessage" xml:space="preserve">

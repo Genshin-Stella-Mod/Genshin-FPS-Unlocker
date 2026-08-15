@@ -142,10 +142,10 @@
     <value>2</value>
   </data>
   <data name="CBAutoClose.Text" xml:space="preserve">
-    <value>Auto close</value>
+    <value>الإغلاق التلقائي</value>
   </data>
   <data name="CBAutoClose.ToolTip" xml:space="preserve">
-    <value>Unlocker will automatically close when the game exits</value>
+    <value>ستُغلق أداة فتح القفل تلقائيًا عند إنهاء اللعبة</value>
   </data>
   <data name="&gt;&gt;CBAutoClose.Name" xml:space="preserve">
     <value>CBAutoClose</value>
@@ -178,10 +178,10 @@
     <value>1</value>
   </data>
   <data name="CBStartMinimized.Text" xml:space="preserve">
-    <value>Start the tool minimized</value>
+    <value>تشغيل الأداة مصغّرة</value>
   </data>
   <data name="CBStartMinimized.ToolTip" xml:space="preserve">
-    <value>Unlocker will minimize to the tray on startup</value>
+    <value>ستُصغَّر أداة فتح القفل إلى علبة النظام عند التشغيل</value>
   </data>
   <data name="&gt;&gt;CBStartMinimized.Name" xml:space="preserve">
     <value>CBStartMinimized</value>
@@ -214,10 +214,10 @@
     <value>3</value>
   </data>
   <data name="CBPowerSave.Text" xml:space="preserve">
-    <value>Power saving</value>
+    <value>توفير الطاقة</value>
   </data>
   <data name="CBPowerSave.ToolTip" xml:space="preserve">
-    <value>Limits FPS to 10 and lowers process priority when the game window loses focus (e.g. when minimized or in the background)</value>
+    <value>يحدّ معدل FPS إلى 10 ويخفض أولوية العملية عندما تفقد نافذة اللعبة التركيز (مثل التصغير أو التشغيل في الخلفية)</value>
   </data>
   <data name="&gt;&gt;CBPowerSave.Name" xml:space="preserve">
     <value>CBPowerSave</value>
@@ -250,7 +250,7 @@
     <value>11</value>
   </data>
   <data name="CBUseMobileUI.Text" xml:space="preserve">
-    <value>Use mobile UI</value>
+    <value>استخدام واجهة الهاتف المحمول</value>
   </data>
   <data name="&gt;&gt;CBUseMobileUI.Name" xml:space="preserve">
     <value>CBUseMobileUI</value>
@@ -307,7 +307,7 @@
     <value>15</value>
   </data>
   <data name="LabelCommandLine.Text" xml:space="preserve">
-    <value>Generated command:</value>
+    <value>الأمر الذي تم إنشاؤه:</value>
   </data>
   <data name="&gt;&gt;LabelCommandLine.Name" xml:space="preserve">
     <value>LabelCommandLine</value>
@@ -361,7 +361,7 @@
     <value>13</value>
   </data>
   <data name="LabelAdditionalCmdLine.Text" xml:space="preserve">
-    <value>Additional command line:</value>
+    <value>سطر الأوامر الإضافي:</value>
   </data>
   <data name="&gt;&gt;LabelAdditionalCmdLine.Name" xml:space="preserve">
     <value>LabelAdditionalCmdLine</value>
@@ -436,10 +436,10 @@
     <value>Top, Right</value>
   </data>
   <data name="ComboFullscreenMode.Items" xml:space="preserve">
-    <value>Borderless</value>
+    <value>بدون حدود</value>
   </data>
   <data name="ComboFullscreenMode.Items1" xml:space="preserve">
-    <value>Exclusive</value>
+    <value>حصري</value>
   </data>
   <data name="ComboFullscreenMode.Location" type="System.Drawing.Point, System.Drawing">
     <value>151, 7</value>
@@ -571,7 +571,7 @@
     <value>2</value>
   </data>
   <data name="CBCustomRes.Text" xml:space="preserve">
-    <value>Custom resolution:</value>
+    <value>دقة مخصصة:</value>
   </data>
   <data name="&gt;&gt;CBCustomRes.Name" xml:space="preserve">
     <value>CBCustomRes</value>
@@ -604,7 +604,7 @@
     <value>1</value>
   </data>
   <data name="CBFullscreen.Text" xml:space="preserve">
-    <value>Fullscreen:</value>
+    <value>ملء الشاشة:</value>
   </data>
   <data name="&gt;&gt;CBFullscreen.Name" xml:space="preserve">
     <value>CBFullscreen</value>
@@ -637,7 +637,7 @@
     <value>0</value>
   </data>
   <data name="CBPopup.Text" xml:space="preserve">
-    <value>Borderless window</value>
+    <value>نافذة بدون حدود (Borderless)</value>
   </data>
   <data name="&gt;&gt;CBPopup.Name" xml:space="preserve">
     <value>CBPopup</value>
@@ -665,7 +665,7 @@
     <value>1</value>
   </data>
   <data name="TabLaunchOptions.Text" xml:space="preserve">
-    <value>Launch options</value>
+    <value>خيارات التشغيل</value>
   </data>
   <data name="&gt;&gt;TabLaunchOptions.Name" xml:space="preserve">
     <value>TabLaunchOptions</value>
@@ -698,7 +698,7 @@
     <value>6</value>
   </data>
   <data name="CBHdr.Text" xml:space="preserve">
-    <value>Enable HDR</value>
+    <value>تفعيل HDR</value>
   </data>
   <data name="&gt;&gt;CBHdr.Name" xml:space="preserve">
     <value>CBHdr</value>
@@ -716,22 +716,22 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="ComboPriority.Items" xml:space="preserve">
-    <value>Realtime</value>
+    <value>الوقت الفعلي</value>
   </data>
   <data name="ComboPriority.Items1" xml:space="preserve">
-    <value>High</value>
+    <value>مرتفع</value>
   </data>
   <data name="ComboPriority.Items2" xml:space="preserve">
-    <value>Above normal</value>
+    <value>أعلى من العادي</value>
   </data>
   <data name="ComboPriority.Items3" xml:space="preserve">
-    <value>Normal</value>
+    <value>عادي</value>
   </data>
   <data name="ComboPriority.Items4" xml:space="preserve">
-    <value>Below normal</value>
+    <value>أقل من العادي</value>
   </data>
   <data name="ComboPriority.Items5" xml:space="preserve">
-    <value>Low</value>
+    <value>منخفض</value>
   </data>
   <data name="ComboPriority.Location" type="System.Drawing.Point, System.Drawing">
     <value>156, 106</value>
@@ -773,7 +773,7 @@
     <value>4</value>
   </data>
   <data name="LabelPriority.Text" xml:space="preserve">
-    <value>Game process priority:</value>
+    <value>أولوية عملية اللعبة:</value>
   </data>
   <data name="&gt;&gt;LabelPriority.Name" xml:space="preserve">
     <value>LabelPriority</value>
@@ -800,7 +800,7 @@
     <value>0</value>
   </data>
   <data name="TabGeneral.Text" xml:space="preserve">
-    <value>General</value>
+    <value>عام</value>
   </data>
   <data name="&gt;&gt;TabGeneral.Name" xml:space="preserve">
     <value>TabGeneral</value>
@@ -857,7 +857,7 @@
     <value>2</value>
   </data>
   <data name="LabelAutoSave.Text" xml:space="preserve">
-    <value>All settings will be saved automatically.</value>
+    <value>سيتم حفظ جميع الإعدادات تلقائيًا.</value>
   </data>
   <data name="LabelAutoSave.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -887,7 +887,7 @@
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>الإعدادات</value>
   </data>
   <data name="&gt;&gt;ToolTipSettings.Name" xml:space="preserve">
     <value>ToolTipSettings</value>

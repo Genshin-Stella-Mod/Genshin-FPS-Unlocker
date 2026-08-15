@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -118,98 +118,98 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="SetupForm_Searching" xml:space="preserve">
-    <value>Đang tìm kiếm...</value>
+    <value>กำลังค้นหา...</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Lỗi</value>
+    <value>ข้อผิดพลาด</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MainForm_ViewCfg_TheUnlockerConfigJsonFileWasNotFound" xml:space="preserve">
-    <value>Không tìm thấy tệp unlocker.config.json.</value>
+    <value>ไม่พบไฟล์ unlocker.config.json</value>
   </data>
   <data name="MainForm_ViewCfg_FileNotFound" xml:space="preserve">
-    <value>Không tìm thấy tệp</value>
+    <value>ไม่พบไฟล์</value>
   </data>
   <data name="SetupForm_UpdateGamePathUi_Found0InstallationOfTheGame" xml:space="preserve">
-    <value>Đã tìm thấy {0} bản cài đặt của game</value>
+    <value>พบการติดตั้งเกม {0} รายการ</value>
   </data>
   <data name="SetupForm_UpdateGamePathUi_NoGameInstallationsFound" xml:space="preserve">
-    <value>Không tìm thấy bản cài đặt game nào!</value>
+    <value>ไม่พบการติดตั้งเกม!</value>
   </data>
   <data name="MainForm_NotifyAndHide_GenshinFPSUnlockerCurrentLimit_" xml:space="preserve">
-    <value>Genshin FPS Unlocker (giới hạn hiện tại: {0})</value>
+    <value>Genshin FPS Unlocker (ขีดจำกัดปัจจุบัน: {0})</value>
   </data>
   <data name="SetupForm_BtnBrowse_Click_ThatSNotTheRightPlace" xml:space="preserve">
-    <value>Đó không phải là vị trí chính xác.</value>
+    <value>นี่ไม่ใช่ตำแหน่งที่ถูกต้อง</value>
   </data>
   <data name="SetupForm_BtnBrowse_Click_PleaseSelectTheGameExe_GenshinImpactExeOrYuanShenExe" xml:space="preserve">
-    <value>Vui lòng chọn tệp exe của game:
-GenshinImpact.exe hoặc YuanShen.exe</value>
+    <value>โปรดเลือกไฟล์ exe ของเกม:
+GenshinImpact.exe หรือ YuanShen.exe</value>
   </data>
   <data name="SetupForm_PollProcess_FailedToFindProcessPathPleaseUseBrowseInstead" xml:space="preserve">
-    <value>Không tìm thấy đường dẫn tiến trình. Vui lòng sử dụng "Duyệt" thay thế.</value>
+    <value>ไม่สามารถค้นหาเส้นทางโปรเซสได้ โปรดใช้ "เรียกดู" แทน</value>
   </data>
   <data name="SetupForm_PollProcess_GameFound_" xml:space="preserve">
-    <value>Đã tìm thấy game!
+    <value>พบเกมแล้ว!
 {0}</value>
   </data>
   <data name="SetupForm_SearchGamePath_SomethingWentWrong_ExMessage" xml:space="preserve">
-    <value>Đã xảy ra sự cố:
+    <value>เกิดข้อผิดพลาด:
 {0}</value>
   </data>
   <data name="Program_Main_DoNotPlaceThisToolInTheGameFolder" xml:space="preserve">
-    <value>Không được đặt công cụ này trong thư mục game!</value>
+    <value>อย่าวางเครื่องมือนี้ไว้ในโฟลเดอร์เกม!</value>
   </data>
   <data name="MainForm_OpenStella_Click_TheRegistryKeyStellaPathWasNotFoundAreYouSureGenshinStellaModIsInstalled" xml:space="preserve">
-    <value>Không tìm thấy khóa registry "StellaPath". Bạn có chắc chắn Genshin Stella Mod đã được cài đặt?</value>
+    <value>ไม่พบคีย์รีจิสทรี "StellaPath" คุณแน่ใจหรือไม่ว่าได้ติดตั้ง Genshin Stella Mod แล้ว?</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Cảnh báo</value>
+    <value>คำเตือน</value>
   </data>
   <data name="Success" xml:space="preserve">
-    <value>Thành công</value>
+    <value>สำเร็จ</value>
   </data>
   <data name="ProcessService_StartGame_GameNotFound" xml:space="preserve">
-    <value>Không tìm thấy tệp thực thi của game:
+    <value>ไม่พบไฟล์เรียกใช้งานเกม:
 {0}
 
-Vui lòng thiết lập đường dẫn chính xác trong Thiết lập.</value>
+โปรดกำหนดเส้นทางที่ถูกต้องในการกำหนดค่า</value>
   </data>
   <data name="MainForm_OpenStella_ExecutableNotFound" xml:space="preserve">
-    <value>Không tìm thấy Stella Mod Launcher:
+    <value>ไม่พบ Stella Mod Launcher:
 {0}
 
-Vui lòng cài đặt lại Genshin Stella Mod (stella.sefinek.net).</value>
+โปรดติดตั้ง Genshin Stella Mod ใหม่ (stella.sefinek.net)</value>
   </data>
   <data name="ProcessService_StartGame_GameAlreadyRunning" xml:space="preserve">
-    <value>Một phiên bản của game đang chạy. Vui lòng đóng nó trước.</value>
+    <value>มีอินสแตนซ์ของเกมทำงานอยู่แล้ว โปรดปิดก่อน</value>
   </data>
   <data name="ProcessService_StartGame_FailedToEnableHDR" xml:space="preserve">
-    <value>Không thể bật HDR: {0}</value>
+    <value>ไม่สามารถเปิดใช้งาน HDR ได้: {0}</value>
   </data>
   <data name="ProcessService_StartGame_CreateProcessFailed" xml:space="preserve">
-    <value>CreateProcess thất bại ({0})
+    <value>CreateProcess ล้มเหลว ({0})
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToCreateSharedMemory" xml:space="preserve">
-    <value>Không thể tạo bộ nhớ dùng chung.</value>
+    <value>ไม่สามารถสร้างหน่วยความจำที่ใช้ร่วมกันได้</value>
   </data>
   <data name="IpcService_Start_FailedToLoadStubModule" xml:space="preserve">
-    <value>Không thể tải mô-đun stub: {0}
+    <value>ไม่สามารถโหลดโมดูลสตับได้: {0}
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToSetWindowHook" xml:space="preserve">
-    <value>Không thể thiết lập window hook: {0}
+    <value>ไม่สามารถตั้งค่า window hook ได้: {0}
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToPostThreadMessage" xml:space="preserve">
-    <value>Không thể gửi thông báo luồng: {0}
+    <value>ไม่สามารถส่งข้อความเธรดได้: {0}
 {1}</value>
   </data>
   <data name="IpcService_Start_FailedToStartUnlocker" xml:space="preserve">
-    <value>Không thể khởi động unlocker.</value>
+    <value>ไม่สามารถเริ่ม Unlocker ได้</value>
   </data>
-</root>
+  </root>

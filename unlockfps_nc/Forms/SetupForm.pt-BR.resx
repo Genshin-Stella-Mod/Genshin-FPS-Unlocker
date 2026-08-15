@@ -157,7 +157,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="BtnBrowse.Text" xml:space="preserve">
-    <value>Browse</value>
+    <value>Procurar</value>
   </data>
   <data name="LabelHeader.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -184,7 +184,7 @@
     <value>LabelHint</value>
   </data>
   <data name="BrowseDialog.Filter" xml:space="preserve">
-    <value>Genshin file (*.exe)|GenshinImpact.exe;YuanShen.exe</value>
+    <value>Arquivo do Genshin (*.exe)|GenshinImpact.exe;YuanShen.exe</value>
   </data>
   <data name="LabelHint.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -211,7 +211,7 @@
     <value>Left, Right</value>
   </data>
   <data name="LabelHeader.Text" xml:space="preserve">
-    <value>Select the game's EXE file</value>
+    <value>Selecione o arquivo EXE do jogo</value>
   </data>
   <data name="&gt;&gt;BtnBrowse.Parent" xml:space="preserve">
     <value>$this</value>
@@ -226,15 +226,15 @@
     <value>LabelResult</value>
   </data>
   <data name="BtnConfirm.Text" xml:space="preserve">
-    <value>Confirm</value>
+    <value>Confirmar</value>
   </data>
   <data name="&gt;&gt;BtnBrowse.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="LabelHint.Text" xml:space="preserve">
-    <value>If your game is not listed above, you can either:
-1. Open the game now and the unlocker will try to find it's location.
-2. Use the Browse button below.</value>
+    <value>Se o seu jogo não estiver listado acima, você pode:
+1. Abrir o jogo agora e o unlocker tentará encontrar sua localização.
+2. Usar o botão Procurar abaixo.</value>
   </data>
   <data name="ComboResult.Location" type="System.Drawing.Point, System.Drawing">
     <value>31, 79</value>
@@ -264,7 +264,7 @@
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Setup</value>
+    <value>Configuração</value>
   </data>
   <data name="BtnBrowse.Location" type="System.Drawing.Point, System.Drawing">
     <value>31, 187</value>
@@ -309,7 +309,7 @@
     <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="BrowseDialog.Title" xml:space="preserve">
-    <value>Select GenshinImpact.exe or YuanShen.exe</value>
+    <value>Selecione GenshinImpact.exe ou YuanShen.exe</value>
   </data>
   <data name="LabelHint.Location" type="System.Drawing.Point, System.Drawing">
     <value>31, 108</value>

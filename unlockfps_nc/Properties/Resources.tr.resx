@@ -179,10 +179,10 @@ GenshinImpact.exe veya YuanShen.exe</value>
 Lütfen Kurulumda doğru yolu ayarlayın.</value>
   </data>
   <data name="MainForm_OpenStella_ExecutableNotFound" xml:space="preserve">
-    <value>Stella Mod Launcher not found:
+    <value>Stella Mod Launcher bulunamadı:
 {0}
 
-Please reinstall Genshin Stella Mod (stella.sefinek.net).</value>
+Lütfen Genshin Stella Mod'u yeniden yükleyin (stella.sefinek.net).</value>
   </data>
   <data name="ProcessService_StartGame_GameAlreadyRunning" xml:space="preserve">
     <value>Oyun zaten çalışıyor. Lütfen önce oyunu kapatın.</value>

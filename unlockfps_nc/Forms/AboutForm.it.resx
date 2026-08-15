@@ -122,7 +122,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
   <data name="linkLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>513, 17</value>
+    <value>645, 26</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
   <data name="linkLabel2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -151,16 +151,16 @@
     <value>0</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 168</value>
+    <value>13, 205</value>
   </data>
   <data name="&gt;&gt;LabelDescription.Name" xml:space="preserve">
     <value>LabelDescription</value>
   </data>
   <data name="LabelDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>513, 59</value>
+    <value>645, 74</value>
   </data>
   <data name="LabelTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 9</value>
+    <value>13, 11</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -182,7 +182,7 @@ v{0}</value>
     <value>$this</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>537, 213</value>
+    <value>671, 266</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Info</value>
@@ -221,10 +221,10 @@ v{0}</value>
     <value>5</value>
   </data>
   <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 123</value>
+    <value>13, 154</value>
   </data>
   <data name="LabelDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 61</value>
+    <value>13, 76</value>
   </data>
   <data name="&gt;&gt;linkLabel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -254,7 +254,7 @@ v{0}</value>
     <value>$this</value>
   </data>
   <data name="linkLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 187</value>
+    <value>13, 231</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -263,7 +263,7 @@ v{0}</value>
     <value>MiddleCenter</value>
   </data>
   <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>513, 17</value>
+    <value>645, 26</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -272,7 +272,7 @@ v{0}</value>
     <value>linkLabel2</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>96, 96</value>
+    <value>120, 120</value>
   </data>
   <data name="&gt;&gt;linkLabel2.Parent" xml:space="preserve">
     <value>$this</value>
@@ -290,7 +290,7 @@ v{0}</value>
     <value>MiddleCenter</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>513, 17</value>
+    <value>645, 26</value>
   </data>
   <data name="&gt;&gt;linkLabel1.Name" xml:space="preserve">
     <value>linkLabel1</value>
@@ -299,7 +299,7 @@ v{0}</value>
     <value>label1</value>
   </data>
   <data name="LabelTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>513, 52</value>
+    <value>645, 65</value>
   </data>
   <data name="LabelDescription.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -313,4 +313,22 @@ v{0}</value>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="LabelTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="LabelDescription.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="linkLabel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="linkLabel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
 </root>

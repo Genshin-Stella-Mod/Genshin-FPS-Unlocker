@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -120,7 +120,7 @@
   <data name="&gt;&gt;StartGameMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -140,9 +140,9 @@
     <value>$this</value>
   </data>
   <data name="systemInformationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Informasi sistem</value>
+    <value>시스템 정보</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="CBAutoStart.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
@@ -159,21 +159,21 @@
     <value>2</value>
   </data>
   <data name="CBAutoStart.Text" xml:space="preserve">
-    <value>Jalankan game secara otomatis</value>
+    <value>게임 자동 시작</value>
   </data>
   <data name="InputFPS.ToolTip" xml:space="preserve">
-    <value></value>
+    <value />
   </data>
   <data name="&gt;&gt;optionsToolStripMenuItem.Name" xml:space="preserve">
     <value>optionsToolStripMenuItem</value>
   </data>
   <data name="LabelFPS.ToolTip" xml:space="preserve">
-    <value></value>
+    <value />
   </data>
   <data name="&gt;&gt;BtnStartGame.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 20</value>
   </data>
@@ -220,13 +220,13 @@
     <value>ContextNotify</value>
   </data>
   <data name="linksToolStripMenuItem.Text" xml:space="preserve">
-    <value>Tautan</value>
+    <value>링크</value>
   </data>
   <data name="&gt;&gt;openToolStripMenuItem.Name" xml:space="preserve">
     <value>openToolStripMenuItem</value>
   </data>
   <data name="sefineksProfileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Profil Sefinek</value>
+    <value>Sefinek의 프로필</value>
   </data>
   <data name="gitHubToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 22</value>
@@ -235,7 +235,7 @@
     <value>OptionsMenuStrip</value>
   </data>
   <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Opsi</value>
+    <value>옵션</value>
   </data>
   <data name="&gt;&gt;sefineksProfileToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -280,7 +280,7 @@
     <value>SetupMenuItem</value>
   </data>
   <data name="ContextNotify.ToolTip" xml:space="preserve">
-    <value></value>
+    <value />
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Genshin FPS Unlocker</value>
@@ -292,25 +292,25 @@
     <value>211, 22</value>
   </data>
   <data name="CBAutoStart.ToolTip" xml:space="preserve">
-    <value>Ini akan berlaku pada peluncuran berikutnya. Tidak disarankan!</value>
+    <value>이 설정은 다음 실행부터 적용됩니다. 권장하지 않습니다!</value>
   </data>
   <data name="&gt;&gt;CBAutoStart.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="officialWebsiteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Situs web resmi</value>
+    <value>공식 웹사이트</value>
   </data>
   <data name="OptionsMenuStrip.ToolTip" xml:space="preserve">
-    <value></value>
+    <value />
   </data>
   <data name="&gt;&gt;officialWebsiteToolStripMenuItem.Name" xml:space="preserve">
     <value>officialWebsiteToolStripMenuItem</value>
   </data>
   <data name="configFileToolStrip.Text" xml:space="preserve">
-    <value>File konfigurasi</value>
+    <value>설정 파일</value>
   </data>
   <data name="ExitMenuItem.Text" xml:space="preserve">
-    <value>Keluar</value>
+    <value>종료</value>
   </data>
   <data name="genshinImpactReShadeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 22</value>
@@ -358,7 +358,7 @@
     <value>YouTube</value>
   </data>
   <data name="SliderFPS.ToolTip" xml:space="preserve">
-    <value></value>
+    <value />
   </data>
   <data name="&gt;&gt;InputFPS.Parent" xml:space="preserve">
     <value>$this</value>
@@ -379,10 +379,10 @@
     <value>MainForm</value>
   </data>
   <data name="fPSUnlockerToolStripMenuItem.Text" xml:space="preserve">
-    <value>Pembuka Kunci FPS</value>
+    <value>FPS Unlocker</value>
   </data>
   <data name="repositoresToolStripMenuItem.Text" xml:space="preserve">
-    <value>Repositori</value>
+    <value>저장소</value>
   </data>
   <data name="stellaLauncherToolStrip.Text" xml:space="preserve">
     <value>Stella Mod Launcher</value>
@@ -406,7 +406,7 @@
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>Buka</value>
+    <value>열기</value>
   </data>
   <data name="SetupMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 22</value>
@@ -415,7 +415,7 @@
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.ToolTip" xml:space="preserve">
-    <value></value>
+    <value />
   </data>
   <data name="NotifyIconMain.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -454,7 +454,7 @@
     <value>True</value>
   </data>
   <data name="pictureBox1.ToolTip" xml:space="preserve">
-    <value></value>
+    <value />
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 36</value>
@@ -472,7 +472,7 @@
     <value>52, 20</value>
   </data>
   <data name="BtnStartGame.Text" xml:space="preserve">
-    <value>Mulai</value>
+    <value>게임 시작</value>
   </data>
   <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -481,7 +481,7 @@
     <value>178, 22</value>
   </data>
   <data name="SettingsMenuItem.Text" xml:space="preserve">
-    <value>Pengaturan</value>
+    <value>설정</value>
   </data>
   <data name="gitHubToolStripMenuItem.Text" xml:space="preserve">
     <value>GitHub</value>
@@ -511,10 +511,10 @@
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="SetupMenuItem.Text" xml:space="preserve">
-    <value>Penyiapan</value>
+    <value>구성</value>
   </data>
   <data name="checkHzToolStrip.Text" xml:space="preserve">
-    <value>Periksa Hz monitor Anda</value>
+    <value>모니터 주사율(Hz) 확인</value>
   </data>
   <data name="&gt;&gt;LabelFPS.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -541,10 +541,10 @@
     <value>repositoresToolStripMenuItem</value>
   </data>
   <data name="NotifyIconMain.BalloonTipText" xml:space="preserve">
-    <value>Alat telah diminimalkan ke baki sistem. Anda tetap dapat mengubah batas FPS bahkan saat bermain.</value>
+    <value>도구가 시스템 트레이로 최소화되었습니다. 게임 플레이 중에도 FPS 제한을 변경할 수 있습니다.</value>
   </data>
   <data name="aboutToolStrip.Text" xml:space="preserve">
-    <value>Tentang</value>
+    <value>정보</value>
   </data>
   <data name="&gt;&gt;InputFPS.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -562,7 +562,7 @@
     <value>157, 22</value>
   </data>
   <data name="StartGameMenuItem.Text" xml:space="preserve">
-    <value>Mulai Game</value>
+    <value>게임 시작</value>
   </data>
   <data name="&gt;&gt;NotifyIconMain.Name" xml:space="preserve">
     <value>NotifyIconMain</value>
@@ -574,7 +574,7 @@
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="LabelFPS.Text" xml:space="preserve">
-    <value>Batas FPS</value>
+    <value>FPS 제한</value>
   </data>
   <data name="NotifyIconMain.Text" xml:space="preserve">
     <value>Genshin FPS Unlocker</value>
@@ -583,7 +583,7 @@
     <value>211, 22</value>
   </data>
   <data name="BtnStartGame.ToolTip" xml:space="preserve">
-    <value></value>
+    <value />
   </data>
   <data name="&gt;&gt;configFileToolStrip.Name" xml:space="preserve">
     <value>configFileToolStrip</value>
