@@ -136,7 +136,7 @@
     <value>8, 32</value>
   </data>
   <data name="CBAutoClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 19</value>
+    <value>82, 19</value>
   </data>
   <data name="CBAutoClose.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -157,7 +157,7 @@
     <value>TabGeneral</value>
   </data>
   <data name="&gt;&gt;CBAutoClose.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="CBStartMinimized.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -172,7 +172,7 @@
     <value>8, 8</value>
   </data>
   <data name="CBStartMinimized.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 19</value>
+    <value>153, 19</value>
   </data>
   <data name="CBStartMinimized.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -193,7 +193,7 @@
     <value>TabGeneral</value>
   </data>
   <data name="&gt;&gt;CBStartMinimized.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="CBPowerSave.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -208,7 +208,7 @@
     <value>8, 57</value>
   </data>
   <data name="CBPowerSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 19</value>
+    <value>96, 19</value>
   </data>
   <data name="CBPowerSave.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -229,7 +229,37 @@
     <value>TabGeneral</value>
   </data>
   <data name="&gt;&gt;CBPowerSave.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
+  </data>
+  <data name="BtnRefreshMonitor.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="BtnRefreshMonitor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>250, 128</value>
+  </data>
+  <data name="BtnRefreshMonitor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 23</value>
+  </data>
+  <data name="BtnRefreshMonitor.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="BtnRefreshMonitor.Text" xml:space="preserve">
+    <value>↻</value>
+  </data>
+  <data name="BtnRefreshMonitor.ToolTip" xml:space="preserve">
+    <value>Refresh the monitor list</value>
+  </data>
+  <data name="&gt;&gt;BtnRefreshMonitor.Name" xml:space="preserve">
+    <value>BtnRefreshMonitor</value>
+  </data>
+  <data name="&gt;&gt;BtnRefreshMonitor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnRefreshMonitor.Parent" xml:space="preserve">
+    <value>TabLaunchOptions</value>
+  </data>
+  <data name="&gt;&gt;BtnRefreshMonitor.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="CBUseMobileUI.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -382,7 +412,7 @@
     <value>8, 128</value>
   </data>
   <data name="ComboMonitor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 23</value>
+    <value>238, 23</value>
   </data>
   <data name="ComboMonitor.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -430,7 +460,7 @@
     <value>TabLaunchOptions</value>
   </data>
   <data name="&gt;&gt;LabelMonitor.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="ComboFullscreenMode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -460,7 +490,7 @@
     <value>TabLaunchOptions</value>
   </data>
   <data name="&gt;&gt;ComboFullscreenMode.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="InputResY.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -487,7 +517,7 @@
     <value>TabLaunchOptions</value>
   </data>
   <data name="&gt;&gt;InputResY.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="LabelX.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -523,7 +553,7 @@
     <value>TabLaunchOptions</value>
   </data>
   <data name="&gt;&gt;LabelX.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="InputResX.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -550,7 +580,7 @@
     <value>TabLaunchOptions</value>
   </data>
   <data name="&gt;&gt;InputResX.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="CBCustomRes.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -565,7 +595,7 @@
     <value>8, 57</value>
   </data>
   <data name="CBCustomRes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 19</value>
+    <value>127, 19</value>
   </data>
   <data name="CBCustomRes.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -583,7 +613,7 @@
     <value>TabLaunchOptions</value>
   </data>
   <data name="&gt;&gt;CBCustomRes.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="CBFullscreen.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -616,7 +646,7 @@
     <value>TabLaunchOptions</value>
   </data>
   <data name="&gt;&gt;CBFullscreen.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="CBPopup.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -631,7 +661,7 @@
     <value>8, 32</value>
   </data>
   <data name="CBPopup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 19</value>
+    <value>125, 19</value>
   </data>
   <data name="CBPopup.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -649,7 +679,7 @@
     <value>TabLaunchOptions</value>
   </data>
   <data name="&gt;&gt;CBPopup.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="TabLaunchOptions.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
@@ -679,6 +709,101 @@
   <data name="&gt;&gt;TabLaunchOptions.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 141</value>
+  </data>
+  <data name="label1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>8, 6, 8, 6</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 110</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>특정 설정 위에 마우스를 올리면 자세한 정보를 확인할 수 있습니다.
+
+이 애플리케이션은 18개 언어를 지원합니다. Stella Mod 앱의 설정에서 언어를 변경할 수 있습니다.</value>
+  </data>
+  <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>TabGeneral</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LabelConfigVersion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="LabelConfigVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 261</value>
+  </data>
+  <data name="LabelConfigVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 15</value>
+  </data>
+  <data name="LabelConfigVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="LabelConfigVersion.Text" xml:space="preserve">
+    <value>설정 버전</value>
+  </data>
+  <data name="LabelConfigVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;LabelConfigVersion.Name" xml:space="preserve">
+    <value>LabelConfigVersion</value>
+  </data>
+  <data name="&gt;&gt;LabelConfigVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelConfigVersion.Parent" xml:space="preserve">
+    <value>TabGeneral</value>
+  </data>
+  <data name="&gt;&gt;LabelConfigVersion.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LabelLastUpdated.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="LabelLastUpdated.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 261</value>
+  </data>
+  <data name="LabelLastUpdated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 15</value>
+  </data>
+  <data name="LabelLastUpdated.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="LabelLastUpdated.Text" xml:space="preserve">
+    <value>마지막 업데이트</value>
+  </data>
+  <data name="LabelLastUpdated.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;LabelLastUpdated.Name" xml:space="preserve">
+    <value>LabelLastUpdated</value>
+  </data>
+  <data name="&gt;&gt;LabelLastUpdated.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLastUpdated.Parent" xml:space="preserve">
+    <value>TabGeneral</value>
+  </data>
+  <data name="&gt;&gt;LabelLastUpdated.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="CBHdr.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -700,17 +825,6 @@
   <data name="CBHdr.Text" xml:space="preserve">
     <value>HDR 활성화</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>특정 설정 위에 마우스를 올리면 자세한 정보를 확인할 수 있습니다.
-
-이 애플리케이션은 18개 언어를 지원합니다. Stella Mod 앱의 설정에서 언어를 변경할 수 있습니다.</value>
-  </data>
-  <data name="LabelConfigVersion.Text" xml:space="preserve">
-    <value>설정 버전</value>
-  </data>
-  <data name="LabelLastUpdated.Text" xml:space="preserve">
-    <value>마지막 업데이트</value>
-  </data>
   <data name="&gt;&gt;CBHdr.Name" xml:space="preserve">
     <value>CBHdr</value>
   </data>
@@ -721,7 +835,7 @@
     <value>TabGeneral</value>
   </data>
   <data name="&gt;&gt;CBHdr.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="ComboPriority.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -763,7 +877,7 @@
     <value>TabGeneral</value>
   </data>
   <data name="&gt;&gt;ComboPriority.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="LabelPriority.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -796,7 +910,7 @@
     <value>TabGeneral</value>
   </data>
   <data name="&gt;&gt;LabelPriority.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="TabGeneral.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
@@ -805,7 +919,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>292, 302</value>
+    <value>292, 283</value>
   </data>
   <data name="TabGeneral.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

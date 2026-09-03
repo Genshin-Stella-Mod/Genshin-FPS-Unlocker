@@ -133,7 +133,7 @@
     <value>ไม่เคย</value>
   </data>
   <data name="SettingsForm_MonitorUndefined" xml:space="preserve">
-    <value>-- ไม่ได้กำหนด --</value>
+    <value>-- ไม่ได้เลือก --</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="MainForm_ViewCfg_TheUnlockerConfigJsonFileWasNotFound" xml:space="preserve">
@@ -150,6 +150,12 @@
   </data>
   <data name="MainForm_NotifyAndHide_GenshinFPSUnlockerCurrentLimit_" xml:space="preserve">
     <value>Genshin FPS Unlocker (ขีดจำกัดปัจจุบัน: {0})</value>
+  </data>
+  <data name="MainForm_MonitorNotConnected_Title" xml:space="preserve">
+    <value>Selected monitor not found</value>
+  </data>
+  <data name="MainForm_MonitorNotConnected_Text" xml:space="preserve">
+    <value>The monitor selected in settings is not connected. The game will start on a different display instead.</value>
   </data>
   <data name="SetupForm_BtnBrowse_Click_ThatSNotTheRightPlace" xml:space="preserve">
     <value>นี่ไม่ใช่ตำแหน่งที่ถูกต้อง</value>

@@ -133,7 +133,7 @@
     <value>never</value>
   </data>
   <data name="SettingsForm_MonitorUndefined" xml:space="preserve">
-    <value>-- Undefined --</value>
+    <value>-- Not selected --</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="MainForm_ViewCfg_TheUnlockerConfigJsonFileWasNotFound" xml:space="preserve">
