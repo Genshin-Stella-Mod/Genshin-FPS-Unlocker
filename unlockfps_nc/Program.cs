@@ -20,6 +20,7 @@ internal static class Program
 	private static readonly string AppPath = AppDomain.CurrentDomain.BaseDirectory;
 	private static readonly string AppData = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Genshin Stella Mod");
 	private static readonly string[] SupportedLangs = ["en", "pl", "fr", "tr", "ru", "sv", "es", "pt-BR", "it", "ar", "de", "id", "ja", "vi", "zh-Hans", "zh-Hant", "ko", "th"];
+	private static readonly string[] TraditionalChineseRegions = ["TW", "HK", "MO"];
 	private static readonly string MutexName = "286B345F-A2EB-4FF3-83E9-2DD83B87694A";
 	private static readonly string EventName = "B2ABB8F2-E6B2-4E31-8A11-15F969ADF755";
 	private static readonly IniFile Settings = new(Path.Combine(AppData, "settings.ini"));
@@ -46,10 +47,9 @@ internal static class Program
 		if (!SupportedLangs.Contains(currentLang))
 		{
 			CultureInfo systemCulture = CultureInfo.InstalledUICulture;
-			var twoLetter = systemCulture.TwoLetterISOLanguageName;
 
 			currentLang = Array.Find(SupportedLangs, lang => lang == systemCulture.Name)
-			              ?? Array.Find(SupportedLangs, lang => lang.StartsWith(twoLetter, StringComparison.OrdinalIgnoreCase))
+			              ?? ResolveFallbackLanguage(systemCulture)
 			              ?? "en";
 			Logger.Info($"System language detected: {systemCulture.Name}. Using: {currentLang}");
 			Settings.WriteString("Language", "UI", currentLang);
@@ -149,6 +149,20 @@ internal static class Program
 			MessageBox.Show(ex.ToString(), Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			Environment.Exit(1);
 		}
+	}
+
+	private static string? ResolveFallbackLanguage(CultureInfo systemCulture)
+	{
+		var twoLetter = systemCulture.TwoLetterISOLanguageName;
+		if (twoLetter.Equals("zh", StringComparison.OrdinalIgnoreCase))
+		{
+			var name = systemCulture.Name;
+			var isTraditional = name.Contains("Hant", StringComparison.OrdinalIgnoreCase)
+			                    || TraditionalChineseRegions.Any(region => name.EndsWith($"-{region}", StringComparison.OrdinalIgnoreCase));
+			return isTraditional ? "zh-Hant" : "zh-Hans";
+		}
+
+		return Array.Find(SupportedLangs, lang => lang.StartsWith(twoLetter, StringComparison.OrdinalIgnoreCase));
 	}
 
 	private static bool IsAdministrator()

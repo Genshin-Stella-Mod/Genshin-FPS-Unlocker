@@ -37,10 +37,12 @@ internal static class MonitorUtils
 
 	internal static bool IsSavedMonitorConnected(Config config)
 	{
-		if (string.IsNullOrEmpty(config.MonitorId)) return true;
+		return IsSavedMonitorConnected(config, GetOrderedScreens());
+	}
 
-		Screen[] screens = GetOrderedScreens();
-		return screens.Any(s => GetDeviceId(s) == config.MonitorId);
+	internal static bool IsSavedMonitorConnected(Config config, Screen[] screens)
+	{
+		return string.IsNullOrEmpty(config.MonitorId) || screens.Any(s => GetDeviceId(s) == config.MonitorId);
 	}
 
 	internal static int ResolveMonitorIndex(Config config, Screen[] screens)

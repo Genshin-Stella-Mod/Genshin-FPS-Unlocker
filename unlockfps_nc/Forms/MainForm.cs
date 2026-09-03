@@ -95,15 +95,14 @@ public partial class MainForm : Form
 			if (!File.Exists(_config.GamePath)) return;
 		}
 
-		if (!MonitorUtils.IsSavedMonitorConnected(_config))
+		Screen[] screens = MonitorUtils.GetOrderedScreens();
+		if (!MonitorUtils.IsSavedMonitorConnected(_config, screens))
 		{
-			var fallbackIndex = MonitorUtils.ResolveMonitorIndex(_config);
-			Program.Logger.Warn($"Saved monitor '{_config.MonitorId}' is not connected, falling back to monitor index {fallbackIndex} and updating configuration");
+			var fallbackIndex = MonitorUtils.ResolveMonitorIndex(_config, screens);
+			Program.Logger.Warn($"Saved monitor '{_config.MonitorId}' is not connected, falling back to monitor index {fallbackIndex}");
 
-			_config.MonitorNum = fallbackIndex + 1;
-			_configService.UpdateMonitorSettings(fallbackIndex);
+			_configService.RebindMonitor(fallbackIndex, screens);
 			_configService.Save();
-			RefreshFPSControls();
 
 			NotifyMonitorNotConnected();
 		}
@@ -121,12 +120,17 @@ public partial class MainForm : Form
 
 	private void NotifyMonitorNotConnected()
 	{
-		NotifyIconMain.Icon = SystemIcons.Application;
-		NotifyIconMain.Visible = true;
+		ShowTrayIcon();
 		NotifyIconMain.BalloonTipIcon = ToolTipIcon.Warning;
 		NotifyIconMain.BalloonTipTitle = Resources.MainForm_MonitorNotConnected_Title;
 		NotifyIconMain.BalloonTipText = Resources.MainForm_MonitorNotConnected_Text;
 		NotifyIconMain.ShowBalloonTip(5000);
+	}
+
+	private void ShowTrayIcon()
+	{
+		NotifyIconMain.Icon = _appIcon;
+		NotifyIconMain.Visible = true;
 	}
 
 	private static void ShowSetupForm()
@@ -147,8 +151,7 @@ public partial class MainForm : Form
 
 	private void NotifyAndHide()
 	{
-		NotifyIconMain.Icon = _appIcon;
-		NotifyIconMain.Visible = true;
+		ShowTrayIcon();
 		NotifyIconMain.Text = string.Format(Resources.MainForm_NotifyAndHide_GenshinFPSUnlockerCurrentLimit_, _config.FPSTarget);
 		if (_configService.IsFirstRun)
 			NotifyIconMain.ShowBalloonTip(500);

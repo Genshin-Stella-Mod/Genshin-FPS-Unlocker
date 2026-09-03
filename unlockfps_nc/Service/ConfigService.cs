@@ -127,6 +127,19 @@ public class ConfigService
 		Config.MonitorId = deviceId;
 	}
 
+	// Unlike UpdateMonitorSettings, only rebinds MonitorId/MonitorNum; clears MonitorId when no screens are available.
+	internal void RebindMonitor(int monitorIndex, Screen[] screens)
+	{
+		if (monitorIndex < 0 || monitorIndex >= screens.Length)
+		{
+			Config.MonitorId = "";
+			return;
+		}
+
+		Config.MonitorNum = monitorIndex + 1;
+		Config.MonitorId = MonitorUtils.GetDeviceId(screens[monitorIndex]);
+	}
+
 	internal void Save()
 	{
 		lock (_lock)

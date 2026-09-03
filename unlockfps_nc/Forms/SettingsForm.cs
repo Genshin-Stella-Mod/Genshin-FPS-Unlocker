@@ -9,12 +9,16 @@ public partial class SettingsForm : Form
 {
 	private readonly Config _config;
 	private readonly ConfigService _configService;
+	private readonly string _configVersionTemplate;
+	private readonly string _lastUpdatedTemplate;
 
 	public SettingsForm(ConfigService configService)
 	{
 		InitializeComponent();
 		_configService = configService;
 		_config = _configService.Config;
+		_configVersionTemplate = LabelConfigVersion.Text;
+		_lastUpdatedTemplate = LabelLastUpdated.Text;
 
 		SetupBindings();
 
@@ -33,12 +37,12 @@ public partial class SettingsForm : Form
 
 	private void SetupConfigInfoLabels()
 	{
-		LabelConfigVersion.Text = string.Format(LabelConfigVersion.Text, _config.ConfigVersion);
+		LabelConfigVersion.Text = string.Format(_configVersionTemplate, _config.ConfigVersion);
 
 		var lastUpdated = _config.LastModified == default
 			? Resources.SettingsForm_LastUpdatedNever
 			: _config.LastModified.ToString("g");
-		LabelLastUpdated.Text = string.Format(LabelLastUpdated.Text, lastUpdated);
+		LabelLastUpdated.Text = string.Format(_lastUpdatedTemplate, lastUpdated);
 	}
 
 	private void SetupDataBindings()
