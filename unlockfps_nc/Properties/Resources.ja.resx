@@ -123,6 +123,18 @@
   <data name="Error" xml:space="preserve">
     <value>エラー</value>
   </data>
+  <data name="SettingsForm_ConfigVersion" xml:space="preserve">
+    <value>設定バージョン: {0}</value>
+  </data>
+  <data name="SettingsForm_LastUpdated" xml:space="preserve">
+    <value>最終更新日: {0}</value>
+  </data>
+  <data name="SettingsForm_LastUpdatedNever" xml:space="preserve">
+    <value>なし</value>
+  </data>
+  <data name="SettingsForm_MonitorUndefined" xml:space="preserve">
+    <value>-- 未定義 --</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
   <data name="MainForm_ViewCfg_TheUnlockerConfigJsonFileWasNotFound" xml:space="preserve">
     <value>unlocker.config.json ファイルが見つかりませんでした。</value>

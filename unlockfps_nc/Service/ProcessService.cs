@@ -188,7 +188,8 @@ public class ProcessService
 	{
 		var commandLine = $"\"{config.GamePath}\" ";
 
-		commandLine += $"-monitor {ResolveMonitorNum(config)} ";
+		if (!string.IsNullOrEmpty(config.MonitorId))
+			commandLine += $"-monitor {ResolveMonitorNum(config)} ";
 
 		if (config.UseCustomRes)
 			commandLine += $"-screen-width {config.CustomResX} -screen-height {config.CustomResY} ";

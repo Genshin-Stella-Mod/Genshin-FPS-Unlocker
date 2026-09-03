@@ -70,6 +70,42 @@ namespace unlockfps_nc.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Config version: {0}.
+        /// </summary>
+        internal static string SettingsForm_ConfigVersion {
+            get {
+                return ResourceManager.GetString("SettingsForm_ConfigVersion", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Last updated: {0}.
+        /// </summary>
+        internal static string SettingsForm_LastUpdated {
+            get {
+                return ResourceManager.GetString("SettingsForm_LastUpdated", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to never.
+        /// </summary>
+        internal static string SettingsForm_LastUpdatedNever {
+            get {
+                return ResourceManager.GetString("SettingsForm_LastUpdatedNever", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to -- Undefined --.
+        /// </summary>
+        internal static string SettingsForm_MonitorUndefined {
+            get {
+                return ResourceManager.GetString("SettingsForm_MonitorUndefined", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Failed to create shared memory..
         /// </summary>
         internal static string IpcService_Start_FailedToCreateSharedMemory {

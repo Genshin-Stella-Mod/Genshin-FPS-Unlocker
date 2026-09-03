@@ -123,6 +123,18 @@
   <data name="Error" xml:space="preserve">
     <value>Hata</value>
   </data>
+  <data name="SettingsForm_ConfigVersion" xml:space="preserve">
+    <value>Yapılandırma sürümü: {0}</value>
+  </data>
+  <data name="SettingsForm_LastUpdated" xml:space="preserve">
+    <value>Son güncelleme: {0}</value>
+  </data>
+  <data name="SettingsForm_LastUpdatedNever" xml:space="preserve">
+    <value>hiç</value>
+  </data>
+  <data name="SettingsForm_MonitorUndefined" xml:space="preserve">
+    <value>-- Tanımsız --</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
   <data name="MainForm_ViewCfg_TheUnlockerConfigJsonFileWasNotFound" xml:space="preserve">
     <value>Unlocker.config.json dosyası bulunamadı.</value>

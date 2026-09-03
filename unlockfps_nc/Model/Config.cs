@@ -3,6 +3,7 @@ namespace unlockfps_nc.Model;
 internal class Config
 {
 	public int ConfigVersion { get; set; }
+	public DateTime LastModified { get; set; }
 
 	public string GamePath { get; set; } = "";
 
@@ -22,7 +23,7 @@ internal class Config
 	public int CustomResX { get; set; } = 1920;
 	public int CustomResY { get; set; } = 1080;
 	public int MonitorNum { get; set; } = 1;
-	public string MonitorId { get; set; } = "";
+	public string? MonitorId { get; set; }
 	public int Priority { get; set; } = 3;
 	public string AdditionalCommandLine { get; set; } = "";
 }

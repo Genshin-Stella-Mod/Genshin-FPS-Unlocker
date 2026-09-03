@@ -701,7 +701,15 @@
     <value>HDR'yi Etkinleştir</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Bu uygulama 18 dilde mevcuttur. Dili Stella Mod uygulamasının Ayarlar bölümünden değiştirebilirsiniz.</value>
+    <value>Daha fazla bilgi almak için fare imlecini belirli bir ayarın üzerine getirin.
+
+Bu uygulama 18 dilde mevcuttur. Dili Stella Mod uygulamasının Ayarlar bölümünden değiştirebilirsiniz.</value>
+  </data>
+  <data name="LabelConfigVersion.Text" xml:space="preserve">
+    <value>Yapılandırma sürümü</value>
+  </data>
+  <data name="LabelLastUpdated.Text" xml:space="preserve">
+    <value>Son güncelleme</value>
   </data>
   <data name="&gt;&gt;CBHdr.Name" xml:space="preserve">
     <value>CBHdr</value>

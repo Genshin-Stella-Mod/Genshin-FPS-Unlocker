@@ -1,4 +1,5 @@
 using unlockfps_nc.Model;
+using unlockfps_nc.Properties;
 using unlockfps_nc.Service;
 using unlockfps_nc.Utility;
 
@@ -27,6 +28,17 @@ public partial class SettingsForm : Form
 		SetupDataBindings();
 		SetupManualBindings();
 		SetupMonitorCombo();
+		SetupConfigInfoLabels();
+	}
+
+	private void SetupConfigInfoLabels()
+	{
+		LabelConfigVersion.Text = string.Format(Resources.SettingsForm_ConfigVersion, _config.ConfigVersion);
+
+		var lastUpdated = _config.LastModified == default
+			? Resources.SettingsForm_LastUpdatedNever
+			: _config.LastModified.ToString("g");
+		LabelLastUpdated.Text = string.Format(Resources.SettingsForm_LastUpdated, lastUpdated);
 	}
 
 	private void SetupDataBindings()
@@ -131,6 +143,7 @@ public partial class SettingsForm : Form
 	private void SetupMonitorCombo()
 	{
 		ComboMonitor.Items.Clear();
+		ComboMonitor.Items.Add(Resources.SettingsForm_MonitorUndefined);
 		Screen[] screens = MonitorUtils.GetOrderedScreens();
 
 		foreach (Screen screen in screens)
@@ -140,18 +153,26 @@ public partial class SettingsForm : Form
 			ComboMonitor.Items.Add(displayName);
 		}
 
-		ComboMonitor.SelectedIndex = MonitorUtils.ResolveMonitorIndex(_config);
+		ComboMonitor.SelectedIndex = string.IsNullOrEmpty(_config.MonitorId) ? 0 : MonitorUtils.ResolveMonitorIndex(_config) + 1;
 		ComboMonitor.SelectedIndexChanged += ComboMonitor_SelectedIndexChanged;
 	}
 
 	private void ComboMonitor_SelectedIndexChanged(object? sender, EventArgs e)
 	{
-		var monitorIndex = ComboMonitor.SelectedIndex;
+		if (ComboMonitor.SelectedIndex == 0)
+		{
+			_config.MonitorId = "";
+			RefreshCommandPreview();
+			return;
+		}
+
+		var monitorIndex = ComboMonitor.SelectedIndex - 1;
 		_config.MonitorNum = monitorIndex + 1;
 		_configService.UpdateMonitorSettings(monitorIndex);
 
 		InputResX.Value = _config.CustomResX;
 		InputResY.Value = _config.CustomResY;
+		RefreshCommandPreview();
 	}
 
 	private void RefreshCommandPreview()

@@ -123,6 +123,18 @@
   <data name="Error" xml:space="preserve">
     <value>错误</value>
   </data>
+  <data name="SettingsForm_ConfigVersion" xml:space="preserve">
+    <value>配置版本：{0}</value>
+  </data>
+  <data name="SettingsForm_LastUpdated" xml:space="preserve">
+    <value>最后更新：{0}</value>
+  </data>
+  <data name="SettingsForm_LastUpdatedNever" xml:space="preserve">
+    <value>从未</value>
+  </data>
+  <data name="SettingsForm_MonitorUndefined" xml:space="preserve">
+    <value>-- 未定义 --</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
   <data name="MainForm_ViewCfg_TheUnlockerConfigJsonFileWasNotFound" xml:space="preserve">
     <value>未找到 unlocker.config.json 文件。</value>

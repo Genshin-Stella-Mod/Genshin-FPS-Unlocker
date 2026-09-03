@@ -701,7 +701,15 @@
     <value>HDR 활성화</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>이 애플리케이션은 18개 언어를 지원합니다. Stella Mod 앱의 설정에서 언어를 변경할 수 있습니다.</value>
+    <value>특정 설정 위에 마우스를 올리면 자세한 정보를 확인할 수 있습니다.
+
+이 애플리케이션은 18개 언어를 지원합니다. Stella Mod 앱의 설정에서 언어를 변경할 수 있습니다.</value>
+  </data>
+  <data name="LabelConfigVersion.Text" xml:space="preserve">
+    <value>설정 버전</value>
+  </data>
+  <data name="LabelLastUpdated.Text" xml:space="preserve">
+    <value>마지막 업데이트</value>
   </data>
   <data name="&gt;&gt;CBHdr.Name" xml:space="preserve">
     <value>CBHdr</value>

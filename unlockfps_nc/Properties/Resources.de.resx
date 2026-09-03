@@ -123,6 +123,18 @@
   <data name="Error" xml:space="preserve">
     <value>Fehler</value>
   </data>
+  <data name="SettingsForm_ConfigVersion" xml:space="preserve">
+    <value>Konfigurationsversion: {0}</value>
+  </data>
+  <data name="SettingsForm_LastUpdated" xml:space="preserve">
+    <value>Zuletzt aktualisiert: {0}</value>
+  </data>
+  <data name="SettingsForm_LastUpdatedNever" xml:space="preserve">
+    <value>nie</value>
+  </data>
+  <data name="SettingsForm_MonitorUndefined" xml:space="preserve">
+    <value>-- Nicht festgelegt --</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
   <data name="MainForm_ViewCfg_TheUnlockerConfigJsonFileWasNotFound" xml:space="preserve">
     <value>Die unlocker.config.json-Datei wurde nicht gefunden.</value>

@@ -133,6 +133,7 @@ public class ConfigService
 		{
 			try
 			{
+				Config.LastModified = DateTime.Now;
 				var json = JsonSerializer.Serialize(Config, WriteOptions);
 
 				var wasHidden = false;

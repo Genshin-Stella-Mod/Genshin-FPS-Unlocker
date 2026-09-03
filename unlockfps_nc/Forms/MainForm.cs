@@ -15,6 +15,7 @@ public partial class MainForm : Form
 	private readonly ProcessService _processService;
 	private Point _windowLocation;
 	private Size _windowSize;
+	private Icon? _appIcon;
 
 	public MainForm(ConfigService configService, ProcessService processService)
 	{
@@ -46,6 +47,7 @@ public partial class MainForm : Form
 		_configService.Save();
 		_processService.OnFormClosing();
 		NotifyIconMain.Visible = false;
+		_appIcon?.Dispose();
 	}
 
 	private void MainForm_Load(object sender, EventArgs e)
@@ -63,7 +65,8 @@ public partial class MainForm : Form
 			WindowState = FormWindowState.Minimized;
 		}
 
-		Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+		_appIcon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+		if (_appIcon != null) Icon = _appIcon;
 	}
 
 	private void SetupBindings()
@@ -119,7 +122,7 @@ public partial class MainForm : Form
 
 	private void NotifyAndHide()
 	{
-		NotifyIconMain.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+		NotifyIconMain.Icon = _appIcon;
 		NotifyIconMain.Visible = true;
 		NotifyIconMain.Text = string.Format(Resources.MainForm_NotifyAndHide_GenshinFPSUnlockerCurrentLimit_, _config.FPSTarget);
 		if (_configService.IsFirstRun)

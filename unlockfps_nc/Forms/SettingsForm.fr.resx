@@ -701,7 +701,15 @@
     <value>Activer le HDR</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Cette application est disponible en 18 langues. Vous pouvez changer la langue dans les Paramètres de l'application Stella Mod.</value>
+    <value>Survolez un paramètre précis avec le curseur pour en savoir plus.
+
+Cette application est disponible en 18 langues. Vous pouvez changer la langue dans les Paramètres de l'application Stella Mod.</value>
+  </data>
+  <data name="LabelConfigVersion.Text" xml:space="preserve">
+    <value>Version de la configuration</value>
+  </data>
+  <data name="LabelLastUpdated.Text" xml:space="preserve">
+    <value>Dernière mise à jour</value>
   </data>
   <data name="&gt;&gt;CBHdr.Name" xml:space="preserve">
     <value>CBHdr</value>

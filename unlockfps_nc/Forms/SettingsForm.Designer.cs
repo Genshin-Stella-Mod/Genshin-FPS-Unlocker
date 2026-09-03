@@ -51,6 +51,8 @@ namespace unlockfps_nc.Forms
 			CBPopup = new CheckBox();
 			TabGeneral = new TabPage();
 			label1 = new Label();
+			LabelConfigVersion = new Label();
+			LabelLastUpdated = new Label();
 			CBHdr = new CheckBox();
 			ComboPriority = new ComboBox();
 			LabelPriority = new Label();
@@ -216,6 +218,8 @@ namespace unlockfps_nc.Forms
 			// 
 			TabGeneral.BackColor = Color.FromArgb(46, 48, 51);
 			TabGeneral.Controls.Add(label1);
+			TabGeneral.Controls.Add(LabelConfigVersion);
+			TabGeneral.Controls.Add(LabelLastUpdated);
 			TabGeneral.Controls.Add(CBHdr);
 			TabGeneral.Controls.Add(ComboPriority);
 			TabGeneral.Controls.Add(LabelPriority);
@@ -227,9 +231,21 @@ namespace unlockfps_nc.Forms
 			// 
 			// label1
 			// 
-			resources.ApplyResources(label1, "label1");
 			label1.ForeColor = Color.White;
+			resources.ApplyResources(label1, "label1");
 			label1.Name = "label1";
+			// 
+			// LabelConfigVersion
+			// 
+			resources.ApplyResources(LabelConfigVersion, "LabelConfigVersion");
+			LabelConfigVersion.ForeColor = Color.Gray;
+			LabelConfigVersion.Name = "LabelConfigVersion";
+			// 
+			// LabelLastUpdated
+			// 
+			resources.ApplyResources(LabelLastUpdated, "LabelLastUpdated");
+			LabelLastUpdated.ForeColor = Color.Gray;
+			LabelLastUpdated.Name = "LabelLastUpdated";
 			// 
 			// CBHdr
 			// 
@@ -318,5 +334,7 @@ namespace unlockfps_nc.Forms
 		private Label LabelCommandLine;
 		private TextBox TextBoxCommandLine;
 		private Label label1;
+		private Label LabelConfigVersion;
+		private Label LabelLastUpdated;
 	}
 }
