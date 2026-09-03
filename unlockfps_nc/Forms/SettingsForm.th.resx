@@ -757,7 +757,7 @@
     <value>8</value>
   </data>
   <data name="LabelConfigVersion.Text" xml:space="preserve">
-    <value>เวอร์ชันการตั้งค่า: {0}</value>
+    <value>เวอร์ชันตั้งค่า: {0}</value>
   </data>
   <data name="LabelConfigVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
