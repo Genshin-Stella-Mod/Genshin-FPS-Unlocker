@@ -700,6 +700,9 @@
   <data name="CBHdr.Text" xml:space="preserve">
     <value>Bật HDR</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Ứng dụng này hỗ trợ 18 ngôn ngữ. Bạn có thể thay đổi ngôn ngữ trong Cài đặt của ứng dụng Stella Mod.</value>
+  </data>
   <data name="&gt;&gt;CBHdr.Name" xml:space="preserve">
     <value>CBHdr</value>
   </data>

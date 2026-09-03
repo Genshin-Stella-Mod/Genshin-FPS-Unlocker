@@ -13,6 +13,7 @@
 		<ApplicationManifest>Properties\app.manifest</ApplicationManifest>
 		<ApplicationIcon>Resources\icon.ico</ApplicationIcon>
 		<ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
+		<ForceDesignerDpiUnaware>true</ForceDesignerDpiUnaware>
 
 		<Company>Sefinek</Company>
 		<Product>Genshin Impact FPS Unlock</Product>

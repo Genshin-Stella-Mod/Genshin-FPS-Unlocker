@@ -700,6 +700,9 @@
   <data name="CBHdr.Text" xml:space="preserve">
     <value>Aktifkan HDR</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Aplikasi ini tersedia dalam 18 bahasa. Anda dapat mengubah bahasa di Pengaturan aplikasi Stella Mod.</value>
+  </data>
   <data name="&gt;&gt;CBHdr.Name" xml:space="preserve">
     <value>CBHdr</value>
   </data>

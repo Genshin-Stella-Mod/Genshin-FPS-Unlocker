@@ -700,6 +700,9 @@
   <data name="CBHdr.Text" xml:space="preserve">
     <value>啟用 HDR</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>此應用程式支援 18 種語言。您可以在 Stella Mod 應用程式的設定中變更語言。</value>
+  </data>
   <data name="&gt;&gt;CBHdr.Name" xml:space="preserve">
     <value>CBHdr</value>
   </data>

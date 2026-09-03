@@ -700,6 +700,9 @@
   <data name="CBHdr.Text" xml:space="preserve">
     <value>HDR を有効にする</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>このアプリケーションは18言語に対応しています。言語はStella Modアプリの設定から変更できます。</value>
+  </data>
   <data name="&gt;&gt;CBHdr.Name" xml:space="preserve">
     <value>CBHdr</value>
   </data>
