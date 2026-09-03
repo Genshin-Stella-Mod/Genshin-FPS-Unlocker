@@ -13,9 +13,9 @@ public partial class MainForm : Form
 	private readonly ConfigService _configService;
 
 	private readonly ProcessService _processService;
+	private Icon? _appIcon;
 	private Point _windowLocation;
 	private Size _windowSize;
-	private Icon? _appIcon;
 
 	public MainForm(ConfigService configService, ProcessService processService)
 	{

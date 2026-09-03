@@ -8,9 +8,9 @@ namespace unlockfps_nc.Service;
 
 public class ConfigService
 {
+	private const int CurrentConfigVersion = 1;
 	internal static readonly string ConfigPath = Path.Combine(AppContext.BaseDirectory, "unlocker.config.json");
 	private static readonly JsonSerializerOptions WriteOptions = new() { WriteIndented = true };
-	private const int CurrentConfigVersion = 1;
 	private readonly Lock _lock = new();
 
 	public ConfigService()

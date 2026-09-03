@@ -25,9 +25,15 @@ internal static class MonitorUtils
 		return int.TryParse(suffix, out var number) ? number : 1;
 	}
 
-	internal static Screen[] GetOrderedScreens() => Screen.AllScreens.OrderByDescending(s => s.Primary).ToArray();
+	internal static Screen[] GetOrderedScreens()
+	{
+		return Screen.AllScreens.OrderByDescending(s => s.Primary).ToArray();
+	}
 
-	internal static int ResolveMonitorIndex(Config config) => ResolveMonitorIndex(config, GetOrderedScreens());
+	internal static int ResolveMonitorIndex(Config config)
+	{
+		return ResolveMonitorIndex(config, GetOrderedScreens());
+	}
 
 	internal static int ResolveMonitorIndex(Config config, Screen[] screens)
 	{
