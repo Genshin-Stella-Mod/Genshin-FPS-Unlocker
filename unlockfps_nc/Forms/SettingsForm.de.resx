@@ -757,7 +757,7 @@ Diese Anwendung ist in 18 Sprachen verfügbar. Du kannst die Sprache in den Eins
     <value>8</value>
   </data>
   <data name="LabelConfigVersion.Text" xml:space="preserve">
-    <value>Konfigurationsversion: {0}</value>
+    <value>Konfig.-Version: {0}</value>
   </data>
   <data name="LabelConfigVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -787,7 +787,7 @@ Diese Anwendung ist in 18 Sprachen verfügbar. Du kannst die Sprache in den Eins
     <value>9</value>
   </data>
   <data name="LabelLastUpdated.Text" xml:space="preserve">
-    <value>Zuletzt aktualisiert: {0}</value>
+    <value>Zuletzt akt.: {0}</value>
   </data>
   <data name="LabelLastUpdated.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
