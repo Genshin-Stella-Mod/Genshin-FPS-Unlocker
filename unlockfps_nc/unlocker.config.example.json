@@ -1,4 +1,6 @@
 {
+    "ConfigVersion": 1,
+    "LastModified": "2026-09-03T04:38:44.0626623+02:00",
     "GamePath": "",
     "AutoStart": false,
     "AutoClose": true,
@@ -11,7 +13,7 @@
     "SuspendLoad": false,
     "UseMobileUI": false,
     "UseHDR": false,
-    "FPSTarget": null,
+    "FPSTarget": 60,
     "CustomResX": 1920,
     "CustomResY": 1080,
     "MonitorNum": 1,
