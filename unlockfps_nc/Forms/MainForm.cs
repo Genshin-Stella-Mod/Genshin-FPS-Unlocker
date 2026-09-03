@@ -99,10 +99,12 @@ public partial class MainForm : Form
 		if (!MonitorUtils.IsSavedMonitorConnected(_config, screens))
 		{
 			var fallbackIndex = MonitorUtils.ResolveMonitorIndex(_config, screens);
-			Program.Logger.Warn($"Saved monitor '{_config.MonitorId}' is not connected, falling back to monitor index {fallbackIndex}");
+			Program.Logger.Warn($"Saved monitor '{_config.MonitorId}' is not connected, falling back to monitor index {fallbackIndex} and updating configuration");
 
-			_configService.RebindMonitor(fallbackIndex, screens);
+			_config.MonitorNum = fallbackIndex + 1;
+			_configService.UpdateMonitorSettings(fallbackIndex);
 			_configService.Save();
+			RefreshFPSControls();
 
 			NotifyMonitorNotConnected();
 		}

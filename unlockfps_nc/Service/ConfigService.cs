@@ -118,26 +118,17 @@ public class ConfigService
 	internal void UpdateMonitorSettings(int monitorIndex)
 	{
 		Screen[] screens = MonitorUtils.GetOrderedScreens();
-		if (monitorIndex < 0 || monitorIndex >= screens.Length) return;
-
-		var (_, width, height, refreshRate, deviceId) = MonitorUtils.GetMonitorInfo(screens[monitorIndex]);
-		Config.FPSTarget = refreshRate > 0 ? refreshRate : 60;
-		Config.CustomResX = width > 0 ? width : 1920;
-		Config.CustomResY = height > 0 ? height : 1080;
-		Config.MonitorId = deviceId;
-	}
-
-	// Unlike UpdateMonitorSettings, only rebinds MonitorId/MonitorNum; clears MonitorId when no screens are available.
-	internal void RebindMonitor(int monitorIndex, Screen[] screens)
-	{
 		if (monitorIndex < 0 || monitorIndex >= screens.Length)
 		{
 			Config.MonitorId = "";
 			return;
 		}
 
-		Config.MonitorNum = monitorIndex + 1;
-		Config.MonitorId = MonitorUtils.GetDeviceId(screens[monitorIndex]);
+		var (_, width, height, refreshRate, deviceId) = MonitorUtils.GetMonitorInfo(screens[monitorIndex]);
+		Config.FPSTarget = refreshRate > 0 ? refreshRate : 60;
+		Config.CustomResX = width > 0 ? width : 1920;
+		Config.CustomResY = height > 0 ? height : 1080;
+		Config.MonitorId = deviceId;
 	}
 
 	internal void Save()
