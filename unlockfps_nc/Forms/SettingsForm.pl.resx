@@ -571,7 +571,7 @@
     <value>2</value>
   </data>
   <data name="CBCustomRes.Text" xml:space="preserve">
-    <value>Niestandardowa rozdzielczość:</value>
+    <value>Niest. rozdzielczość:</value>
   </data>
   <data name="&gt;&gt;CBCustomRes.Name" xml:space="preserve">
     <value>CBCustomRes</value>

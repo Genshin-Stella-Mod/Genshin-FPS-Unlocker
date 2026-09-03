@@ -19,7 +19,7 @@ internal static class Program
 	private static readonly string AppFullVersion = Application.ProductVersion;
 	private static readonly string AppPath = AppDomain.CurrentDomain.BaseDirectory;
 	private static readonly string AppData = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Genshin Stella Mod");
-	private static readonly string[] SupportedLangs = ["en", "pl", "fr", "tr", "ru", "sv", "es", "pt-BR", "it"];
+	private static readonly string[] SupportedLangs = ["en", "pl", "fr", "tr", "ru", "sv", "es", "pt-BR", "it", "ar", "de", "id", "ja", "vi", "zh-Hans", "zh-Hant", "ko", "th"];
 	private static readonly string MutexName = "286B345F-A2EB-4FF3-83E9-2DD83B87694A";
 	private static readonly string EventName = "B2ABB8F2-E6B2-4E31-8A11-15F969ADF755";
 	private static readonly IniFile Settings = new(Path.Combine(AppData, "settings.ini"));
@@ -45,9 +45,13 @@ internal static class Program
 		Logger.Info($"Loaded language from settings: {currentLang}");
 		if (!SupportedLangs.Contains(currentLang))
 		{
-			var sysLang = CultureInfo.InstalledUICulture.TwoLetterISOLanguageName;
-			currentLang = Array.Find(SupportedLangs, lang => lang == sysLang) ?? "en";
-			Logger.Info($"System language detected: {sysLang}. Using: {currentLang}");
+			CultureInfo systemCulture = CultureInfo.InstalledUICulture;
+			var twoLetter = systemCulture.TwoLetterISOLanguageName;
+
+			currentLang = Array.Find(SupportedLangs, lang => lang == systemCulture.Name)
+			              ?? Array.Find(SupportedLangs, lang => lang.StartsWith(twoLetter, StringComparison.OrdinalIgnoreCase))
+			              ?? "en";
+			Logger.Info($"System language detected: {systemCulture.Name}. Using: {currentLang}");
 			Settings.WriteString("Language", "UI", currentLang);
 		}
 		else

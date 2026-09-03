@@ -161,7 +161,25 @@ namespace unlockfps_nc.Properties {
                 return ResourceManager.GetString("MainForm_NotifyAndHide_GenshinFPSUnlockerCurrentLimit_", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Selected monitor not found.
+        /// </summary>
+        internal static string MainForm_MonitorNotConnected_Title {
+            get {
+                return ResourceManager.GetString("MainForm_MonitorNotConnected_Title", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to The monitor selected in settings is not connected. The game will start on a different display instead..
+        /// </summary>
+        internal static string MainForm_MonitorNotConnected_Text {
+            get {
+                return ResourceManager.GetString("MainForm_MonitorNotConnected_Text", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to The registry key &quot;StellaPath&quot; was not found. Are you sure Genshin Stella Mod is installed?.
         /// </summary>

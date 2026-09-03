@@ -34,6 +34,7 @@ namespace unlockfps_nc.Forms
 			CBAutoClose = new CheckBox();
 			CBStartMinimized = new CheckBox();
 			CBPowerSave = new CheckBox();
+			BtnRefreshMonitor = new Button();
 			CBUseMobileUI = new CheckBox();
 			TabLaunchOptions = new TabPage();
 			TextBoxCommandLine = new TextBox();
@@ -95,6 +96,14 @@ namespace unlockfps_nc.Forms
 			ToolTipSettings.SetToolTip(CBPowerSave, resources.GetString("CBPowerSave.ToolTip"));
 			CBPowerSave.UseVisualStyleBackColor = true;
 			// 
+			// BtnRefreshMonitor
+			// 
+			resources.ApplyResources(BtnRefreshMonitor, "BtnRefreshMonitor");
+			BtnRefreshMonitor.Name = "BtnRefreshMonitor";
+			ToolTipSettings.SetToolTip(BtnRefreshMonitor, resources.GetString("BtnRefreshMonitor.ToolTip"));
+			BtnRefreshMonitor.UseVisualStyleBackColor = true;
+			BtnRefreshMonitor.Click += BtnRefreshMonitor_Click;
+			// 
 			// CBUseMobileUI
 			// 
 			resources.ApplyResources(CBUseMobileUI, "CBUseMobileUI");
@@ -111,6 +120,7 @@ namespace unlockfps_nc.Forms
 			TabLaunchOptions.Controls.Add(LabelAdditionalCmdLine);
 			TabLaunchOptions.Controls.Add(CBUseMobileUI);
 			TabLaunchOptions.Controls.Add(ComboMonitor);
+			TabLaunchOptions.Controls.Add(BtnRefreshMonitor);
 			TabLaunchOptions.Controls.Add(LabelMonitor);
 			TabLaunchOptions.Controls.Add(ComboFullscreenMode);
 			TabLaunchOptions.Controls.Add(InputResY);
@@ -312,6 +322,7 @@ namespace unlockfps_nc.Forms
 		private CheckBox CBUseMobileUI;
 		private TabPage TabLaunchOptions;
 		private ComboBox ComboMonitor;
+		private Button BtnRefreshMonitor;
 		private Label LabelMonitor;
 		private ComboBox ComboFullscreenMode;
 		private NumericUpDown InputResY;

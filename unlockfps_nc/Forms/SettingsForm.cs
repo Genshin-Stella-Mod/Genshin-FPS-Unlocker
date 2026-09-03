@@ -142,6 +142,8 @@ public partial class SettingsForm : Form
 
 	private void SetupMonitorCombo()
 	{
+		ComboMonitor.SelectedIndexChanged -= ComboMonitor_SelectedIndexChanged;
+
 		ComboMonitor.Items.Clear();
 		ComboMonitor.Items.Add(Resources.SettingsForm_MonitorUndefined);
 		Screen[] screens = MonitorUtils.GetOrderedScreens();
@@ -155,6 +157,11 @@ public partial class SettingsForm : Form
 
 		ComboMonitor.SelectedIndex = string.IsNullOrEmpty(_config.MonitorId) ? 0 : MonitorUtils.ResolveMonitorIndex(_config) + 1;
 		ComboMonitor.SelectedIndexChanged += ComboMonitor_SelectedIndexChanged;
+	}
+
+	private void BtnRefreshMonitor_Click(object? sender, EventArgs e)
+	{
+		SetupMonitorCombo();
 	}
 
 	private void ComboMonitor_SelectedIndexChanged(object? sender, EventArgs e)

@@ -4,6 +4,7 @@ using Microsoft.Win32;
 using unlockfps_nc.Model;
 using unlockfps_nc.Properties;
 using unlockfps_nc.Service;
+using unlockfps_nc.Utility;
 
 namespace unlockfps_nc.Forms;
 
@@ -55,6 +56,10 @@ public partial class MainForm : Form
 		Program.Logger.Info("MainForm loaded");
 		_windowLocation = Location;
 		_windowSize = Size;
+
+		_appIcon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+		if (_appIcon != null) Icon = _appIcon;
+
 		if (_config.AutoStart)
 		{
 			Program.Logger.Info("Auto-start enabled, starting game automatically");
@@ -64,9 +69,6 @@ public partial class MainForm : Form
 		{
 			WindowState = FormWindowState.Minimized;
 		}
-
-		_appIcon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
-		if (_appIcon != null) Icon = _appIcon;
 	}
 
 	private void SetupBindings()
@@ -93,6 +95,19 @@ public partial class MainForm : Form
 			if (!File.Exists(_config.GamePath)) return;
 		}
 
+		if (!MonitorUtils.IsSavedMonitorConnected(_config))
+		{
+			var fallbackIndex = MonitorUtils.ResolveMonitorIndex(_config);
+			Program.Logger.Warn($"Saved monitor '{_config.MonitorId}' is not connected, falling back to monitor index {fallbackIndex} and updating configuration");
+
+			_config.MonitorNum = fallbackIndex + 1;
+			_configService.UpdateMonitorSettings(fallbackIndex);
+			_configService.Save();
+			RefreshFPSControls();
+
+			NotifyMonitorNotConnected();
+		}
+
 		if (_processService.StartGame())
 		{
 			Program.Logger.Info("Game started successfully, minimizing to tray");
@@ -102,6 +117,16 @@ public partial class MainForm : Form
 		{
 			Program.Logger.Warn("Game failed to start");
 		}
+	}
+
+	private void NotifyMonitorNotConnected()
+	{
+		NotifyIconMain.Icon = SystemIcons.Application;
+		NotifyIconMain.Visible = true;
+		NotifyIconMain.BalloonTipIcon = ToolTipIcon.Warning;
+		NotifyIconMain.BalloonTipTitle = Resources.MainForm_MonitorNotConnected_Title;
+		NotifyIconMain.BalloonTipText = Resources.MainForm_MonitorNotConnected_Text;
+		NotifyIconMain.ShowBalloonTip(5000);
 	}
 
 	private static void ShowSetupForm()
