@@ -2,6 +2,8 @@ namespace unlockfps_nc.Model;
 
 internal class Config
 {
+	public int ConfigVersion { get; set; }
+
 	public string GamePath { get; set; } = "";
 
 	public bool AutoStart { get; set; }

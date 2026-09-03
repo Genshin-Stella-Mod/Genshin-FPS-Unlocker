@@ -207,13 +207,8 @@ public class ProcessService
 
 	private static int ResolveMonitorNum(Config config)
 	{
-		var screenCount = Screen.AllScreens.Length;
-
-		if (!string.IsNullOrEmpty(config.MonitorId))
-			for (var i = 0; i < screenCount; i++)
-				if (MonitorUtils.GetMonitorInfo(i).DeviceId == config.MonitorId)
-					return i + 1;
-
-		return config.MonitorNum is >= 1 && config.MonitorNum <= screenCount ? config.MonitorNum : 1;
+		Screen[] screens = MonitorUtils.GetOrderedScreens();
+		var index = MonitorUtils.ResolveMonitorIndex(config, screens);
+		return MonitorUtils.GetDisplayNumber(screens[index]);
 	}
 }

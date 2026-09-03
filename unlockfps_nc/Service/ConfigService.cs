@@ -10,6 +10,7 @@ public class ConfigService
 {
 	internal static readonly string ConfigPath = Path.Combine(AppContext.BaseDirectory, "unlocker.config.json");
 	private static readonly JsonSerializerOptions WriteOptions = new() { WriteIndented = true };
+	private const int CurrentConfigVersion = 1;
 	private readonly Lock _lock = new();
 
 	public ConfigService()
@@ -21,8 +22,16 @@ public class ConfigService
 		var loaded = Load();
 		Sanitize();
 		LoadGamePathFromRegistry();
-		if (!loaded) InitializePrimaryMonitor();
-		else BackfillMonitorId();
+
+		if (!loaded)
+		{
+			InitializePrimaryMonitor();
+			Config.ConfigVersion = CurrentConfigVersion;
+		}
+		else
+		{
+			MigrateMonitorSettings();
+		}
 	}
 
 	internal bool IsFirstRun { get; }
@@ -72,50 +81,46 @@ public class ConfigService
 
 	private void InitializePrimaryMonitor()
 	{
-		var primaryMonitorIndex = FindPrimaryMonitorIndex();
-
-		if (primaryMonitorIndex != -1)
-		{
-			Config.MonitorNum = primaryMonitorIndex + 1;
-			UpdateMonitorSettings(primaryMonitorIndex);
-			Program.Logger.Info($"Initialized primary monitor settings: {Config.CustomResX}x{Config.CustomResY} @{Config.FPSTarget}Hz");
-		}
-		else
+		if (MonitorUtils.GetOrderedScreens().Length == 0)
 		{
 			Program.Logger.Warn("Could not detect primary monitor, using default settings");
+			return;
 		}
+
+		Config.MonitorNum = 1;
+		UpdateMonitorSettings(0);
+		Program.Logger.Info($"Initialized primary monitor settings: {Config.CustomResX}x{Config.CustomResY} @{Config.FPSTarget}Hz");
 	}
 
-	private static int FindPrimaryMonitorIndex()
+	private void MigrateMonitorSettings()
 	{
-		for (var i = 0; i < 10; i++)
-			try
-			{
-				var (_, _, _, _, isPrimary, _) = MonitorUtils.GetMonitorInfo(i);
-				if (isPrimary) return i;
-			}
-			catch
-			{
-				break;
-			}
+		if (Config.ConfigVersion >= CurrentConfigVersion) return;
 
-		return -1;
-	}
-
-	private void BackfillMonitorId()
-	{
-		if (!string.IsNullOrEmpty(Config.MonitorId)) return;
-
+		Screen[] screens = Screen.AllScreens;
 		var index = Config.MonitorNum - 1;
-		if (index < 0 || index >= Screen.AllScreens.Length) return;
+		if (index >= 0 && index < screens.Length)
+		{
+			var (_, width, height, _, deviceId) = MonitorUtils.GetMonitorInfo(screens[index]);
+			Config.MonitorId = deviceId;
 
-		Config.MonitorId = MonitorUtils.GetMonitorInfo(index).DeviceId;
-		Program.Logger.Info($"Backfilled MonitorId for existing config from monitor index {Config.MonitorNum}");
+			if (Config.CustomResX == 1920 && Config.CustomResY == 1080)
+			{
+				if (width > 0) Config.CustomResX = width;
+				if (height > 0) Config.CustomResY = height;
+			}
+
+			Program.Logger.Info($"Resynced monitor id/resolution for monitor index {Config.MonitorNum} during config migration");
+		}
+
+		Config.ConfigVersion = CurrentConfigVersion;
 	}
 
 	internal void UpdateMonitorSettings(int monitorIndex)
 	{
-		var (_, width, height, refreshRate, _, deviceId) = MonitorUtils.GetMonitorInfo(monitorIndex);
+		Screen[] screens = MonitorUtils.GetOrderedScreens();
+		if (monitorIndex < 0 || monitorIndex >= screens.Length) return;
+
+		var (_, width, height, refreshRate, deviceId) = MonitorUtils.GetMonitorInfo(screens[monitorIndex]);
 		Config.FPSTarget = refreshRate > 0 ? refreshRate : 60;
 		Config.CustomResX = width > 0 ? width : 1920;
 		Config.CustomResY = height > 0 ? height : 1080;

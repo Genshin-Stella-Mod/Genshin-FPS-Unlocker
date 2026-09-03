@@ -1,5 +1,7 @@
 using System.Runtime.InteropServices;
+using System.Text;
 using Microsoft.Win32;
+using unlockfps_nc.Model;
 
 namespace unlockfps_nc.Utility;
 
@@ -8,32 +10,57 @@ internal static class MonitorUtils
 	[DllImport("user32.dll")]
 	private static extern bool EnumDisplayDevices(string? lpDevice, uint iDevNum, ref DisplayDevice lpDisplayDevice, uint dwFlags);
 
-	internal static (string Name, int Width, int Height, int RefreshRate, bool IsPrimary, string DeviceId) GetMonitorInfo(int monitorIndex)
+	internal static string GetDeviceId(Screen screen)
 	{
 		var device = new DisplayDevice { cb = Marshal.SizeOf<DisplayDevice>() };
+		return EnumDisplayDevices(screen.DeviceName, 0, ref device, 0) ? device.DeviceID : "";
+	}
 
-		if (EnumDisplayDevices(null, (uint)monitorIndex, ref device, 0))
+	internal static int GetDisplayNumber(Screen screen)
+	{
+		var index = screen.DeviceName.IndexOf("DISPLAY", StringComparison.OrdinalIgnoreCase);
+		if (index < 0) return 1;
+
+		var suffix = screen.DeviceName[(index + "DISPLAY".Length)..];
+		return int.TryParse(suffix, out var number) ? number : 1;
+	}
+
+	internal static Screen[] GetOrderedScreens() => Screen.AllScreens.OrderByDescending(s => s.Primary).ToArray();
+
+	internal static int ResolveMonitorIndex(Config config) => ResolveMonitorIndex(config, GetOrderedScreens());
+
+	internal static int ResolveMonitorIndex(Config config, Screen[] screens)
+	{
+		if (!string.IsNullOrEmpty(config.MonitorId))
+			for (var i = 0; i < screens.Length; i++)
+				if (GetDeviceId(screens[i]) == config.MonitorId)
+					return i;
+
+		var fallback = config.MonitorNum - 1;
+		return fallback >= 0 && fallback < screens.Length ? fallback : 0;
+	}
+
+	internal static (string Name, int Width, int Height, int RefreshRate, string DeviceId) GetMonitorInfo(Screen screen)
+	{
+		DevMode devMode = GetDeviceMode(screen.DeviceName);
+		var width = devMode.dmPelsWidth > 0 ? devMode.dmPelsWidth : screen.Bounds.Width;
+		var height = devMode.dmPelsHeight > 0 ? devMode.dmPelsHeight : screen.Bounds.Height;
+		var refreshRate = devMode.dmDisplayFrequency > 0 ? devMode.dmDisplayFrequency : 60;
+
+		var monitorDevice = new DisplayDevice { cb = Marshal.SizeOf<DisplayDevice>() };
+		if (EnumDisplayDevices(screen.DeviceName, 0, ref monitorDevice, 0))
 		{
-			var monitorDevice = new DisplayDevice { cb = Marshal.SizeOf<DisplayDevice>() };
-
-			if (EnumDisplayDevices(device.DeviceName, 0, ref monitorDevice, 0))
-			{
-				var realName = GetMonitorNameFromRegistry(monitorDevice.DeviceID);
-				var name = !string.IsNullOrEmpty(realName) && !realName.Contains("Generic")
-					? realName
-					: monitorDevice.DeviceString;
-
-				DevMode devMode = GetDeviceMode(device.DeviceName);
-				var width = devMode.dmPelsWidth;
-				var height = devMode.dmPelsHeight;
-				var refreshRate = devMode.dmDisplayFrequency;
-				var isPrimary = (device.StateFlags & 4) != 0;
-
-				return (name, width, height, refreshRate, isPrimary, monitorDevice.DeviceID);
-			}
+			var name = GetMonitorName(monitorDevice.DeviceID) ?? monitorDevice.DeviceString;
+			return (name, width, height, refreshRate, monitorDevice.DeviceID);
 		}
 
-		return ($"Monitor {monitorIndex + 1}", 0, 0, 60, false, "");
+		return (FormatFallbackName(screen.DeviceName), width, height, refreshRate, "");
+	}
+
+	private static string FormatFallbackName(string deviceName)
+	{
+		var index = deviceName.IndexOf("DISPLAY", StringComparison.OrdinalIgnoreCase);
+		return index >= 0 ? $"Monitor {deviceName[(index + "DISPLAY".Length)..]}" : deviceName;
 	}
 
 	[DllImport("user32.dll")]
@@ -45,7 +72,7 @@ internal static class MonitorUtils
 		return EnumDisplaySettings(deviceName, -1, ref devMode) ? devMode : default;
 	}
 
-	private static string? GetMonitorNameFromRegistry(string deviceId)
+	private static string? GetMonitorName(string deviceId)
 	{
 		try
 		{
@@ -58,7 +85,15 @@ internal static class MonitorUtils
 			foreach (var subKeyName in key.GetSubKeyNames())
 			{
 				using RegistryKey? subKey = key.OpenSubKey(subKeyName);
-				var friendlyName = subKey?.GetValue("FriendlyName")?.ToString();
+				if (subKey == null) continue;
+
+				if (subKey.OpenSubKey("Device Parameters")?.GetValue("EDID") is byte[] edid)
+				{
+					var edidName = ParseEdidMonitorName(edid);
+					if (!string.IsNullOrEmpty(edidName)) return edidName;
+				}
+
+				var friendlyName = subKey.GetValue("FriendlyName")?.ToString();
 				if (string.IsNullOrEmpty(friendlyName)) continue;
 
 				var cleanName = CleanMonitorName(friendlyName);
@@ -69,6 +104,24 @@ internal static class MonitorUtils
 		catch (Exception ex)
 		{
 			Program.Logger.Error(ex);
+		}
+
+		return null;
+	}
+
+	private static string? ParseEdidMonitorName(byte[] edid)
+	{
+		if (edid.Length < 128) return null;
+
+		for (var offset = 54; offset <= 108; offset += 18)
+		{
+			if (edid[offset] != 0 || edid[offset + 1] != 0 || edid[offset + 3] != 0xFC) continue;
+
+			Span<byte> nameBytes = edid.AsSpan(offset + 5, 13);
+			var terminator = nameBytes.IndexOf((byte)0x0A);
+			var length = terminator >= 0 ? terminator : nameBytes.Length;
+			var name = Encoding.ASCII.GetString(nameBytes[..length]).Trim();
+			if (!string.IsNullOrEmpty(name)) return name;
 		}
 
 		return null;

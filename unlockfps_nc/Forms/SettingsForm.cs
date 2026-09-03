@@ -131,16 +131,16 @@ public partial class SettingsForm : Form
 	private void SetupMonitorCombo()
 	{
 		ComboMonitor.Items.Clear();
-		Screen[] screens = Screen.AllScreens;
+		Screen[] screens = MonitorUtils.GetOrderedScreens();
 
-		for (var i = 0; i < screens.Length; i++)
+		foreach (Screen screen in screens)
 		{
-			var (name, width, height, refreshRate, isPrimary, _) = MonitorUtils.GetMonitorInfo(i);
-			var displayName = $"{name}{(isPrimary ? " (Primary)" : "")} - {width}x{height}@{refreshRate}Hz";
+			var (name, width, height, refreshRate, _) = MonitorUtils.GetMonitorInfo(screen);
+			var displayName = $"{name}{(screen.Primary ? " (Main)" : "")} - {width}x{height}@{refreshRate}Hz";
 			ComboMonitor.Items.Add(displayName);
 		}
 
-		ComboMonitor.SelectedIndex = Math.Min(_config.MonitorNum - 1, screens.Length - 1);
+		ComboMonitor.SelectedIndex = MonitorUtils.ResolveMonitorIndex(_config);
 		ComboMonitor.SelectedIndexChanged += ComboMonitor_SelectedIndexChanged;
 	}
 

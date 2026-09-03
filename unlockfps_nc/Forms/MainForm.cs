@@ -119,7 +119,7 @@ public partial class MainForm : Form
 
 	private void NotifyAndHide()
 	{
-		NotifyIconMain.Icon = ImageResources.cat;
+		NotifyIconMain.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 		NotifyIconMain.Visible = true;
 		NotifyIconMain.Text = string.Format(Resources.MainForm_NotifyAndHide_GenshinFPSUnlockerCurrentLimit_, _config.FPSTarget);
 		if (_configService.IsFirstRun)

@@ -22,7 +22,7 @@
 		<Authors>Sefinek;34736384</Authors>
 		<NeutralLanguage>en-US</NeutralLanguage>
 
-		<Version>4.1.6.0</Version>
+		<Version>4.1.7.0</Version>
 		<AssemblyVersion>$(Version)</AssemblyVersion>
 		<FileVersion>$(Version)</FileVersion>
 
@@ -50,11 +50,10 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.11" />
-		<PackageReference Include="NLog" Version="6.1.4" />
+		<PackageReference Include="NLog" Version="6.2.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Content Include="Resources\icon.ico" />
 		<EmbeddedResource Include="Resources\UnlockerStub.dll" />
 	</ItemGroup>
 
