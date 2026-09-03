@@ -33,12 +33,12 @@ public partial class SettingsForm : Form
 
 	private void SetupConfigInfoLabels()
 	{
-		LabelConfigVersion.Text = string.Format(Resources.SettingsForm_ConfigVersion, _config.ConfigVersion);
+		LabelConfigVersion.Text = string.Format(LabelConfigVersion.Text, _config.ConfigVersion);
 
 		var lastUpdated = _config.LastModified == default
 			? Resources.SettingsForm_LastUpdatedNever
 			: _config.LastModified.ToString("g");
-		LabelLastUpdated.Text = string.Format(Resources.SettingsForm_LastUpdated, lastUpdated);
+		LabelLastUpdated.Text = string.Format(LabelLastUpdated.Text, lastUpdated);
 	}
 
 	private void SetupDataBindings()

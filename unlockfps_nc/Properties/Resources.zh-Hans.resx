@@ -123,12 +123,6 @@
   <data name="Error" xml:space="preserve">
     <value>错误</value>
   </data>
-  <data name="SettingsForm_ConfigVersion" xml:space="preserve">
-    <value>配置版本：{0}</value>
-  </data>
-  <data name="SettingsForm_LastUpdated" xml:space="preserve">
-    <value>最后更新：{0}</value>
-  </data>
   <data name="SettingsForm_LastUpdatedNever" xml:space="preserve">
     <value>从未</value>
   </data>

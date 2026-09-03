@@ -123,12 +123,6 @@
   <data name="Error" xml:space="preserve">
     <value>오류</value>
   </data>
-  <data name="SettingsForm_ConfigVersion" xml:space="preserve">
-    <value>설정 버전: {0}</value>
-  </data>
-  <data name="SettingsForm_LastUpdated" xml:space="preserve">
-    <value>마지막 업데이트: {0}</value>
-  </data>
   <data name="SettingsForm_LastUpdatedNever" xml:space="preserve">
     <value>없음</value>
   </data>

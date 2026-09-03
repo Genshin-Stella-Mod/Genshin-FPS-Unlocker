@@ -123,12 +123,6 @@
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
-  <data name="SettingsForm_ConfigVersion" xml:space="preserve">
-    <value>Versión de configuración: {0}</value>
-  </data>
-  <data name="SettingsForm_LastUpdated" xml:space="preserve">
-    <value>Última actualización: {0}</value>
-  </data>
   <data name="SettingsForm_LastUpdatedNever" xml:space="preserve">
     <value>nunca</value>
   </data>

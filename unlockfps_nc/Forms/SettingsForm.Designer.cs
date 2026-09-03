@@ -248,12 +248,14 @@ namespace unlockfps_nc.Forms
 			// LabelConfigVersion
 			// 
 			resources.ApplyResources(LabelConfigVersion, "LabelConfigVersion");
+			LabelConfigVersion.AutoEllipsis = true;
 			LabelConfigVersion.ForeColor = Color.Gray;
 			LabelConfigVersion.Name = "LabelConfigVersion";
 			// 
 			// LabelLastUpdated
 			// 
 			resources.ApplyResources(LabelLastUpdated, "LabelLastUpdated");
+			LabelLastUpdated.AutoEllipsis = true;
 			LabelLastUpdated.ForeColor = Color.Gray;
 			LabelLastUpdated.Name = "LabelLastUpdated";
 			// 

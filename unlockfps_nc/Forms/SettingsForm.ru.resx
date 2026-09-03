@@ -757,7 +757,7 @@
     <value>8</value>
   </data>
   <data name="LabelConfigVersion.Text" xml:space="preserve">
-    <value>Версия конфигурации</value>
+    <value>Версия конфигурации: {0}</value>
   </data>
   <data name="LabelConfigVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -778,7 +778,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="LabelLastUpdated.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 261</value>
+    <value>123, 261</value>
   </data>
   <data name="LabelLastUpdated.Size" type="System.Drawing.Size, System.Drawing">
     <value>163, 15</value>
@@ -787,7 +787,7 @@
     <value>9</value>
   </data>
   <data name="LabelLastUpdated.Text" xml:space="preserve">
-    <value>Последнее обновление</value>
+    <value>Последнее обновление: {0}</value>
   </data>
   <data name="LabelLastUpdated.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>

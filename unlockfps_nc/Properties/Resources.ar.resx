@@ -123,12 +123,6 @@
   <data name="Error" xml:space="preserve">
     <value>خطأ</value>
   </data>
-  <data name="SettingsForm_ConfigVersion" xml:space="preserve">
-    <value>إصدار الإعدادات: {0}</value>
-  </data>
-  <data name="SettingsForm_LastUpdated" xml:space="preserve">
-    <value>آخر تحديث: {0}</value>
-  </data>
   <data name="SettingsForm_LastUpdatedNever" xml:space="preserve">
     <value>أبداً</value>
   </data>

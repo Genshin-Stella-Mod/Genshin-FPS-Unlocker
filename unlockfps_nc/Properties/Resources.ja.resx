@@ -123,12 +123,6 @@
   <data name="Error" xml:space="preserve">
     <value>エラー</value>
   </data>
-  <data name="SettingsForm_ConfigVersion" xml:space="preserve">
-    <value>設定バージョン: {0}</value>
-  </data>
-  <data name="SettingsForm_LastUpdated" xml:space="preserve">
-    <value>最終更新日: {0}</value>
-  </data>
   <data name="SettingsForm_LastUpdatedNever" xml:space="preserve">
     <value>なし</value>
   </data>

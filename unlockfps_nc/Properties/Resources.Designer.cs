@@ -70,24 +70,6 @@ namespace unlockfps_nc.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Config version: {0}.
-        /// </summary>
-        internal static string SettingsForm_ConfigVersion {
-            get {
-                return ResourceManager.GetString("SettingsForm_ConfigVersion", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Last updated: {0}.
-        /// </summary>
-        internal static string SettingsForm_LastUpdated {
-            get {
-                return ResourceManager.GetString("SettingsForm_LastUpdated", resourceCulture);
-            }
-        }
-
-        /// <summary>
         ///   Looks up a localized string similar to never.
         /// </summary>
         internal static string SettingsForm_LastUpdatedNever {

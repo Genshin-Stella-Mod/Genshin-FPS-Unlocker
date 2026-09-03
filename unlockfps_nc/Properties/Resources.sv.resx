@@ -123,12 +123,6 @@
   <data name="Error" xml:space="preserve">
     <value>Fel</value>
   </data>
-  <data name="SettingsForm_ConfigVersion" xml:space="preserve">
-    <value>Konfigurationsversion: {0}</value>
-  </data>
-  <data name="SettingsForm_LastUpdated" xml:space="preserve">
-    <value>Senast uppdaterad: {0}</value>
-  </data>
   <data name="SettingsForm_LastUpdatedNever" xml:space="preserve">
     <value>aldrig</value>
   </data>
