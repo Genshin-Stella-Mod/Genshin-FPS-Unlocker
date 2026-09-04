@@ -26,4 +26,7 @@ internal class Config
 	public string? MonitorId { get; set; }
 	public int Priority { get; set; } = 3;
 	public string AdditionalCommandLine { get; set; } = "";
+
+	public DateTime LastUpdateCheckUtc { get; set; }
+	public string? LastNotifiedUpdateVersion { get; set; }
 }

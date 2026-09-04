@@ -14,16 +14,19 @@ public partial class MainForm : Form
 	private readonly ConfigService _configService;
 
 	private readonly ProcessService _processService;
+	private readonly UpdateCheckService _updateCheckService;
 	private Icon? _appIcon;
 	private Point _windowLocation;
 	private Size _windowSize;
+	private string? _updateReleaseUrl;
 
-	public MainForm(ConfigService configService, ProcessService processService)
+	public MainForm(ConfigService configService, ProcessService processService, UpdateCheckService updateCheckService)
 	{
 		InitializeComponent();
 		_configService = configService;
 		_config = _configService.Config;
 		_processService = processService;
+		_updateCheckService = updateCheckService;
 		SetupBindings();
 		RefreshFPSControls();
 	}
@@ -59,6 +62,9 @@ public partial class MainForm : Form
 
 		_appIcon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 		if (_appIcon != null) Icon = _appIcon;
+
+		NotifyIconMain.BalloonTipClicked += NotifyIconMain_BalloonTipClicked;
+		_ = CheckForUpdatesAsync();
 
 		if (_config.AutoStart)
 		{
@@ -122,11 +128,63 @@ public partial class MainForm : Form
 
 	private void NotifyMonitorNotConnected()
 	{
+		_updateReleaseUrl = null;
 		ShowTrayIcon();
 		NotifyIconMain.BalloonTipIcon = ToolTipIcon.Warning;
 		NotifyIconMain.BalloonTipTitle = Resources.MainForm_MonitorNotConnected_Title;
 		NotifyIconMain.BalloonTipText = Resources.MainForm_MonitorNotConnected_Text;
 		NotifyIconMain.ShowBalloonTip(5000);
+	}
+
+	private async Task CheckForUpdatesAsync()
+	{
+		if (IsStellaModInstalled())
+		{
+			Program.Logger.Info("Genshin Stella Mod detected, skipping standalone update check");
+			return;
+		}
+
+		if (DateTime.UtcNow - _config.LastUpdateCheckUtc < TimeSpan.FromHours(24))
+		{
+			Program.Logger.Info($"Skipping update check, last checked at {_config.LastUpdateCheckUtc:u}");
+			return;
+		}
+
+		Program.Logger.Info("Checking for a new release on GitHub...");
+		UpdateInfo? update = await _updateCheckService.CheckForUpdateAsync();
+		_config.LastUpdateCheckUtc = DateTime.UtcNow;
+
+		if (update == null)
+		{
+			Program.Logger.Info("No new release found, already up to date");
+		}
+		else if (update.Version.ToString() != _config.LastNotifiedUpdateVersion)
+		{
+			Program.Logger.Info($"New release available: v{update.Version}");
+			_config.LastNotifiedUpdateVersion = update.Version.ToString();
+			NotifyUpdateAvailable(update);
+		}
+		else
+		{
+			Program.Logger.Info($"New release v{update.Version} was already reported previously, skipping notification");
+		}
+
+		_configService.Save();
+	}
+
+	private void NotifyUpdateAvailable(UpdateInfo update)
+	{
+		_updateReleaseUrl = update.Url;
+		ShowTrayIcon();
+		NotifyIconMain.BalloonTipIcon = ToolTipIcon.Info;
+		NotifyIconMain.BalloonTipTitle = Resources.MainForm_UpdateAvailable_Title;
+		NotifyIconMain.BalloonTipText = string.Format(Resources.MainForm_UpdateAvailable_Text, update.Version);
+		NotifyIconMain.ShowBalloonTip(8000);
+	}
+
+	private void NotifyIconMain_BalloonTipClicked(object? sender, EventArgs e)
+	{
+		if (!string.IsNullOrEmpty(_updateReleaseUrl)) AboutForm.OpenLink(_updateReleaseUrl);
 	}
 
 	private void ShowTrayIcon()
@@ -153,6 +211,7 @@ public partial class MainForm : Form
 
 	private void NotifyAndHide()
 	{
+		_updateReleaseUrl = null;
 		ShowTrayIcon();
 		NotifyIconMain.Text = string.Format(Resources.MainForm_NotifyAndHide_GenshinFPSUnlockerCurrentLimit_, _config.FPSTarget);
 		if (_configService.IsFirstRun)
@@ -216,6 +275,13 @@ public partial class MainForm : Form
 		}
 
 		Process.Start(new ProcessStartInfo { FileName = exePath, WorkingDirectory = stellaPath });
+	}
+
+	private static bool IsStellaModInstalled()
+	{
+		using RegistryKey? key = Registry.CurrentUser.OpenSubKey(Program.REGISTRY_PATH);
+		var stellaPath = key?.GetValue("StellaPath")?.ToString();
+		return !string.IsNullOrEmpty(stellaPath) && File.Exists(Path.Combine(stellaPath, "Stella Mod Launcher.exe"));
 	}
 
 	private void SysInf_Click(object sender, EventArgs e)

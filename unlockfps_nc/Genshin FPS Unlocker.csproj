@@ -23,7 +23,7 @@
 		<Authors>Sefinek;34736384</Authors>
 		<NeutralLanguage>en-US</NeutralLanguage>
 
-		<Version>4.2.0.0</Version>
+		<Version>4.3.0.0</Version>
 		<AssemblyVersion>$(Version)</AssemblyVersion>
 		<FileVersion>$(Version)</FileVersion>
 

@@ -134,6 +134,7 @@ internal static class Program
 		services.AddSingleton<ConfigService>();
 		services.AddSingleton<ProcessService>();
 		services.AddSingleton<IpcService>();
+		services.AddSingleton<UpdateCheckService>();
 
 		ServiceProvider = services.BuildServiceProvider();
 

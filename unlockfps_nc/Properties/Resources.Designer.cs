@@ -163,6 +163,24 @@ namespace unlockfps_nc.Properties {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to New version detected.
+        /// </summary>
+        internal static string MainForm_UpdateAvailable_Title {
+            get {
+                return ResourceManager.GetString("MainForm_UpdateAvailable_Title", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to A new version, v{0}, is available. Click here to view the release on GitHub..
+        /// </summary>
+        internal static string MainForm_UpdateAvailable_Text {
+            get {
+                return ResourceManager.GetString("MainForm_UpdateAvailable_Text", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to The registry key &quot;StellaPath&quot; was not found. Are you sure Genshin Stella Mod is installed?.
         /// </summary>
         internal static string MainForm_OpenStella_Click_TheRegistryKeyStellaPathWasNotFoundAreYouSureGenshinStellaModIsInstalled {

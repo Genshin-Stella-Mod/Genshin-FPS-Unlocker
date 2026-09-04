@@ -151,6 +151,12 @@
   <data name="MainForm_MonitorNotConnected_Text" xml:space="preserve">
     <value>The monitor selected in settings is not connected. The game will start on a different display instead.</value>
   </data>
+  <data name="MainForm_UpdateAvailable_Title" xml:space="preserve">
+    <value>偵測到新版本</value>
+  </data>
+  <data name="MainForm_UpdateAvailable_Text" xml:space="preserve">
+    <value>新版本 v{0} 現已推出。點擊此處在 GitHub 上查看發佈內容。</value>
+  </data>
   <data name="SetupForm_BtnBrowse_Click_ThatSNotTheRightPlace" xml:space="preserve">
     <value>這不是正確的位置。</value>
   </data>
