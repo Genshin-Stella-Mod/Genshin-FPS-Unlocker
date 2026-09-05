@@ -10,7 +10,6 @@
     "IsExclusiveFullscreen": true,
     "StartMinimized": false,
     "UsePowerSave": false,
-    "SuspendLoad": false,
     "UseMobileUI": false,
     "UseHDR": false,
     "FPSTarget": 60,

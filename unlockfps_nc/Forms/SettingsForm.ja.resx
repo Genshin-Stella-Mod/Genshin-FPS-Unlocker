@@ -727,7 +727,7 @@
   <data name="label1.Text" xml:space="preserve">
     <value>特定の設定にカーソルを合わせると詳細が表示されます。
 
-このアプリケーションは18言語に対応しています。言語はStella Modアプリの設定から変更できます。</value>
+このアプリケーションは多言語に対応しています。言語はStella Modアプリの設定から変更できます。</value>
   </data>
   <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>

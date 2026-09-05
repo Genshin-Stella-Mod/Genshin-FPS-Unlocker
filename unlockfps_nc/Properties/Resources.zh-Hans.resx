@@ -129,6 +129,12 @@
   <data name="SettingsForm_MonitorUndefined" xml:space="preserve">
     <value>-- 未选择 --</value>
   </data>
+  <data name="SettingsForm_MonitorOverridden_Title" xml:space="preserve">
+    <value>显示器选择已被覆盖</value>
+  </data>
+  <data name="SettingsForm_MonitorOverridden_Text" xml:space="preserve">
+    <value>在附加命令行中检测到 "-monitor" 参数，因此 Monitor 下拉列表已被禁用。</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="MainForm_ViewCfg_TheUnlockerConfigJsonFileWasNotFound" xml:space="preserve">
     <value>未找到 unlocker.config.json 文件。</value>

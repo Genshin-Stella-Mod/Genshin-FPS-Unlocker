@@ -16,28 +16,14 @@ internal static class MonitorUtils
 		return EnumDisplayDevices(screen.DeviceName, 0, ref device, 0) ? device.DeviceID : "";
 	}
 
-	internal static int GetDisplayNumber(Screen screen)
-	{
-		var index = screen.DeviceName.IndexOf("DISPLAY", StringComparison.OrdinalIgnoreCase);
-		if (index < 0) return 1;
-
-		var suffix = screen.DeviceName[(index + "DISPLAY".Length)..];
-		return int.TryParse(suffix, out var number) ? number : 1;
-	}
-
 	internal static Screen[] GetOrderedScreens()
 	{
-		return Screen.AllScreens.OrderByDescending(s => s.Primary).ToArray();
+		return [..Screen.AllScreens.OrderByDescending(s => s.Primary)];
 	}
 
 	internal static int ResolveMonitorIndex(Config config)
 	{
 		return ResolveMonitorIndex(config, GetOrderedScreens());
-	}
-
-	internal static bool IsSavedMonitorConnected(Config config)
-	{
-		return IsSavedMonitorConnected(config, GetOrderedScreens());
 	}
 
 	internal static bool IsSavedMonitorConnected(Config config, Screen[] screens)
@@ -64,13 +50,10 @@ internal static class MonitorUtils
 		var refreshRate = devMode.dmDisplayFrequency > 0 ? devMode.dmDisplayFrequency : 60;
 
 		var monitorDevice = new DisplayDevice { cb = Marshal.SizeOf<DisplayDevice>() };
-		if (EnumDisplayDevices(screen.DeviceName, 0, ref monitorDevice, 0))
-		{
-			var name = GetMonitorName(monitorDevice.DeviceID) ?? monitorDevice.DeviceString;
-			return (name, width, height, refreshRate, monitorDevice.DeviceID);
-		}
+		if (!EnumDisplayDevices(screen.DeviceName, 0, ref monitorDevice, 0)) return (FormatFallbackName(screen.DeviceName), width, height, refreshRate, "");
 
-		return (FormatFallbackName(screen.DeviceName), width, height, refreshRate, "");
+		var name = GetMonitorName(monitorDevice.DeviceID) ?? monitorDevice.DeviceString;
+		return (name, width, height, refreshRate, monitorDevice.DeviceID);
 	}
 
 	private static string FormatFallbackName(string deviceName)

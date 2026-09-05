@@ -727,7 +727,7 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Daha fazla bilgi almak için fare imlecini belirli bir ayarın üzerine getirin.
 
-Bu uygulama 18 dilde mevcuttur. Dili Stella Mod uygulamasının Ayarlar bölümünden değiştirebilirsiniz.</value>
+Bu uygulama birçok dilde mevcuttur. Dili Stella Mod uygulamasının Ayarlar bölümünden değiştirebilirsiniz.</value>
   </data>
   <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>

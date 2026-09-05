@@ -96,14 +96,14 @@ public class ConfigService
 	{
 		if (Config.ConfigVersion >= CurrentConfigVersion) return;
 
-		Screen[] screens = Screen.AllScreens;
+		Screen[] screens = MonitorUtils.GetOrderedScreens();
 		var index = Config.MonitorNum - 1;
 		if (index >= 0 && index < screens.Length)
 		{
 			var (_, width, height, _, deviceId) = MonitorUtils.GetMonitorInfo(screens[index]);
 			Config.MonitorId = deviceId;
 
-			if (Config.CustomResX == 1920 && Config.CustomResY == 1080)
+			if (Config is { CustomResX: 1920, CustomResY: 1080 })
 			{
 				if (width > 0) Config.CustomResX = width;
 				if (height > 0) Config.CustomResY = height;

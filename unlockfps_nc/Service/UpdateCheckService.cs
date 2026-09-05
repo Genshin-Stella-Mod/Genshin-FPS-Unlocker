@@ -1,4 +1,3 @@
-using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text.Json;
@@ -20,6 +19,11 @@ public sealed class UpdateCheckService : IDisposable
 		_httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github+json"));
 	}
 
+	public void Dispose()
+	{
+		_httpClient.Dispose();
+	}
+
 	internal async Task<UpdateInfo?> CheckForUpdateAsync(CancellationToken cancellationToken = default)
 	{
 		try
@@ -32,15 +36,13 @@ public sealed class UpdateCheckService : IDisposable
 			}
 
 			await using Stream stream = await response.Content.ReadAsStreamAsync(cancellationToken);
-			GitHubRelease? release = await JsonSerializer.DeserializeAsync<GitHubRelease>(stream, cancellationToken: cancellationToken);
+			var release = await JsonSerializer.DeserializeAsync<GitHubRelease>(stream, cancellationToken: cancellationToken);
 			if (string.IsNullOrEmpty(release?.TagName)) return null;
 
 			if (!Version.TryParse(release.TagName.TrimStart('v', 'V'), out Version? latestVersion)) return null;
 
 			Version currentVersion = Assembly.GetExecutingAssembly().GetName().Version ?? new Version(0, 0, 0, 0);
-			if (latestVersion <= currentVersion) return null;
-
-			return new UpdateInfo(latestVersion, release.HtmlUrl ?? "https://github.com/Genshin-Stella-Mod/Genshin-FPS-Unlocker/releases/latest");
+			return latestVersion <= currentVersion ? null : new UpdateInfo(latestVersion, release.HtmlUrl ?? "https://github.com/Genshin-Stella-Mod/Genshin-FPS-Unlocker/releases/latest");
 		}
 		catch (Exception ex)
 		{
@@ -49,14 +51,10 @@ public sealed class UpdateCheckService : IDisposable
 		}
 	}
 
-	public void Dispose() => _httpClient.Dispose();
-
 	private sealed class GitHubRelease
 	{
-		[JsonPropertyName("tag_name")]
-		public string? TagName { get; set; }
+		[JsonPropertyName("tag_name")] public string? TagName { get; set; }
 
-		[JsonPropertyName("html_url")]
-		public string? HtmlUrl { get; set; }
+		[JsonPropertyName("html_url")] public string? HtmlUrl { get; set; }
 	}
 }

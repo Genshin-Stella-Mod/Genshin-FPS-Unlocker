@@ -129,6 +129,12 @@
   <data name="SettingsForm_MonitorUndefined" xml:space="preserve">
     <value>-- 선택 안 함 --</value>
   </data>
+  <data name="SettingsForm_MonitorOverridden_Title" xml:space="preserve">
+    <value>모니터 선택이 재정의됨</value>
+  </data>
+  <data name="SettingsForm_MonitorOverridden_Text" xml:space="preserve">
+    <value>추가 명령줄에서 "-monitor" 인수가 발견되어 모니터 드롭다운이 비활성화되었습니다.</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="MainForm_ViewCfg_TheUnlockerConfigJsonFileWasNotFound" xml:space="preserve">
     <value>unlocker.config.json 파일을 찾을 수 없습니다.</value>

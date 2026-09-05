@@ -11,6 +11,8 @@ public partial class SettingsForm : Form
 	private readonly ConfigService _configService;
 	private readonly string _configVersionTemplate;
 	private readonly string _lastUpdatedTemplate;
+	private bool _monitorOverrideActive;
+	private NotifyIcon? _monitorOverrideNotifyIcon;
 
 	public SettingsForm(ConfigService configService)
 	{
@@ -21,10 +23,6 @@ public partial class SettingsForm : Form
 		_lastUpdatedTemplate = LabelLastUpdated.Text;
 
 		SetupBindings();
-
-#if RELEASEMIN
-		TabCtrlSettings.Controls.Remove(TabDlls);
-#endif
 	}
 
 	private void SetupBindings()
@@ -33,6 +31,7 @@ public partial class SettingsForm : Form
 		SetupManualBindings();
 		SetupMonitorCombo();
 		SetupConfigInfoLabels();
+		UpdateMonitorOverrideState();
 	}
 
 	private void SetupConfigInfoLabels()
@@ -107,8 +106,30 @@ public partial class SettingsForm : Form
 		TextBoxAdditionalCmdLine.TextChanged += (_, _) =>
 		{
 			_config.AdditionalCommandLine = TextBoxAdditionalCmdLine.Text;
+			UpdateMonitorOverrideState();
 			RefreshCommandPreview();
 		};
+	}
+
+	private void UpdateMonitorOverrideState()
+	{
+		var isOverridden = ProcessService.HasManualMonitorOverride(_config);
+		ComboMonitor.Enabled = !isOverridden;
+		BtnRefreshMonitor.Enabled = !isOverridden;
+
+		if (isOverridden == _monitorOverrideActive) return;
+		_monitorOverrideActive = isOverridden;
+		if (isOverridden) ShowMonitorOverrideNotification();
+	}
+
+	private void ShowMonitorOverrideNotification()
+	{
+		_monitorOverrideNotifyIcon ??= new NotifyIcon { Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath) };
+		_monitorOverrideNotifyIcon.Visible = true;
+		_monitorOverrideNotifyIcon.BalloonTipIcon = ToolTipIcon.None;
+		_monitorOverrideNotifyIcon.BalloonTipTitle = Resources.SettingsForm_MonitorOverridden_Title;
+		_monitorOverrideNotifyIcon.BalloonTipText = Resources.SettingsForm_MonitorOverridden_Text;
+		_monitorOverrideNotifyIcon.ShowBalloonTip(5000);
 	}
 
 	private void CBCustomRes_CheckedChanged(object? sender, EventArgs e)
@@ -121,7 +142,7 @@ public partial class SettingsForm : Form
 	private void CBPopup_CheckedChanged(object? sender, EventArgs e)
 	{
 		_config.PopupWindow = CBPopup.Checked;
-		if (_config.PopupWindow && _config.Fullscreen)
+		if (_config is { PopupWindow: true, Fullscreen: true })
 		{
 			_config.Fullscreen = false;
 			CBFullscreen.Checked = false;
@@ -134,7 +155,7 @@ public partial class SettingsForm : Form
 	private void CBFullscreen_CheckedChanged(object? sender, EventArgs e)
 	{
 		_config.Fullscreen = CBFullscreen.Checked;
-		if (_config.Fullscreen && _config.PopupWindow)
+		if (_config is { Fullscreen: true, PopupWindow: true })
 		{
 			_config.PopupWindow = false;
 			CBPopup.Checked = false;
@@ -194,5 +215,6 @@ public partial class SettingsForm : Form
 	private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
 	{
 		_configService.Save();
+		_monitorOverrideNotifyIcon?.Dispose();
 	}
 }

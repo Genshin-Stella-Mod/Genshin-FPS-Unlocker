@@ -129,6 +129,12 @@
   <data name="SettingsForm_MonitorUndefined" xml:space="preserve">
     <value>-- ไม่ได้เลือก --</value>
   </data>
+  <data name="SettingsForm_MonitorOverridden_Title" xml:space="preserve">
+    <value>การเลือกจอภาพถูกแทนที่</value>
+  </data>
+  <data name="SettingsForm_MonitorOverridden_Text" xml:space="preserve">
+    <value>พบอาร์กิวเมนต์ "-monitor" ในบรรทัดคำสั่งเพิ่มเติม ดังนั้นดรอปดาวน์จอภาพจึงถูกปิดใช้งาน</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="MainForm_ViewCfg_TheUnlockerConfigJsonFileWasNotFound" xml:space="preserve">
     <value>ไม่พบไฟล์ unlocker.config.json</value>

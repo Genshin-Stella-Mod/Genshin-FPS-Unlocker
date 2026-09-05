@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using Microsoft.Win32;
 using unlockfps_nc.Model;
 using unlockfps_nc.Properties;
@@ -8,7 +9,7 @@ using unlockfps_nc.Utility;
 
 namespace unlockfps_nc.Service;
 
-public class ProcessService
+public partial class ProcessService
 {
 	private static readonly uint[] PriorityClassMap =
 	[
@@ -76,26 +77,19 @@ public class ProcessService
 		}
 
 		STARTUPINFO si = new();
-		var creationFlag = _config.SuspendLoad ? 4u : 0u;
 		var gameFolder = Path.GetDirectoryName(_config.GamePath);
 
 		var commandLine = BuildCommandLine();
 		Program.Logger.Info($"Launching game with command line: {commandLine}");
 
 		var commandLineBuffer = new StringBuilder(commandLine);
-		if (!Native.CreateProcess(_config.GamePath, commandLineBuffer, IntPtr.Zero, IntPtr.Zero, false, creationFlag, IntPtr.Zero, gameFolder, ref si, out PROCESS_INFORMATION pi))
+		if (!Native.CreateProcess(_config.GamePath, commandLineBuffer, IntPtr.Zero, IntPtr.Zero, false, 0u, IntPtr.Zero, gameFolder, ref si, out PROCESS_INFORMATION pi))
 		{
 			var error = Marshal.GetLastWin32Error();
 			var errorMessage = Marshal.GetLastPInvokeErrorMessage();
 			Program.Logger.Error($"CreateProcess failed with error code {error}: {errorMessage}");
 			MessageBox.Show(string.Format(Resources.ProcessService_StartGame_CreateProcessFailed, error, errorMessage), Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			return false;
-		}
-
-		if (_config.SuspendLoad)
-		{
-			Program.Logger.Info("Resuming suspended game thread");
-			Native.ResumeThread(pi.hThread);
 		}
 
 		_gameHandle = pi.hProcess;
@@ -184,11 +178,19 @@ public class ProcessService
 		return BuildCommandLine(_config);
 	}
 
+	[GeneratedRegex(@"(?<![\w-])-monitor\b", RegexOptions.IgnoreCase)]
+	private static partial Regex MonitorArgRegex();
+
+	internal static bool HasManualMonitorOverride(Config config)
+	{
+		return !string.IsNullOrWhiteSpace(config.AdditionalCommandLine) && MonitorArgRegex().IsMatch(config.AdditionalCommandLine);
+	}
+
 	internal static string BuildCommandLine(Config config)
 	{
 		var commandLine = $"\"{config.GamePath}\" ";
 
-		if (!string.IsNullOrEmpty(config.MonitorId))
+		if (!HasManualMonitorOverride(config) && !string.IsNullOrEmpty(config.MonitorId))
 			commandLine += $"-monitor {ResolveMonitorNum(config)} ";
 
 		if (config.UseCustomRes)
@@ -210,6 +212,6 @@ public class ProcessService
 	{
 		Screen[] screens = MonitorUtils.GetOrderedScreens();
 		var index = MonitorUtils.ResolveMonitorIndex(config, screens);
-		return MonitorUtils.GetDisplayNumber(screens[index]);
+		return index + 1;
 	}
 }

@@ -129,6 +129,12 @@
   <data name="SettingsForm_MonitorUndefined" xml:space="preserve">
     <value>-- Tidak dipilih --</value>
   </data>
+  <data name="SettingsForm_MonitorOverridden_Title" xml:space="preserve">
+    <value>Pemilihan monitor ditimpa</value>
+  </data>
+  <data name="SettingsForm_MonitorOverridden_Text" xml:space="preserve">
+    <value>Argumen "-monitor" ditemukan di Baris perintah tambahan, sehingga dropdown Monitor dinonaktifkan.</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="MainForm_ViewCfg_TheUnlockerConfigJsonFileWasNotFound" xml:space="preserve">
     <value>File unlocker.config.json tidak ditemukan.</value>

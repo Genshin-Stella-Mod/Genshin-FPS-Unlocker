@@ -88,6 +88,24 @@ namespace unlockfps_nc.Properties {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Monitor selection overridden.
+        /// </summary>
+        internal static string SettingsForm_MonitorOverridden_Title {
+            get {
+                return ResourceManager.GetString("SettingsForm_MonitorOverridden_Title", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to A &quot;-monitor&quot; argument was found in Additional Command Line, so the Monitor dropdown is disabled..
+        /// </summary>
+        internal static string SettingsForm_MonitorOverridden_Text {
+            get {
+                return ResourceManager.GetString("SettingsForm_MonitorOverridden_Text", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Failed to create shared memory..
         /// </summary>
         internal static string IpcService_Start_FailedToCreateSharedMemory {

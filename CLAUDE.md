@@ -40,7 +40,7 @@ This is the part that isn't obvious from any single file - it spans `unlockfps_n
 
 ## Localization
 
-- 18 languages via per-form/per-language `.resx` files (e.g. `Forms/SettingsForm.pl.resx`). Managed externally through the [Stella-Mod-Translations](https://github.com/sefinek/Stella-Mod-Translations) repo, edited locally with the ResXManager VS extension (`ResXManager.config.xml`).
+- 18 languages via per-form/per-language `.resx` files (e.g. `Forms/SettingsForm.pl.resx`). Managed externally through the [translations-i18n](https://github.com/Genshin-Stella-Mod/translations-i18n) repo, edited locally with the ResXManager VS extension (`ResXManager.config.xml`).
 - Startup language resolution lives in `Program.cs` (`SupportedLangs` + `ResolveFallbackLanguage`), persisted to `%AppData%/Genshin Stella Mod/settings.ini` via the hand-rolled `Service/IniFile.cs` (P/Invoke `Get/WritePrivateProfileString`, not `System.Configuration`).
 - The sibling `Genshin-Impact-ReShade` repo has its own, near-identical language-resolution logic centralized in `Stella.Utils/LanguageResolver.cs` (shared across its Launcher/Configuration/Welcome/Prepare apps). The two implementations are **not** shared code - a bug fixed in one (e.g. Traditional-vs-Simplified Chinese fallback) needs to be checked/ported in the other by hand.
 

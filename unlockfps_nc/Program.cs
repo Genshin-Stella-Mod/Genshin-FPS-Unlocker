@@ -155,15 +155,12 @@ internal static class Program
 	private static string? ResolveFallbackLanguage(CultureInfo systemCulture)
 	{
 		var twoLetter = systemCulture.TwoLetterISOLanguageName;
-		if (twoLetter.Equals("zh", StringComparison.OrdinalIgnoreCase))
-		{
-			var name = systemCulture.Name;
-			var isTraditional = name.Contains("Hant", StringComparison.OrdinalIgnoreCase)
-			                    || TraditionalChineseRegions.Any(region => name.EndsWith($"-{region}", StringComparison.OrdinalIgnoreCase));
-			return isTraditional ? "zh-Hant" : "zh-Hans";
-		}
+		if (!twoLetter.Equals("zh", StringComparison.OrdinalIgnoreCase)) return Array.Find(SupportedLangs, lang => lang.StartsWith(twoLetter, StringComparison.OrdinalIgnoreCase));
 
-		return Array.Find(SupportedLangs, lang => lang.StartsWith(twoLetter, StringComparison.OrdinalIgnoreCase));
+		var name = systemCulture.Name;
+		var isTraditional = name.Contains("Hant", StringComparison.OrdinalIgnoreCase)
+		                    || TraditionalChineseRegions.Any(region => name.EndsWith($"-{region}", StringComparison.OrdinalIgnoreCase));
+		return isTraditional ? "zh-Hant" : "zh-Hans";
 	}
 
 	private static bool IsAdministrator()

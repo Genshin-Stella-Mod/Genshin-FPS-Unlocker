@@ -15,7 +15,6 @@ internal class Config
 	public bool IsExclusiveFullscreen { get; set; } = true;
 	public bool StartMinimized { get; set; }
 	public bool UsePowerSave { get; set; }
-	public bool SuspendLoad { get; set; }
 	public bool UseMobileUI { get; set; }
 	public bool UseHDR { get; set; }
 

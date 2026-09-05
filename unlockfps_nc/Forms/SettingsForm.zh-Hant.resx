@@ -727,7 +727,7 @@
   <data name="label1.Text" xml:space="preserve">
     <value>將滑鼠游標移到特定設定上以瞭解更多資訊。
 
-此應用程式支援 18 種語言。您可以在 Stella Mod 應用程式的設定中變更語言。</value>
+此應用程式支援多種語言。您可以在 Stella Mod 應用程式的設定中變更語言。</value>
   </data>
   <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>

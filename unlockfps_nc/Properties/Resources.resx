@@ -129,6 +129,12 @@
   <data name="SettingsForm_MonitorUndefined" xml:space="preserve">
     <value>-- Not selected --</value>
   </data>
+  <data name="SettingsForm_MonitorOverridden_Title" xml:space="preserve">
+    <value>Monitor selection overridden</value>
+  </data>
+  <data name="SettingsForm_MonitorOverridden_Text" xml:space="preserve">
+    <value>A "-monitor" argument was found in Additional command line, so the Monitor dropdown is disabled.</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="MainForm_ViewCfg_TheUnlockerConfigJsonFileWasNotFound" xml:space="preserve">
     <value>The unlocker.config.json file was not found.</value>

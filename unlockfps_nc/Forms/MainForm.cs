@@ -16,9 +16,9 @@ public partial class MainForm : Form
 	private readonly ProcessService _processService;
 	private readonly UpdateCheckService _updateCheckService;
 	private Icon? _appIcon;
+	private string? _updateReleaseUrl;
 	private Point _windowLocation;
 	private Size _windowSize;
-	private string? _updateReleaseUrl;
 
 	public MainForm(ConfigService configService, ProcessService processService, UpdateCheckService updateCheckService)
 	{
@@ -176,7 +176,7 @@ public partial class MainForm : Form
 	{
 		_updateReleaseUrl = update.Url;
 		ShowTrayIcon();
-		NotifyIconMain.BalloonTipIcon = ToolTipIcon.Info;
+		NotifyIconMain.BalloonTipIcon = ToolTipIcon.None;
 		NotifyIconMain.BalloonTipTitle = Resources.MainForm_UpdateAvailable_Title;
 		NotifyIconMain.BalloonTipText = string.Format(Resources.MainForm_UpdateAvailable_Text, update.Version);
 		NotifyIconMain.ShowBalloonTip(8000);
@@ -322,7 +322,7 @@ public partial class MainForm : Form
 
 	private void GIReShade_Click(object sender, EventArgs e)
 	{
-		AboutForm.OpenLink("https://github.com/sefinek/Genshin-Impact-ReShade?referrer=GIReShade_Click");
+		AboutForm.OpenLink("https://github.com/Genshin-Stella-Mod/Genshin-Impact-ReShade?referrer=GIReShade_Click");
 	}
 
 	private void FpsUnlocker_Click(object sender, EventArgs e)

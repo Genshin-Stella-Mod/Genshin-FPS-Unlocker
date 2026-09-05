@@ -727,7 +727,7 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Najedź kursorem na konkretne ustawienie, aby dowiedzieć się o nim więcej.
 
-Ta aplikacja jest dostępna w 18 językach. Język możesz zmienić w Ustawieniach aplikacji Stella Mod.</value>
+Ta aplikacja jest dostępna w wielu językach. Język możesz zmienić w Ustawieniach aplikacji Stella Mod.</value>
   </data>
   <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>

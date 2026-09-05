@@ -265,7 +265,7 @@ namespace unlockfps_nc.Forms
 			// 
 			// NotifyIconMain
 			// 
-			NotifyIconMain.BalloonTipIcon = ToolTipIcon.Info;
+			NotifyIconMain.BalloonTipIcon = ToolTipIcon.None;
 			resources.ApplyResources(NotifyIconMain, "NotifyIconMain");
 			NotifyIconMain.ContextMenuStrip = ContextNotify;
 			NotifyIconMain.DoubleClick += NotifyIconMain_DoubleClick;
