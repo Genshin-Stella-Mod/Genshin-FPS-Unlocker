@@ -35,7 +35,7 @@ internal static class Program
 		Logger = LogManagerHelper.GetLogger();
 
 		// First log
-		var currentLang = Settings.ReadString("Language", "UI");
+		string currentLang = Settings.ReadString("Language", "UI");
 		Logger.Info(
 			$"================= v{AppFullVersion} {(Debugger.IsAttached ? "(DEBUG MODE)" : "")} =================\n" +
 			$"* AppVersion: {AppVersion}\n" +
@@ -78,12 +78,12 @@ internal static class Program
 			return;
 		}
 
-		using var mutex = new Mutex(true, MutexName, out var isFirst);
+		using var mutex = new Mutex(true, MutexName, out bool isFirst);
 		if (!isFirst)
 		{
 			try
 			{
-				using EventWaitHandle evt = EventWaitHandle.OpenExisting(EventName);
+				using var evt = EventWaitHandle.OpenExisting(EventName);
 				evt.Set();
 			}
 			catch (Exception ex)
@@ -154,18 +154,18 @@ internal static class Program
 
 	private static string? ResolveFallbackLanguage(CultureInfo systemCulture)
 	{
-		var twoLetter = systemCulture.TwoLetterISOLanguageName;
+		string twoLetter = systemCulture.TwoLetterISOLanguageName;
 		if (!twoLetter.Equals("zh", StringComparison.OrdinalIgnoreCase)) return Array.Find(SupportedLangs, lang => lang.StartsWith(twoLetter, StringComparison.OrdinalIgnoreCase));
 
-		var name = systemCulture.Name;
-		var isTraditional = name.Contains("Hant", StringComparison.OrdinalIgnoreCase)
-		                    || TraditionalChineseRegions.Any(region => name.EndsWith($"-{region}", StringComparison.OrdinalIgnoreCase));
+		string name = systemCulture.Name;
+		bool isTraditional = name.Contains("Hant", StringComparison.OrdinalIgnoreCase)
+		                     || TraditionalChineseRegions.Any(region => name.EndsWith($"-{region}", StringComparison.OrdinalIgnoreCase));
 		return isTraditional ? "zh-Hant" : "zh-Hans";
 	}
 
 	private static bool IsAdministrator()
 	{
-		using WindowsIdentity identity = WindowsIdentity.GetCurrent();
+		using var identity = WindowsIdentity.GetCurrent();
 		var principal = new WindowsPrincipal(identity);
 		return principal.IsInRole(WindowsBuiltInRole.Administrator);
 	}

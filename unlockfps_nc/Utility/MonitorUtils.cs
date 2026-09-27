@@ -18,7 +18,7 @@ internal static class MonitorUtils
 
 	internal static Screen[] GetOrderedScreens()
 	{
-		return [..Screen.AllScreens.OrderByDescending(s => s.Primary)];
+		return [.. Screen.AllScreens.OrderByDescending(s => s.Primary)];
 	}
 
 	internal static int ResolveMonitorIndex(Config config)
@@ -34,31 +34,35 @@ internal static class MonitorUtils
 	internal static int ResolveMonitorIndex(Config config, Screen[] screens)
 	{
 		if (!string.IsNullOrEmpty(config.MonitorId))
-			for (var i = 0; i < screens.Length; i++)
+		{
+			for (int i = 0; i < screens.Length; i++)
+			{
 				if (GetDeviceId(screens[i]) == config.MonitorId)
 					return i;
+			}
+		}
 
-		var fallback = config.MonitorNum - 1;
+		int fallback = config.MonitorNum - 1;
 		return fallback >= 0 && fallback < screens.Length ? fallback : 0;
 	}
 
 	internal static (string Name, int Width, int Height, int RefreshRate, string DeviceId) GetMonitorInfo(Screen screen)
 	{
 		DevMode devMode = GetDeviceMode(screen.DeviceName);
-		var width = devMode.dmPelsWidth > 0 ? devMode.dmPelsWidth : screen.Bounds.Width;
-		var height = devMode.dmPelsHeight > 0 ? devMode.dmPelsHeight : screen.Bounds.Height;
-		var refreshRate = devMode.dmDisplayFrequency > 0 ? devMode.dmDisplayFrequency : 60;
+		int width = devMode.dmPelsWidth > 0 ? devMode.dmPelsWidth : screen.Bounds.Width;
+		int height = devMode.dmPelsHeight > 0 ? devMode.dmPelsHeight : screen.Bounds.Height;
+		int refreshRate = devMode.dmDisplayFrequency > 0 ? devMode.dmDisplayFrequency : 60;
 
 		var monitorDevice = new DisplayDevice { cb = Marshal.SizeOf<DisplayDevice>() };
 		if (!EnumDisplayDevices(screen.DeviceName, 0, ref monitorDevice, 0)) return (FormatFallbackName(screen.DeviceName), width, height, refreshRate, "");
 
-		var name = GetMonitorName(monitorDevice.DeviceID) ?? monitorDevice.DeviceString;
+		string name = GetMonitorName(monitorDevice.DeviceID) ?? monitorDevice.DeviceString;
 		return (name, width, height, refreshRate, monitorDevice.DeviceID);
 	}
 
 	private static string FormatFallbackName(string deviceName)
 	{
-		var index = deviceName.IndexOf("DISPLAY", StringComparison.OrdinalIgnoreCase);
+		int index = deviceName.IndexOf("DISPLAY", StringComparison.OrdinalIgnoreCase);
 		return index >= 0 ? $"Monitor {deviceName[(index + "DISPLAY".Length)..]}" : deviceName;
 	}
 
@@ -75,27 +79,27 @@ internal static class MonitorUtils
 	{
 		try
 		{
-			var parts = deviceId.Split('\\');
+			string[] parts = deviceId.Split('\\');
 			if (parts.Length < 2) return null;
 
 			using RegistryKey? key = Registry.LocalMachine.OpenSubKey($@"SYSTEM\CurrentControlSet\Enum\DISPLAY\{parts[1]}");
 			if (key == null) return null;
 
-			foreach (var subKeyName in key.GetSubKeyNames())
+			foreach (string subKeyName in key.GetSubKeyNames())
 			{
 				using RegistryKey? subKey = key.OpenSubKey(subKeyName);
 				if (subKey == null) continue;
 
 				if (subKey.OpenSubKey("Device Parameters")?.GetValue("EDID") is byte[] edid)
 				{
-					var edidName = ParseEdidMonitorName(edid);
+					string? edidName = ParseEdidMonitorName(edid);
 					if (!string.IsNullOrEmpty(edidName)) return edidName;
 				}
 
-				var friendlyName = subKey.GetValue("FriendlyName")?.ToString();
+				string? friendlyName = subKey.GetValue("FriendlyName")?.ToString();
 				if (string.IsNullOrEmpty(friendlyName)) continue;
 
-				var cleanName = CleanMonitorName(friendlyName);
+				string cleanName = CleanMonitorName(friendlyName);
 				if (!string.IsNullOrEmpty(cleanName) && !cleanName.Contains("Generic"))
 					return cleanName;
 			}
@@ -112,14 +116,14 @@ internal static class MonitorUtils
 	{
 		if (edid.Length < 128) return null;
 
-		for (var offset = 54; offset <= 108; offset += 18)
+		for (int offset = 54; offset <= 108; offset += 18)
 		{
 			if (edid[offset] != 0 || edid[offset + 1] != 0 || edid[offset + 3] != 0xFC) continue;
 
 			Span<byte> nameBytes = edid.AsSpan(offset + 5, 13);
-			var terminator = nameBytes.IndexOf((byte)0x0A);
-			var length = terminator >= 0 ? terminator : nameBytes.Length;
-			var name = Encoding.ASCII.GetString(nameBytes[..length]).Trim();
+			int terminator = nameBytes.IndexOf((byte)0x0A);
+			int length = terminator >= 0 ? terminator : nameBytes.Length;
+			string name = Encoding.ASCII.GetString(nameBytes[..length]).Trim();
 			if (!string.IsNullOrEmpty(name)) return name;
 		}
 
@@ -130,15 +134,15 @@ internal static class MonitorUtils
 	{
 		if (rawName.Contains(';'))
 		{
-			var parts = rawName.Split(';');
-			var lastPart = parts[^1];
+			string[] parts = rawName.Split(';');
+			string lastPart = parts[^1];
 			if (lastPart.StartsWith('(') && lastPart.EndsWith(')'))
 				return lastPart.Trim('(', ')');
 		}
 
 		if (!rawName.StartsWith('@')) return rawName;
 
-		var index = rawName.IndexOf(';');
+		int index = rawName.IndexOf(';');
 		if (index > 0 && index < rawName.Length - 1)
 			return rawName[(index + 1)..];
 

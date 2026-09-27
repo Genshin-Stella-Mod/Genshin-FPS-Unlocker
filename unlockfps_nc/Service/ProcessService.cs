@@ -61,7 +61,7 @@ public partial class ProcessService
 
 		if (_config.UseHDR)
 		{
-			var subKeyName = Path.GetFileName(_config.GamePath) == "YuanShen.exe" ? "原神" : "Genshin Impact";
+			string subKeyName = Path.GetFileName(_config.GamePath) == "YuanShen.exe" ? "原神" : "Genshin Impact";
 			Program.Logger.Info($"Enabling HDR mode for {subKeyName}");
 			try
 			{
@@ -77,16 +77,16 @@ public partial class ProcessService
 		}
 
 		STARTUPINFO si = new();
-		var gameFolder = Path.GetDirectoryName(_config.GamePath);
+		string? gameFolder = Path.GetDirectoryName(_config.GamePath);
 
-		var commandLine = BuildCommandLine();
+		string commandLine = BuildCommandLine();
 		Program.Logger.Info($"Launching game with command line: {commandLine}");
 
 		var commandLineBuffer = new StringBuilder(commandLine);
 		if (!Native.CreateProcess(_config.GamePath, commandLineBuffer, IntPtr.Zero, IntPtr.Zero, false, 0u, IntPtr.Zero, gameFolder, ref si, out PROCESS_INFORMATION pi))
 		{
-			var error = Marshal.GetLastWin32Error();
-			var errorMessage = Marshal.GetLastPInvokeErrorMessage();
+			int error = Marshal.GetLastWin32Error();
+			string errorMessage = Marshal.GetLastPInvokeErrorMessage();
 			Program.Logger.Error($"CreateProcess failed with error code {error}: {errorMessage}");
 			MessageBox.Show(string.Format(Resources.ProcessService_StartGame_CreateProcessFailed, error, errorMessage), Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			return false;
@@ -95,7 +95,7 @@ public partial class ProcessService
 		_gameHandle = pi.hProcess;
 		Program.Logger.Info($"Game process started successfully with PID: {pi.dwProcessId}");
 
-		var priorityClass = PriorityClassMap[_config.Priority];
+		uint priorityClass = PriorityClassMap[_config.Priority];
 		if (!Native.SetPriorityClass(_gameHandle, priorityClass))
 			Program.Logger.Warn($"SetPriorityClass failed with error: {Marshal.GetLastWin32Error()}");
 		else
@@ -117,7 +117,7 @@ public partial class ProcessService
 		if (_gameHandle == IntPtr.Zero)
 			return false;
 
-		if (!Native.GetExitCodeProcess(_gameHandle, out var exitCode))
+		if (!Native.GetExitCodeProcess(_gameHandle, out uint exitCode))
 			return false;
 
 		return exitCode == 259; // STILL_ACTIVE
@@ -168,7 +168,7 @@ public partial class ProcessService
 		Process[] processes = Process.GetProcessesByName("GenshinImpact");
 		if (processes.Length == 0)
 			processes = Process.GetProcessesByName("YuanShen");
-		for (var i = 1; i < processes.Length; i++)
+		for (int i = 1; i < processes.Length; i++)
 			processes[i].Dispose();
 		return processes.FirstOrDefault();
 	}
@@ -188,7 +188,7 @@ public partial class ProcessService
 
 	internal static string BuildCommandLine(Config config)
 	{
-		var commandLine = $"\"{config.GamePath}\" ";
+		string commandLine = $"\"{config.GamePath}\" ";
 
 		if (!HasManualMonitorOverride(config) && !string.IsNullOrEmpty(config.MonitorId))
 			commandLine += $"-monitor {ResolveMonitorNum(config)} ";
@@ -211,7 +211,7 @@ public partial class ProcessService
 	private static int ResolveMonitorNum(Config config)
 	{
 		Screen[] screens = MonitorUtils.GetOrderedScreens();
-		var index = MonitorUtils.ResolveMonitorIndex(config, screens);
+		int index = MonitorUtils.ResolveMonitorIndex(config, screens);
 		return index + 1;
 	}
 }

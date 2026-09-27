@@ -34,7 +34,7 @@ public partial class MainForm : Form
 	private void SettingsMenuItem_Click(object sender, EventArgs e)
 	{
 		Program.Logger.Info("Opening settings dialog");
-		using var form = Program.ServiceProvider.GetRequiredService<SettingsForm>();
+		using SettingsForm form = Program.ServiceProvider.GetRequiredService<SettingsForm>();
 		form.ShowDialog();
 		RefreshFPSControls();
 	}
@@ -104,7 +104,7 @@ public partial class MainForm : Form
 		Screen[] screens = MonitorUtils.GetOrderedScreens();
 		if (!MonitorUtils.IsSavedMonitorConnected(_config, screens))
 		{
-			var fallbackIndex = MonitorUtils.ResolveMonitorIndex(_config, screens);
+			int fallbackIndex = MonitorUtils.ResolveMonitorIndex(_config, screens);
 			Program.Logger.Warn($"Saved monitor '{_config.MonitorId}' is not connected, falling back to monitor index {fallbackIndex} and updating configuration");
 
 			_config.MonitorNum = fallbackIndex + 1;
@@ -195,7 +195,7 @@ public partial class MainForm : Form
 
 	private static void ShowSetupForm()
 	{
-		using var form = Program.ServiceProvider.GetRequiredService<SetupForm>();
+		using SetupForm form = Program.ServiceProvider.GetRequiredService<SetupForm>();
 		form.ShowDialog();
 	}
 
@@ -259,7 +259,7 @@ public partial class MainForm : Form
 	private void OpenStella_Click(object sender, EventArgs e)
 	{
 		using RegistryKey? key = Registry.CurrentUser.OpenSubKey(Program.REGISTRY_PATH);
-		var stellaPath = key?.GetValue("StellaPath")?.ToString();
+		string? stellaPath = key?.GetValue("StellaPath")?.ToString();
 
 		if (string.IsNullOrEmpty(stellaPath))
 		{
@@ -267,7 +267,7 @@ public partial class MainForm : Form
 			return;
 		}
 
-		var exePath = Path.Combine(stellaPath, "Stella Mod Launcher.exe");
+		string exePath = Path.Combine(stellaPath, "Stella Mod Launcher.exe");
 		if (!File.Exists(exePath))
 		{
 			MessageBox.Show(string.Format(Resources.MainForm_OpenStella_ExecutableNotFound, exePath), Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -280,7 +280,7 @@ public partial class MainForm : Form
 	private static bool IsStellaModInstalled()
 	{
 		using RegistryKey? key = Registry.CurrentUser.OpenSubKey(Program.REGISTRY_PATH);
-		var stellaPath = key?.GetValue("StellaPath")?.ToString();
+		string? stellaPath = key?.GetValue("StellaPath")?.ToString();
 		return !string.IsNullOrEmpty(stellaPath) && File.Exists(Path.Combine(stellaPath, "Stella Mod Launcher.exe"));
 	}
 
@@ -296,7 +296,7 @@ public partial class MainForm : Form
 
 	private void ViewConfig_Click(object sender, EventArgs e)
 	{
-		var cfgPath = ConfigService.ConfigPath;
+		string cfgPath = ConfigService.ConfigPath;
 		if (!File.Exists(cfgPath))
 		{
 			MessageBox.Show(Resources.MainForm_ViewCfg_TheUnlockerConfigJsonFileWasNotFound, Resources.MainForm_ViewCfg_FileNotFound, MessageBoxButtons.OK, MessageBoxIcon.Warning);

@@ -69,31 +69,31 @@ public class IpcService(ConfigService configService) : IDisposable
 		_stubModule = Native.LoadLibrary(_stubPath);
 		if (_stubModule == IntPtr.Zero)
 		{
-			var error = Marshal.GetLastWin32Error();
-			var errorMessage = Marshal.GetLastPInvokeErrorMessage();
+			int error = Marshal.GetLastWin32Error();
+			string errorMessage = Marshal.GetLastPInvokeErrorMessage();
 			Program.Logger.Error($"LoadLibrary failed with error code {error}: {errorMessage}");
 			MessageBox.Show(string.Format(Resources.IpcService_Start_FailedToLoadStubModule, error, errorMessage), Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			return false;
 		}
 
-		var stubWndProc = Native.GetProcAddress(_stubModule, "WndProc");
-		var targetWindow = ProcessUtils.GetWindowFromProcessId(processId);
+		IntPtr stubWndProc = Native.GetProcAddress(_stubModule, "WndProc");
+		IntPtr targetWindow = ProcessUtils.GetWindowFromProcessId(processId);
 		if (targetWindow == IntPtr.Zero)
 		{
-			var error = Marshal.GetLastWin32Error();
-			var errorMessage = Marshal.GetLastPInvokeErrorMessage();
+			int error = Marshal.GetLastWin32Error();
+			string errorMessage = Marshal.GetLastPInvokeErrorMessage();
 			Program.Logger.Error($"Failed to find game window for process ID: {processId}");
 			MessageBox.Show(string.Format(Resources.IpcService_Start_FailedToSetWindowHook, error, errorMessage), Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			return false;
 		}
 
-		var threadId = Native.GetWindowThreadProcessId(targetWindow, out _);
+		uint threadId = Native.GetWindowThreadProcessId(targetWindow, out _);
 
 		_wndHook = Native.SetWindowsHookEx(3, stubWndProc, _stubModule, threadId);
 		if (_wndHook == IntPtr.Zero)
 		{
-			var error = Marshal.GetLastWin32Error();
-			var errorMessage = Marshal.GetLastPInvokeErrorMessage();
+			int error = Marshal.GetLastWin32Error();
+			string errorMessage = Marshal.GetLastPInvokeErrorMessage();
 			Program.Logger.Error($"SetWindowsHookEx failed with error code {error}: {errorMessage}");
 			MessageBox.Show(string.Format(Resources.IpcService_Start_FailedToSetWindowHook, error, errorMessage), Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			return false;
@@ -101,14 +101,14 @@ public class IpcService(ConfigService configService) : IDisposable
 
 		if (!Native.PostThreadMessage(threadId, 0, IntPtr.Zero, IntPtr.Zero))
 		{
-			var error = Marshal.GetLastWin32Error();
-			var errorMessage = Marshal.GetLastPInvokeErrorMessage();
+			int error = Marshal.GetLastWin32Error();
+			string errorMessage = Marshal.GetLastPInvokeErrorMessage();
 			Program.Logger.Error($"PostThreadMessage failed with error code {error}: {errorMessage}");
 			MessageBox.Show(string.Format(Resources.IpcService_Start_FailedToPostThreadMessage, error, errorMessage), Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			return false;
 		}
 
-		var retryCount = 0;
+		int retryCount = 0;
 		while (true)
 		{
 			_sharedMemoryAccessor.Read(0, out ipcData);
@@ -167,7 +167,7 @@ public class IpcService(ConfigService configService) : IDisposable
 		var assembly = Assembly.GetExecutingAssembly();
 		using Stream stream = assembly.GetManifestResourceStream("unlockfps_nc.Resources.UnlockerStub.dll")!;
 
-		var filePath = Path.Combine(AppContext.BaseDirectory, "UnlockerStub.dll");
+		string filePath = Path.Combine(AppContext.BaseDirectory, "UnlockerStub.dll");
 
 		try
 		{

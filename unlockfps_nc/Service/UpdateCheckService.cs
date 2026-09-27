@@ -36,7 +36,7 @@ public sealed class UpdateCheckService : IDisposable
 			}
 
 			await using Stream stream = await response.Content.ReadAsStreamAsync(cancellationToken);
-			var release = await JsonSerializer.DeserializeAsync<GitHubRelease>(stream, cancellationToken: cancellationToken);
+			GitHubRelease? release = await JsonSerializer.DeserializeAsync<GitHubRelease>(stream, cancellationToken: cancellationToken);
 			if (string.IsNullOrEmpty(release?.TagName)) return null;
 
 			if (!Version.TryParse(release.TagName.TrimStart('v', 'V'), out Version? latestVersion)) return null;

@@ -19,7 +19,7 @@ public class ConfigService
 
 		Program.Logger.Info(IsFirstRun ? $"First run detected, creating new config at: {ConfigPath}" : $"Loading existing config from: {ConfigPath}");
 
-		var loaded = Load();
+		bool loaded = Load();
 		Sanitize();
 		LoadGamePathFromRegistry();
 
@@ -43,8 +43,8 @@ public class ConfigService
 
 		try
 		{
-			var json = File.ReadAllText(ConfigPath);
-			var config = JsonSerializer.Deserialize<Config>(json);
+			string json = File.ReadAllText(ConfigPath);
+			Config? config = JsonSerializer.Deserialize<Config>(json);
 			if (config == null) return false;
 
 			Config = config;
@@ -72,7 +72,7 @@ public class ConfigService
 		if (!string.IsNullOrEmpty(Config.GamePath)) return;
 
 		using RegistryKey? key = Registry.CurrentUser.OpenSubKey(Program.REGISTRY_PATH);
-		var gamePath = key?.GetValue("GamePath") as string;
+		string? gamePath = key?.GetValue("GamePath") as string;
 		if (string.IsNullOrEmpty(gamePath) || !File.Exists(gamePath)) return;
 
 		Config.GamePath = gamePath;
@@ -97,10 +97,10 @@ public class ConfigService
 		if (Config.ConfigVersion >= CurrentConfigVersion) return;
 
 		Screen[] screens = MonitorUtils.GetOrderedScreens();
-		var index = Config.MonitorNum - 1;
+		int index = Config.MonitorNum - 1;
 		if (index >= 0 && index < screens.Length)
 		{
-			var (_, width, height, _, deviceId) = MonitorUtils.GetMonitorInfo(screens[index]);
+			(_, int width, int height, _, string deviceId) = MonitorUtils.GetMonitorInfo(screens[index]);
 			Config.MonitorId = deviceId;
 
 			if (Config is { CustomResX: 1920, CustomResY: 1080 })
@@ -124,7 +124,7 @@ public class ConfigService
 			return;
 		}
 
-		var (_, width, height, refreshRate, deviceId) = MonitorUtils.GetMonitorInfo(screens[monitorIndex]);
+		(_, int width, int height, int refreshRate, string deviceId) = MonitorUtils.GetMonitorInfo(screens[monitorIndex]);
 		Config.FPSTarget = refreshRate > 0 ? refreshRate : 60;
 		Config.CustomResX = width > 0 ? width : 1920;
 		Config.CustomResY = height > 0 ? height : 1080;
@@ -138,9 +138,9 @@ public class ConfigService
 			try
 			{
 				Config.LastModified = DateTime.Now;
-				var json = JsonSerializer.Serialize(Config, WriteOptions);
+				string json = JsonSerializer.Serialize(Config, WriteOptions);
 
-				var wasHidden = false;
+				bool wasHidden = false;
 				if (File.Exists(ConfigPath))
 				{
 					FileAttributes attributes = File.GetAttributes(ConfigPath);

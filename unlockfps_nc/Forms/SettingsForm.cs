@@ -38,7 +38,7 @@ public partial class SettingsForm : Form
 	{
 		LabelConfigVersion.Text = string.Format(_configVersionTemplate, _config.ConfigVersion);
 
-		var lastUpdated = _config.LastModified == default
+		string lastUpdated = _config.LastModified == default
 			? Resources.SettingsForm_LastUpdatedNever
 			: _config.LastModified.ToString("g");
 		LabelLastUpdated.Text = string.Format(_lastUpdatedTemplate, lastUpdated);
@@ -113,7 +113,7 @@ public partial class SettingsForm : Form
 
 	private void UpdateMonitorOverrideState()
 	{
-		var isOverridden = ProcessService.HasManualMonitorOverride(_config);
+		bool isOverridden = ProcessService.HasManualMonitorOverride(_config);
 		ComboMonitor.Enabled = !isOverridden;
 		BtnRefreshMonitor.Enabled = !isOverridden;
 
@@ -175,8 +175,8 @@ public partial class SettingsForm : Form
 
 		foreach (Screen screen in screens)
 		{
-			var (name, width, height, refreshRate, _) = MonitorUtils.GetMonitorInfo(screen);
-			var displayName = $"{name}{(screen.Primary ? " (Main)" : "")} - {width}x{height}@{refreshRate}Hz";
+			(string name, int width, int height, int refreshRate, _) = MonitorUtils.GetMonitorInfo(screen);
+			string displayName = $"{name}{(screen.Primary ? " (Main)" : "")} - {width}x{height}@{refreshRate}Hz";
 			ComboMonitor.Items.Add(displayName);
 		}
 
@@ -198,7 +198,7 @@ public partial class SettingsForm : Form
 			return;
 		}
 
-		var monitorIndex = ComboMonitor.SelectedIndex - 1;
+		int monitorIndex = ComboMonitor.SelectedIndex - 1;
 		_config.MonitorNum = monitorIndex + 1;
 		_configService.UpdateMonitorSettings(monitorIndex);
 
